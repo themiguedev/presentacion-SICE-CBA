@@ -258,9 +258,21 @@
     body.light-mode .crit-subtitle {
       color: #B45309 !important;
     }
-    body.light-mode .crit-media {
-      background: #F1F5F9 !important;
+    body.light-mode .crit-emoji-box {
       border: 1.5px solid #CBD5E1 !important;
+      box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.04) !important;
+    }
+    body.light-mode .crit-card:nth-child(1) .crit-emoji-box {
+      background: radial-gradient(circle at center, #EFF6FF 0%, #DBEAFE 100%) !important;
+      border-color: #93C5FD !important;
+    }
+    body.light-mode .crit-card:nth-child(2) .crit-emoji-box {
+      background: radial-gradient(circle at center, #F0F9FF 0%, #E0F2FE 100%) !important;
+      border-color: #7DD3FC !important;
+    }
+    body.light-mode .crit-card:nth-child(3) .crit-emoji-box {
+      background: radial-gradient(circle at center, #FFFBEB 0%, #FEF3C7 100%) !important;
+      border-color: #FDE68A !important;
     }
     body.light-mode .crit-block.legacy {
       background: #FEF2F2 !important;
@@ -850,7 +862,68 @@
       transform: translateY(-1px);
     }
 
-    /* Main Slide Container */
+    /* Transition Selector in Top Bar */
+    .transition-pill-control {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      height: 36px;
+      padding: 0 10px;
+      background: var(--nav-btn-bg);
+      border: 1px solid var(--nav-btn-border);
+      border-radius: 8px;
+      transition: all 0.2s ease;
+      position: relative;
+    }
+
+    .transition-pill-control:hover {
+      border-color: var(--cba-gold);
+      background: var(--cba-gold-light);
+    }
+
+    .transition-icon {
+      font-size: 13px;
+      user-select: none;
+      line-height: 1;
+    }
+
+    .transition-select {
+      background: transparent;
+      border: none;
+      color: var(--text-main);
+      font-size: 12.5px;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      outline: none;
+      padding-right: 2px;
+    }
+
+    .transition-select option {
+      background: #12152A;
+      color: #F8FAFC;
+    }
+
+    body.light-mode .transition-pill-control {
+      background: #FFFFFF !important;
+      border: 1.5px solid #94A3B8 !important;
+    }
+
+    body.light-mode .transition-pill-control:hover {
+      border-color: #B45309 !important;
+      background: #FEF3C7 !important;
+    }
+
+    body.light-mode .transition-select {
+      color: #0F172A !important;
+    }
+
+    body.light-mode .transition-select option {
+      background: #FFFFFF !important;
+      color: #0F172A !important;
+    }
+
+    /* Main Slide Container & 3D Perspective */
     .slide-viewport {
       position: absolute;
       top: 60px;
@@ -862,6 +935,8 @@
       align-items: center;
       justify-content: center;
       padding: 20px 28px;
+      perspective: 1400px;
+      perspective-origin: 50% 50%;
     }
 
     .slide {
@@ -876,18 +951,201 @@
       box-shadow: var(--slide-shadow);
       padding: 34px 42px;
       opacity: 0;
-      transform: scale(0.97) translateY(16px);
       pointer-events: none;
-      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
       display: flex;
       flex-direction: column;
       overflow-y: auto;
+      will-change: transform, opacity, filter;
+      backface-visibility: hidden;
+      transform-style: preserve-3d;
+      transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+                  opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+                  filter 0.45s ease;
     }
 
-    .slide.active {
+    /* 1. MODO DESLIZAMIENTO HORIZONTAL (Slide - Por defecto) */
+    body:not([data-transition]) .slide.active,
+    body[data-transition="slide"] .slide.active {
       opacity: 1;
-      transform: scale(1) translateY(0);
+      transform: translate3d(0, 0, 0) scale(1);
       pointer-events: auto;
+      z-index: 5;
+      filter: blur(0);
+    }
+    body:not([data-transition]) .slide.past,
+    body[data-transition="slide"] .slide.past {
+      opacity: 0;
+      transform: translate3d(-80px, 0, -40px) scale(0.94);
+      pointer-events: none;
+      z-index: 1;
+      filter: blur(2px);
+    }
+    body:not([data-transition]) .slide.future,
+    body[data-transition="slide"] .slide.future {
+      opacity: 0;
+      transform: translate3d(80px, 0, -40px) scale(0.94);
+      pointer-events: none;
+      z-index: 1;
+      filter: blur(2px);
+    }
+
+    /* 2. MODO ZOOM & FADE (Cinemático) */
+    body[data-transition="fade"] .slide.active {
+      opacity: 1;
+      transform: scale(1) translate3d(0, 0, 0);
+      pointer-events: auto;
+      z-index: 5;
+      filter: blur(0);
+    }
+    body[data-transition="fade"] .slide.past {
+      opacity: 0;
+      transform: scale(1.08) translate3d(0, 0, 0);
+      pointer-events: none;
+      z-index: 1;
+      filter: blur(5px);
+    }
+    body[data-transition="fade"] .slide.future {
+      opacity: 0;
+      transform: scale(0.9) translate3d(0, 0, 0);
+      pointer-events: none;
+      z-index: 1;
+      filter: blur(5px);
+    }
+
+    /* 3. MODO CUBO 3D (Perspectiva Tridimensional) */
+    body[data-transition="cube"] .slide.active {
+      opacity: 1;
+      transform: translate3d(0, 0, 0) rotateY(0deg) scale(1);
+      pointer-events: auto;
+      z-index: 5;
+      filter: blur(0);
+    }
+    body[data-transition="cube"] .slide.past {
+      opacity: 0;
+      transform: translate3d(-120px, 0, -180px) rotateY(22deg) scale(0.88);
+      pointer-events: none;
+      z-index: 1;
+      filter: blur(3px);
+    }
+    body[data-transition="cube"] .slide.future {
+      opacity: 0;
+      transform: translate3d(120px, 0, -180px) rotateY(-22deg) scale(0.88);
+      pointer-events: none;
+      z-index: 1;
+      filter: blur(3px);
+    }
+
+    /* 4. MODO VERTICAL (Deck Vertical) */
+    body[data-transition="stack"] .slide.active {
+      opacity: 1;
+      transform: translate3d(0, 0, 0) scale(1);
+      pointer-events: auto;
+      z-index: 5;
+      filter: blur(0);
+    }
+    body[data-transition="stack"] .slide.past {
+      opacity: 0;
+      transform: translate3d(0, -70px, -40px) scale(0.94);
+      pointer-events: none;
+      z-index: 1;
+      filter: blur(2px);
+    }
+    body[data-transition="stack"] .slide.future {
+      opacity: 0;
+      transform: translate3d(0, 70px, -40px) scale(0.94);
+      pointer-events: none;
+      z-index: 1;
+      filter: blur(2px);
+    }
+
+    /* Estado inicial sin clase posicional */
+    .slide:not(.active):not(.past):not(.future) {
+      opacity: 0;
+      transform: scale(0.97) translateY(16px);
+      pointer-events: none;
+    }
+
+    /* Entrada animada y escalonada de los elementos internos */
+    @keyframes slideHeaderEnter {
+      from {
+        opacity: 0;
+        transform: translateY(-12px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideCardStagger {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .slide.active .slide-tag,
+    .slide.active .slide-title,
+    .slide.active .hero-h1 {
+      animation: slideHeaderEnter 0.45s cubic-bezier(0.16, 1, 0.3, 1) 0.05s backwards;
+    }
+
+    .slide.active .slide-subtitle,
+    .slide.active .hero-desc {
+      animation: slideHeaderEnter 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.1s backwards;
+    }
+
+    .slide.active .crit-card,
+    .slide.active .comp-col,
+    .slide.active .task-card,
+    .slide.active .feature-card,
+    .slide.active .hero-stat-card,
+    .slide.active .hero-visual {
+      animation: slideCardStagger 0.5s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+    }
+
+    .slide.active .crit-card:nth-child(1),
+    .slide.active .comp-col:nth-child(1),
+    .slide.active .task-card:nth-child(1),
+    .slide.active .feature-card:nth-child(1),
+    .slide.active .hero-stat-card:nth-child(1) {
+      animation-delay: 0.12s;
+    }
+
+    .slide.active .crit-card:nth-child(2),
+    .slide.active .comp-col:nth-child(2),
+    .slide.active .task-card:nth-child(2),
+    .slide.active .feature-card:nth-child(2),
+    .slide.active .hero-stat-card:nth-child(2) {
+      animation-delay: 0.20s;
+    }
+
+    .slide.active .crit-card:nth-child(3),
+    .slide.active .task-card:nth-child(3),
+    .slide.active .feature-card:nth-child(3),
+    .slide.active .hero-visual {
+      animation-delay: 0.28s;
+    }
+
+    .slide.active .task-card:nth-child(4) {
+      animation-delay: 0.36s;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .slide,
+      .slide.active,
+      .slide.past,
+      .slide.future,
+      .slide.active * {
+        animation: none !important;
+        transition: opacity 0.2s ease !important;
+        transform: none !important;
+        filter: none !important;
+      }
     }
 
     /* Bottom Control Bar */
@@ -1580,79 +1838,90 @@
       border: 1px solid rgba(245, 158, 11, 0.35);
     }
 
-    /* Previsualización Interactiva de Captura de Pantalla */
-    .crit-media {
+    /* Emoji Animado Representativo de Mediano Tamaño */
+    .crit-emoji-box {
       position: relative;
-      border-radius: 8px;
-      overflow: hidden;
-      height: 98px;
-      background: #060913;
-      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 12px;
+      height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       margin-bottom: 9px;
-      cursor: zoom-in;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: inset 0 1px 8px rgba(0, 0, 0, 0.28);
+      transition: all 0.28s ease;
       flex-shrink: 0;
     }
 
-    .crit-media img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: top center;
-      transition: transform 0.3s ease, filter 0.25s ease;
-      filter: brightness(0.95);
+    .crit-card:nth-child(1) .crit-emoji-box {
+      background: radial-gradient(circle at center, rgba(59, 130, 246, 0.18) 0%, rgba(15, 23, 42, 0.45) 80%);
+      border-color: rgba(59, 130, 246, 0.28);
+    }
+    .crit-card:nth-child(2) .crit-emoji-box {
+      background: radial-gradient(circle at center, rgba(56, 189, 248, 0.18) 0%, rgba(15, 23, 42, 0.45) 80%);
+      border-color: rgba(56, 189, 248, 0.28);
+    }
+    .crit-card:nth-child(3) .crit-emoji-box {
+      background: radial-gradient(circle at center, rgba(251, 191, 36, 0.18) 0%, rgba(15, 23, 42, 0.45) 80%);
+      border-color: rgba(251, 191, 36, 0.28);
     }
 
-    .crit-media:hover img {
-      transform: scale(1.05);
-      filter: brightness(1.05);
+    .crit-anim-emoji {
+      font-size: 42px;
+      line-height: 1;
+      display: inline-block;
+      user-select: none;
+      transition: transform 0.25s ease;
+      cursor: default;
     }
 
-    .crit-media-tag {
-      position: absolute;
-      top: 5px;
-      left: 5px;
-      background: rgba(16, 185, 129, 0.92);
-      backdrop-filter: blur(4px);
-      color: #FFFFFF;
-      font-size: 8.5px;
-      font-weight: 800;
-      padding: 2px 6px;
-      border-radius: 4px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
-      display: flex;
-      align-items: center;
-      gap: 3px;
-      z-index: 2;
+    /* Animaciones individuales para cada eje temático */
+    @keyframes floatOrbit {
+      0%, 100% {
+        transform: translateY(0) scale(1);
+        filter: drop-shadow(0 0 6px rgba(59, 130, 246, 0.4));
+      }
+      50% {
+        transform: translateY(-5px) scale(1.08);
+        filter: drop-shadow(0 0 16px rgba(59, 130, 246, 0.75));
+      }
     }
 
-    .crit-zoom-badge {
-      position: absolute;
-      bottom: 5px;
-      right: 5px;
-      background: rgba(11, 13, 24, 0.88);
-      backdrop-filter: blur(5px);
-      color: #F8FAFC;
-      font-size: 9.5px;
-      font-weight: 700;
-      padding: 2.5px 7px;
-      border-radius: 5px;
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      transition: all 0.2s ease;
-      pointer-events: none;
-      z-index: 2;
+    @keyframes rocketZoom {
+      0%, 100% {
+        transform: translateY(0) rotate(0deg) scale(1);
+        filter: drop-shadow(0 0 6px rgba(56, 189, 248, 0.4));
+      }
+      50% {
+        transform: translateY(-6px) rotate(4deg) scale(1.1);
+        filter: drop-shadow(0 0 18px rgba(56, 189, 248, 0.8));
+      }
     }
 
-    .crit-media:hover .crit-zoom-badge {
-      background: #FBBF24;
-      color: #0B0D18;
-      border-color: #FBBF24;
-      font-weight: 800;
+    @keyframes shieldGleam {
+      0%, 100% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 6px rgba(245, 158, 11, 0.4));
+      }
+      50% {
+        transform: scale(1.09);
+        filter: drop-shadow(0 0 18px rgba(251, 191, 36, 0.8));
+      }
+    }
+
+    .emoji-infra {
+      animation: floatOrbit 3.2s ease-in-out infinite;
+    }
+    .emoji-speed {
+      animation: rocketZoom 2.6s ease-in-out infinite;
+    }
+    .emoji-control {
+      animation: shieldGleam 3s ease-in-out infinite;
+    }
+
+    .crit-card:hover .crit-anim-emoji {
+      transform: scale(1.18);
     }
 
     /* Bloques de Comparativa (Antes vs Nuevo) */
@@ -1916,6 +2185,17 @@
     </div>
 
     <div class="top-actions">
+      <!-- Selector de Animación de Transición -->
+      <div class="transition-pill-control" title="Animación de Transición entre Diapositivas (Presiona 'M' para alternar)">
+        <span class="transition-icon">✨</span>
+        <select id="transitionSelect" class="transition-select" onchange="changeTransition(this.value)">
+          <option value="slide">↔️ Deslizamiento</option>
+          <option value="fade">🔍 Zoom & Fade</option>
+          <option value="cube">🧊 Cubo 3D</option>
+          <option value="stack">↕️ Vertical</option>
+        </select>
+      </div>
+
       <button class="action-icon-btn" onclick="toggleTheme()" id="themeBtn" title="Alternar Modo de Pantalla (D)">🌓</button>
       <button class="action-icon-btn" onclick="toggleDrawer()" title="Índice de Diapositivas (T)">☰</button>
       <button class="action-icon-btn" onclick="toggleFullScreen()" title="Pantalla Completa (F)">⛶</button>
@@ -1973,11 +2253,9 @@
             <span class="crit-badge">🔌 Local + Nube</span>
           </div>
 
-          <!-- Captura interactiva del sistema -->
-          <div class="crit-media" onclick="openZoom('./assets/sisceba_config_real.png', 'SICE-CBA: Panel de control con arquitectura unificada y enlace sincronizado en la nube')">
-            <span class="crit-media-tag">📸 SICE-CBA Host & Nube</span>
-            <img src="./assets/sisceba_config_real.png" alt="SICE-CBA Infraestructura">
-            <span class="crit-zoom-badge">🔍 Clic para ampliar</span>
+          <!-- Emoji animado representativo -->
+          <div class="crit-emoji-box">
+            <span class="crit-anim-emoji emoji-infra" role="img" aria-label="Infraestructura y Red">🌐</span>
           </div>
 
           <div class="crit-blocks-container">
@@ -2026,11 +2304,9 @@
             <span class="crit-badge">🚀 SPA · Auto-Save</span>
           </div>
 
-          <!-- Captura interactiva del sistema -->
-          <div class="crit-media" onclick="openZoom('./assets/sisceba_evaluacion_real.png', 'SICE-CBA: Carga interactiva y guardado continuo celda por celda sin recargas de pantalla F5')">
-            <span class="crit-media-tag">📸 SICE-CBA Evaluación SPA</span>
-            <img src="./assets/sisceba_evaluacion_real.png" alt="SICE-CBA Evaluación SPA">
-            <span class="crit-zoom-badge">🔍 Clic para ampliar</span>
+          <!-- Emoji animado representativo -->
+          <div class="crit-emoji-box">
+            <span class="crit-anim-emoji emoji-speed" role="img" aria-label="Velocidad y SPA">🚀</span>
           </div>
 
           <div class="crit-blocks-container">
@@ -2079,11 +2355,9 @@
             <span class="crit-badge">🛡️ MPPE + Sección U</span>
           </div>
 
-          <!-- Captura interactiva del sistema -->
-          <div class="crit-media" onclick="openZoom('./assets/sisceba_gestion_real.png', 'SICE-CBA: Módulo de Gestión con matrícula blindada, secciones oficiales (A, B y Sección U) y roles MPPE')">
-            <span class="crit-media-tag">📸 SICE-CBA Gestión Oficial</span>
-            <img src="./assets/sisceba_gestion_real.png" alt="SICE-CBA Gestión y Control">
-            <span class="crit-zoom-badge">🔍 Clic para ampliar</span>
+          <!-- Emoji animado representativo -->
+          <div class="crit-emoji-box">
+            <span class="crit-anim-emoji emoji-control" role="img" aria-label="Control y Legalidad">🛡️</span>
           </div>
 
           <div class="crit-blocks-container">
