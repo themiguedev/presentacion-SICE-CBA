@@ -14,7 +14,7 @@ El sistema se encuentra actualmente en **fase activa de validación y pruebas lo
 
 ---
 
-## 🖥️ Estructura de Diapositivas (7 Módulos Clave)
+## 🖥️ Estructura de Diapositivas (6 Módulos Clave)
 
 1. **Portada & Estado del Proyecto:**
    - Presentación institucional, escudo oficial y distinción del plan: *Fase 1: Pruebas Locales* ➔ *Fase 2: Despliegue en Servidores del Colegio*.
@@ -24,23 +24,20 @@ El sistema se encuentra actualmente en **fase activa de validación y pruebas lo
    - **Velocidad y Fluidez:** Recargas lentas de pantalla (F5) vs. Guardado continuo celda por celda sin pérdida de notas.
    - **Control:** Manejo exclusivo de secciones A y B en CEO vs. Implementación de la sección U (Única) en SICE-CBA.
 
-3. **Cara a Cara Visual 1: Escritorio y Centro de Comando:**
+3. **Cara a Cara Visual: Escritorio y Centro de Comando:**
    - Comparativa 50/50 con capturas reales de alta definición entre el panel estático de CEO y el *Academic Pulse Hero* en tiempo real de SICE-CBA con buscador global (Ctrl+K).
 
-4. **Cara a Cara Visual 2: Gestión de Matrícula y Secciones Estrictas "A" y "B":**
-   - Comparativa visual erradicando secciones residuales que alteraban las nóminas de Zona Educativa y blindaje de la matrícula para el rol ADMINISTRADOR.
-
-5. **Automatización de Tareas Recurrentes por Rol (Documento Institucional CBA):**
+4. **Automatización de Tareas Recurrentes por Rol (Documento Institucional CBA):**
    - **Directora:** Estrategias por curso/docente, asistencia, conducta, **Doble Pensum Académico (Promedio MPPE y Promedio CBA)**, cuadros estadísticos y reporte de **Grupos CRP** (inscripción y notas).
    - **Coordinación Docente de Inicial:** Indicadores evaluados, **Indicadores Actitudinales**, consultas de evaluación por estudiante y curso, y estadísticas formativas en escala literal (A a E).
    - **Coordinación Docente de Primaria:** Indicadores por curso/docente, asistencia, disciplina, **Doble Pensum (MPPE y CBA)**, cuadros estadísticos y escala cualitativa (L, P/EP, I).
    - **Coordinación Docente de Media General:** Registro de estrategias evaluadas, asistencia, disciplina, **Doble Pensum (escala vigesimal 01 a 20)**, cuadros estadísticos y **Grupos CRP**.
 
-6. **Escalas Evaluativas Oficiales y Roles de Personal:**
+5. **Escalas Evaluativas Oficiales y Roles de Personal:**
    - Detalle por subsistema (Inicial Literal, Primaria Cualitativa, Media General Vigesimal).
    - Segregación de roles (SECRETARIA blindada con acceso exclusivo a Inasistencias y Conducta; DOCENTE en Evaluación; ADMINISTRADOR en Matrícula y Usuarios).
 
-7. **Plan de Despliegue a Servidores del Plantel & Preguntas y Respuestas:**
+6. **Plan de Despliegue a Servidores del Plantel & Preguntas y Respuestas:**
    - Ruta de 4 fases hacia la producción definitiva en la infraestructura del colegio y espacio abierto para directivos y docentes.
 
 ---
