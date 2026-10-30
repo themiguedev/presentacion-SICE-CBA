@@ -1,4 +1,4 @@
-﻿# ðŸŽ“ SICE-CBA: EvoluciÃ³n del Control de Estudios (CBA vs. CEO)
+# ðŸŽ“ SICE-CBA: EvoluciÃ³n del Control de Estudios (CBA vs. CEO)
 
 > **U.E.P. Colegio Bellas Artes**  
 > Maracaibo, Estado Zulia, Venezuela Â· CÃ³digo DEA: **S0432D2305**  
@@ -21,9 +21,9 @@ El sistema se encuentra actualmente en **fase activa de validaciÃ³n y pruebas 
    - Principios rectores: Secciones estrictas A y B, y apego 100% a la legalidad MPPE.
 
 2. **De CEO a SICE-CBA en 3 Puntos CrÃ­ticos:**
-   - **Infraestructura:** Dependencia de hosting externo vs. AutonomÃ­a total en red local del colegio (inmune a caÃ­das de internet).
+   - **Infraestructura:** Servidores físicos vulnerables a fluctuaciones eléctricas vs. Sistema y base de datos integrados en un mismo servidor con opción de enlace a la nube sincronizado para garantizar máxima estabilidad.
    - **Velocidad y Fluidez:** Recargas lentas de pantalla (F5) vs. Guardado continuo celda por celda sin pÃ©rdida de notas.
-   - **Legalidad y Control:** Promedios no normados y secciones fantasma (C, D, U) vs. Normativa ministerial estricta y Secciones Ãºnicas A y B.
+   - **Control:** Promedios no normados en CEO y manejo solo de secciones A y B vs. Normativa ministerial estricta e implementación de la sección U (Única) en SICE-CBA.
 
 3. **Cara a Cara Visual 1: Escritorio y Centro de Comando:**
    - Comparativa 50/50 con capturas reales de alta definiciÃ³n entre el panel estÃ¡tico de CEO y el *Academic Pulse Hero* en tiempo real de SICE-CBA con buscador global (Ctrl+K).
