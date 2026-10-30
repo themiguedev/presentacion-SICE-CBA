@@ -184,7 +184,7 @@
       padding: 3px 12px !important;
     }
 
-    /* Portada: Tarjetas y Elementos de Alto Contraste */
+    /* Portada Minimalista: Elementos de Alto Contraste en Modo Claro */
     body.light-mode .hero-stat-card {
       background: #FFFDF5 !important;
       border: 2px solid #D97706 !important;
@@ -203,15 +203,7 @@
     body.light-mode .hero-cover-badge {
       background: #FEF3C7 !important;
       border: 1.5px solid #D97706 !important;
-    }
-    body.light-mode .hero-badge-title {
       color: #92400E !important;
-      font-weight: 900 !important;
-    }
-    body.light-mode .hero-badge-pill {
-      background: #DCFCE7 !important;
-      border-color: #059669 !important;
-      color: #065F46 !important;
       font-weight: 900 !important;
     }
     body.light-mode .hero-cover-title {
@@ -224,74 +216,63 @@
       color: #0F172A !important;
       font-weight: 600 !important;
     }
-    body.light-mode .roadmap-card {
+    body.light-mode .hero-min-card {
       background: #FFFFFF !important;
       border: 2px solid #CBD5E1 !important;
       box-shadow: 0 4px 14px rgba(15, 23, 42, 0.08) !important;
     }
-    body.light-mode .roadmap-card.phase-active {
-      border: 2.5px solid #059669 !important;
+    body.light-mode .hero-min-card.active-card {
+      border: 2px solid #059669 !important;
       background: #F0FDF4 !important;
     }
-    body.light-mode .roadmap-card.phase-scheduled {
-      border: 2.5px solid #D97706 !important;
+    body.light-mode .hero-min-card.target-card {
+      border: 2px solid #D97706 !important;
       background: #FFFDF5 !important;
     }
-    body.light-mode .phase-chip {
-      background: #DCFCE7 !important;
-      color: #065F46 !important;
-      border-color: #059669 !important;
-      font-weight: 900 !important;
-    }
-    body.light-mode .phase-chip.gold {
-      background: #FEF3C7 !important;
-      color: #78350F !important;
-      border-color: #D97706 !important;
-      font-weight: 900 !important;
-    }
-    body.light-mode .status-live-chip {
+    body.light-mode .card-phase-num {
       color: #065F46 !important;
       font-weight: 900 !important;
     }
-    body.light-mode .status-target-chip {
+    body.light-mode .card-phase-num.gold {
+      color: #B45309 !important;
+      font-weight: 900 !important;
+    }
+    body.light-mode .card-status-dot {
+      color: #065F46 !important;
+      font-weight: 800 !important;
+    }
+    body.light-mode .card-status-target {
       color: #92400E !important;
-      font-weight: 900 !important;
+      font-weight: 800 !important;
     }
-    body.light-mode .roadmap-phase-title {
+    body.light-mode .card-main-title {
       color: #000000 !important;
       font-weight: 900 !important;
     }
-    body.light-mode .roadmap-phase-desc {
-      color: #1E293B !important;
+    body.light-mode .card-sub-label {
+      color: #334155 !important;
       font-weight: 600 !important;
     }
-    body.light-mode .roadmap-tag {
-      background: #F1F5F9 !important;
-      color: #0F172A !important;
-      border-color: #94A3B8 !important;
-      font-weight: 800 !important;
+    body.light-mode .hero-min-visual {
+      background: #0B1026 !important;
+      border: 2.5px solid #D97706 !important;
+      box-shadow: 0 12px 30px rgba(11, 16, 38, 0.35) !important;
     }
-    body.light-mode .roadmap-tag.gold {
-      background: #FEF3C7 !important;
-      color: #78350F !important;
-      border-color: #D97706 !important;
+    body.light-mode .min-visual-name {
+      color: #FFFFFF !important;
       font-weight: 900 !important;
     }
-    body.light-mode .arrow-circle {
+    body.light-mode .min-visual-sub {
+      color: #CBD5E1 !important;
+    }
+    body.light-mode .min-visual-pill {
       background: #FEF3C7 !important;
-      border-color: #D97706 !important;
-      color: #92400E !important;
+      color: #78350F !important;
+      border: 1.5px solid #D97706 !important;
+      font-weight: 900 !important;
     }
-    body.light-mode .hero-cover-right .inst-pillar-item {
-      background: rgba(255, 255, 255, 0.08) !important;
-      border: 1px solid rgba(217, 119, 6, 0.45) !important;
-    }
-    body.light-mode .hero-cover-right .pillar-text strong {
-      color: #FFFFFF !important;
-    }
-    body.light-mode .hero-cover-right .pillar-text small {
-      color: #E2E8F0 !important;
-    }
+
+    
 
     /* Slide 2: 3 Puntos Críticos (Modo Claro de Alto Contraste) */
     body.light-mode .crit-card {
@@ -1198,8 +1179,8 @@
     .slide.active .hero-stat-card,
     .slide.active .hero-visual,
     .slide.active .hero-cover-badge,
-    .slide.active .roadmap-card,
-    .slide.active .roadmap-arrow-divider {
+    .slide.active .hero-min-card,
+    .slide.active .hero-min-visual {
       animation: slideCardStagger 0.5s cubic-bezier(0.16, 1, 0.3, 1) backwards;
     }
 
@@ -1212,12 +1193,8 @@
     .slide.active .task-card:nth-child(1),
     .slide.active .feature-card:nth-child(1),
     .slide.active .hero-stat-card:nth-child(1),
-    .slide.active .roadmap-card.phase-active {
+    .slide.active .hero-min-card:nth-child(1) {
       animation-delay: 0.12s;
-    }
-
-    .slide.active .roadmap-arrow-divider {
-      animation-delay: 0.18s;
     }
 
     .slide.active .crit-card:nth-child(2),
@@ -1225,16 +1202,16 @@
     .slide.active .task-card:nth-child(2),
     .slide.active .feature-card:nth-child(2),
     .slide.active .hero-stat-card:nth-child(2),
-    .slide.active .roadmap-card.phase-scheduled {
-      animation-delay: 0.22s;
+    .slide.active .hero-min-card:nth-child(2) {
+      animation-delay: 0.20s;
     }
 
     .slide.active .crit-card:nth-child(3),
     .slide.active .task-card:nth-child(3),
     .slide.active .feature-card:nth-child(3),
     .slide.active .hero-visual,
-    .slide.active .hero-cover-right {
-      animation-delay: 0.28s;
+    .slide.active .hero-min-visual {
+      animation-delay: 0.26s;
     }
 
     .slide.active .task-card:nth-child(4) {
@@ -2951,15 +2928,15 @@
               </div>
               <div>
                 <h3 class="crit-title">3. Control</h3>
-                <span class="crit-subtitle">Legalidad & Roles</span>
+                <span class="crit-subtitle">Gestión de Secciones</span>
               </div>
             </div>
-            <span class="crit-badge">🛡️ MPPE + Sección U</span>
+            <span class="crit-badge">🗂️ Sección U (Única)</span>
           </div>
 
           <!-- Emoji animado representativo -->
           <div class="crit-emoji-box">
-            <span class="crit-anim-emoji emoji-control" role="img" aria-label="Control y Legalidad">🛡️</span>
+            <span class="crit-anim-emoji emoji-control" role="img" aria-label="Control y Secciones">🛡️</span>
           </div>
 
           <div class="crit-blocks-container">
@@ -2967,10 +2944,10 @@
             <div class="crit-block legacy">
               <div class="crit-block-head">
                 <span class="crit-block-title">🛑 CEO (Anterior)</span>
-                <span class="crit-block-pill">No Normado</span>
+                <span class="crit-block-pill">Solo A y B</span>
               </div>
               <p class="crit-block-text">
-                <strong>🚫 Desvío Normativo:</strong> Promedios numéricos indebidos sobre 20 en Inicial/Primaria y manejo limitado exclusivamente a secciones A y B sin opción para sección única.
+                <strong>⚠️ Secciones Rígidas:</strong> Únicamente maneja las secciones A y B, sin soporte para sección única.
               </p>
             </div>
 
@@ -2978,18 +2955,18 @@
             <div class="crit-block modern">
               <div class="crit-block-head">
                 <span class="crit-block-title">✨ SICE-CBA (Nuevo)</span>
-                <span class="crit-block-pill">100% Legal</span>
+                <span class="crit-block-pill">Sección U</span>
               </div>
               <p class="crit-block-text">
-                <strong>📜 Apego MPPE + 🗂️ Sección U:</strong> Cumplimiento estricto de escalas oficiales (literal, cualitativa y vigesimal), roles jerárquicos blindados y soporte oficial de Sección U (Única).
+                <strong>🗂️ Implementación Sección U:</strong> Se implementó la sección U (Única), adaptándose a las necesidades reales de cada grado institucional.
               </p>
             </div>
           </div>
 
           <div class="crit-pills-row">
-            <span class="crit-pill">📜 Gaceta MPPE</span>
-            <span class="crit-pill">🗂️ Secciones A, B y U</span>
-            <span class="crit-pill">🔒 Roles Blindados</span>
+            <span class="crit-pill">🗂️ Secciones A y B</span>
+            <span class="crit-pill">✨ Sección U (Única)</span>
+            <span class="crit-pill">🏛️ Normativa Oficial</span>
           </div>
         </div>
       </div>

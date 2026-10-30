@@ -22,7 +22,7 @@ El sistema se encuentra actualmente en **fase activa de validación y pruebas lo
 2. **De CEO a SICE-CBA en 3 Puntos Críticos:**
    - **Infraestructura:** Servidores físicos vulnerables a fluctuaciones eléctricas vs. Sistema y base de datos integrados en un mismo servidor con opción de enlace a la nube sincronizado para garantizar máxima estabilidad.
    - **Velocidad y Fluidez:** Recargas lentas de pantalla (F5) vs. Guardado continuo celda por celda sin pérdida de notas.
-   - **Control:** Promedios no normados en CEO y manejo solo de secciones A y B vs. Normativa ministerial estricta e implementación de la sección U (Única) en SICE-CBA.
+   - **Control:** Manejo exclusivo de secciones A y B en CEO vs. Implementación de la sección U (Única) en SICE-CBA.
 
 3. **Cara a Cara Visual 1: Escritorio y Centro de Comando:**
    - Comparativa 50/50 con capturas reales de alta definición entre el panel estático de CEO y el *Academic Pulse Hero* en tiempo real de SICE-CBA con buscador global (Ctrl+K).
