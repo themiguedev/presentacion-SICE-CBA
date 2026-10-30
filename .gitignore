@@ -1,2 +1,3 @@
-# Temporary test captures
-*_test.png
+# Temporary test files and captures
+*_test*.png
+test_*.py
