@@ -3062,7 +3062,187 @@
     body.light-mode .showcase-desc-highlight {
       color: #B45309;
     }
-</style>
+
+    /* Módulo de Interfaz y Espacio para 1 Captura por Diapositiva */
+    .role-single-cap-pill {
+      font-size: 8.5px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      padding: 2.5px 8px;
+      border-radius: 4px;
+      background: rgba(212, 175, 55, 0.12);
+      border: 1px solid var(--cba-gold);
+      color: var(--cba-gold);
+      white-space: nowrap;
+    }
+
+    .role-interface-canvas {
+      flex: 1;
+      width: 100%;
+      min-height: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 14px 16px;
+      background: radial-gradient(circle at 50% 15%, rgba(212, 175, 55, 0.05) 0%, rgba(8, 10, 20, 0.95) 85%);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 9px;
+      box-shadow: inset 0 0 24px rgba(0, 0, 0, 0.5);
+    }
+    body.light-mode .role-interface-canvas {
+      background: radial-gradient(circle at 50% 15%, rgba(217, 119, 6, 0.06) 0%, #FFFFFF 85%);
+      border: 1.5px solid #CBD5E1;
+      box-shadow: inset 0 0 16px rgba(0, 0, 0, 0.04);
+    }
+
+    .canvas-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 9px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      gap: 10px;
+    }
+    body.light-mode .canvas-topbar {
+      border-bottom: 1px solid #E2E8F0;
+    }
+
+    .canvas-sys-info {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+    .canvas-dot-pulse {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--cba-gold);
+      box-shadow: 0 0 8px var(--cba-gold);
+    }
+    .canvas-brand {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+      color: var(--text-main);
+    }
+    body.light-mode .canvas-brand { color: #0F172A; }
+    .canvas-slash { color: var(--text-secondary); opacity: 0.5; font-size: 11px; }
+    .canvas-role-badge {
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--cba-gold);
+    }
+
+    .canvas-tabs-preview {
+      display: flex;
+      gap: 6px;
+    }
+    .canvas-tab {
+      font-size: 9px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--text-secondary);
+    }
+    body.light-mode .canvas-tab {
+      background: #F1F5F9;
+      border: 1px solid #CBD5E1;
+      color: #475569;
+    }
+    .canvas-tab.active {
+      background: rgba(212, 175, 55, 0.16);
+      border-color: var(--cba-gold);
+      color: var(--cba-gold);
+    }
+    body.light-mode .canvas-tab.active {
+      background: #FEF3C7;
+      border-color: #D97706;
+      color: #92400E;
+    }
+
+    .canvas-pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+    .canvas-pillar-card {
+      background: rgba(255, 255, 255, 0.025);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 7px;
+      padding: 9px 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    body.light-mode .canvas-pillar-card {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+    }
+    .pillar-icon { font-size: 15px; margin-bottom: 2px; }
+    .pillar-title {
+      font-size: 10.5px;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+    body.light-mode .pillar-title { color: #0F172A; }
+    .pillar-desc {
+      font-size: 9px;
+      color: var(--text-secondary);
+      line-height: 1.3;
+    }
+    body.light-mode .pillar-desc { color: #64748B; }
+
+    .role-capture-slot {
+      border: 1.5px dashed rgba(212, 175, 55, 0.35);
+      border-radius: 8px;
+      background: rgba(212, 175, 55, 0.03);
+      padding: 18px 20px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      transition: all 0.25s ease;
+    }
+    body.light-mode .role-capture-slot {
+      border-color: rgba(217, 119, 6, 0.4);
+      background: rgba(217, 119, 6, 0.03);
+    }
+    .capture-slot-icon {
+      font-size: 26px;
+      line-height: 1;
+      width: 44px;
+      height: 44px;
+      border-radius: 8px;
+      background: rgba(212, 175, 55, 0.12);
+      border: 1px solid rgba(212, 175, 55, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .capture-slot-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .capture-slot-title {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+    body.light-mode .capture-slot-title { color: #0F172A; }
+    .capture-slot-sub {
+      font-size: 9.5px;
+      color: var(--text-secondary);
+      line-height: 1.35;
+    }
+    body.light-mode .capture-slot-sub { color: #64748B; }
+
+  </style>
 </head>
 <body>
 
@@ -3354,137 +3534,107 @@
       <p class="slide-subtitle">Monitoreo continuo de los 3 subsistemas, doble pensum y auditoría pedagógica institucional:</p>
 
       <div class="role-slide-layout role-dir">
-        <!-- Panel Izquierdo: Lista de Tareas / Opciones -->
+        <!-- Panel Izquierdo: Lista de Tareas Recurrentes -->
         <div class="role-options-panel">
           <div class="role-panel-header">
-            <span class="role-panel-header-title">🏛️ Tareas Recurrentes</span>
+            <span class="role-panel-header-title">🏛️ Tareas Recurrentes del Rol</span>
             <span class="role-panel-badge" style="background: rgba(212, 175, 55, 0.16); border: 1px solid var(--cba-gold); color: var(--cba-gold);">10 Tareas</span>
           </div>
           <div class="role-options-list">
             <button type="button" class="role-option-item active" 
-                    onclick="selectRoleOption(this, 'dirOptImg', 'dirOptTitle', 'dirOptDesc', 'dirOptTag', 'dirOptZoomBtn', './assets/sisceba_dashboard_real.png', './assets/sisceba_dashboard_real.png', 'Estrategias evaluadas', 'Auditoría en tiempo real de la malla curricular institucional (18 asignaturas) y avance de estrategias de aula por docente.', 'SUPERVISIÓN ACADÉMICA')"
-                    onmouseenter="selectRoleOption(this, 'dirOptImg', 'dirOptTitle', 'dirOptDesc', 'dirOptTag', 'dirOptZoomBtn', './assets/sisceba_dashboard_real.png', './assets/sisceba_dashboard_real.png', 'Estrategias evaluadas', 'Auditoría en tiempo real de la malla curricular institucional (18 asignaturas) y avance de estrategias de aula por docente.', 'SUPERVISIÓN ACADÉMICA')">
+                    onclick="selectRoleOption(this, 'dirOptTitle', 'dirOptDesc', 'dirOptTag', 'Estrategias evaluadas', 'Auditoría en tiempo real de la malla curricular institucional (18 asignaturas) y avance de estrategias de aula por docente.', 'SUPERVISIÓN ACADÉMICA')"
+                    onmouseenter="selectRoleOption(this, 'dirOptTitle', 'dirOptDesc', 'dirOptTag', 'Estrategias evaluadas', 'Auditoría en tiempo real de la malla curricular institucional (18 asignaturas) y avance de estrategias de aula por docente.', 'SUPERVISIÓN ACADÉMICA')">
               <span class="role-option-icon">🎯</span>
               <div class="role-option-info">
                 <span class="role-option-title">Estrategias evaluadas</span>
                 <span class="role-option-scope">Por curso y por docente</span>
               </div>
-              <div class="role-option-thumb">
-                <img src="./assets/sisceba_dashboard_real.png" alt="Estrategias evaluadas" loading="lazy">
-              </div>
             </button>
             <button type="button" class="role-option-item" 
-                    onclick="selectRoleOption(this, 'dirOptImg', 'dirOptTitle', 'dirOptDesc', 'dirOptTag', 'dirOptZoomBtn', './assets/consultas_asistencia.png', './assets/consultas_asistencia.png', 'Registros de asistencia', 'Control diario automatizado con registro de pases en portería (4), índice CBA (98.4%) y alertas normativas LOE Art. 109.', 'CONTROL DE ASISTENCIAS')"
-                    onmouseenter="selectRoleOption(this, 'dirOptImg', 'dirOptTitle', 'dirOptDesc', 'dirOptTag', 'dirOptZoomBtn', './assets/consultas_asistencia.png', './assets/consultas_asistencia.png', 'Registros de asistencia', 'Control diario automatizado con registro de pases en portería (4), índice CBA (98.4%) y alertas normativas LOE Art. 109.', 'CONTROL DE ASISTENCIAS')">
+                    onclick="selectRoleOption(this, 'dirOptTitle', 'dirOptDesc', 'dirOptTag', 'Registros de asistencia', 'Control diario automatizado con registro de pases en portería (4), índice CBA (98.4%) y alertas normativas LOE Art. 109.', 'CONTROL DE ASISTENCIAS')"
+                    onmouseenter="selectRoleOption(this, 'dirOptTitle', 'dirOptDesc', 'dirOptTag', 'Registros de asistencia', 'Control diario automatizado con registro de pases en portería (4), índice CBA (98.4%) y alertas normativas LOE Art. 109.', 'CONTROL DE ASISTENCIAS')">
               <span class="role-option-icon">📅</span>
               <div class="role-option-info">
                 <span class="role-option-title">Registros de asistencia</span>
                 <span class="role-option-scope">Por curso y por estudiante</span>
               </div>
-              <div class="role-option-thumb">
-                <img src="./assets/consultas_asistencia.png" alt="Registros de asistencia" loading="lazy">
-              </div>
             </button>
             <button type="button" class="role-option-item" 
-                    onclick="selectRoleOption(this, 'dirOptImg', 'dirOptTitle', 'dirOptDesc', 'dirOptTag', 'dirOptZoomBtn', './assets/gestion_conductas.png', './assets/gestion_conductas.png', 'Registros de conducta', 'Bitácora institucional de conducta: seguimiento de faltas leves, graves y reconocimientos vinculados a ambos padres.', 'EXPEDIENTE DISCIPLINARIO')"
-                    onmouseenter="selectRoleOption(this, 'dirOptImg', 'dirOptTitle', 'dirOptDesc', 'dirOptTag', 'dirOptZoomBtn', './assets/gestion_conductas.png', './assets/gestion_conductas.png', 'Registros de conducta', 'Bitácora institucional de conducta: seguimiento de faltas leves, graves y reconocimientos vinculados a ambos padres.', 'EXPEDIENTE DISCIPLINARIO')">
+                    onclick="selectRoleOption(this, 'dirOptTitle', 'dirOptDesc', 'dirOptTag', 'Registros de conducta', 'Bitácora institucional de conducta: seguimiento de faltas leves, graves y reconocimientos vinculados a ambos padres.', 'EXPEDIENTE DISCIPLINARIO')"
+                    onmouseenter="selectRoleOption(this, 'dirOptTitle', 'dirOptDesc', 'dirOptTag', 'Registros de conducta', 'Bitácora institucional de conducta: seguimiento de faltas leves, graves y reconocimientos vinculados a ambos padres.', 'EXPEDIENTE DISCIPLINARIO')">
               <span class="role-option-icon">⚖️</span>
               <div class="role-option-info">
                 <span class="role-option-title">Registros de conducta</span>
                 <span class="role-option-scope">Por curso y por estudiante</span>
               </div>
-              <div class="role-option-thumb">
-                <img src="./assets/gestion_conductas.png" alt="Registros de conducta" loading="lazy">
-              </div>
             </button>
             <button type="button" class="role-option-item" 
-                    onclick="selectRoleOption(this, 'dirOptImg', 'dirOptTitle', 'dirOptDesc', 'dirOptTag', 'dirOptZoomBtn', './assets/sisceba_consultas_real.png', './assets/sisceba_consultas_real.png', 'Calificaciones / estudiante', 'Cálculo automático de promedios ponderados ministeriales MPPE y promedios internos CBA sin recargas de página.', 'PROMEDIOS OFICIALES')"
-                    onmouseenter="selectRoleOption(this, 'dirOptImg', 'dirOptTitle', 'dirOptDesc', 'dirOptTag', 'dirOptZoomBtn', './assets/sisceba_consultas_real.png', './assets/sisceba_consultas_real.png', 'Calificaciones / estudiante', 'Cálculo automático de promedios ponderados ministeriales MPPE y promedios internos CBA sin recargas de página.', 'PROMEDIOS OFICIALES')">
+                    onclick="selectRoleOption(this, 'dirOptTitle', 'dirOptDesc', 'dirOptTag', 'Calificaciones / estudiante', 'Cálculo automático de promedios ponderados ministeriales MPPE y promedios internos CBA sin recargas de página.', 'PROMEDIOS OFICIALES')"
+                    onmouseenter="selectRoleOption(this, 'dirOptTitle', 'dirOptDesc', 'dirOptTag', 'Calificaciones / estudiante', 'Cálculo automático de promedios ponderados ministeriales MPPE y promedios internos CBA sin recargas de página.', 'PROMEDIOS OFICIALES')">
               <span class="role-option-icon">📝</span>
               <div class="role-option-info">
                 <span class="role-option-title">Calificaciones / estudiante</span>
                 <span class="role-option-scope">Promedio MPPE y Promedio CBA</span>
               </div>
-              <div class="role-option-thumb">
-                <img src="./assets/sisceba_consultas_real.png" alt="Calificaciones / estudiante" loading="lazy">
-              </div>
             </button>
             <button type="button" class="role-option-item" 
-                    onclick="selectRoleOption(this, 'dirOptImg', 'dirOptTitle', 'dirOptDesc', 'dirOptTag', 'dirOptZoomBtn', './assets/sisceba_consultas_real.png', './assets/sisceba_consultas_real.png', 'Calificaciones por curso', 'Matriz institucional completa con desglose de materias oficiales y materias del programa artístico Bellas Artes.', 'SÁBANA DE NOTAS')"
-                    onmouseenter="selectRoleOption(this, 'dirOptImg', 'dirOptTitle', 'dirOptDesc', 'dirOptTag', 'dirOptZoomBtn', './assets/sisceba_consultas_real.png', './assets/sisceba_consultas_real.png', 'Calificaciones por curso', 'Matriz institucional completa con desglose de materias oficiales y materias del programa artístico Bellas Artes.', 'SÁBANA DE NOTAS')">
+                    onclick="selectRoleOption(this, 'dirOptTitle', 'dirOptDesc', 'dirOptTag', 'Calificaciones por curso', 'Matriz institucional completa con desglose de materias oficiales y materias del programa artístico Bellas Artes.', 'SÁBANA DE NOTAS')"
+                    onmouseenter="selectRoleOption(this, 'dirOptTitle', 'dirOptDesc', 'dirOptTag', 'Calificaciones por curso', 'Matriz institucional completa con desglose de materias oficiales y materias del programa artístico Bellas Artes.', 'SÁBANA DE NOTAS')">
               <span class="role-option-icon">📊</span>
               <div class="role-option-info">
                 <span class="role-option-title">Calificaciones por curso</span>
                 <span class="role-option-scope">Pensum MPPE y Pensum CBA</span>
               </div>
-              <div class="role-option-thumb">
-                <img src="./assets/sisceba_consultas_real.png" alt="Calificaciones por curso" loading="lazy">
-              </div>
             </button>
             <button type="button" class="role-option-item" 
-                    onclick="selectRoleOption(this, 'dirOptImg', 'dirOptTitle', 'dirOptDesc', 'dirOptTag', 'dirOptZoomBtn', './assets/sisceba_dashboard_real.png', './assets/sisceba_dashboard_real.png', 'Cuadros estadísticos', 'Semáforo de rendimiento general, Promedio UCE (16.4/20) y porcentajes de aprobación consolidados por nivel escolar.', 'ANALÍTICA Y RENDIMIENTO')"
-                    onmouseenter="selectRoleOption(this, 'dirOptImg', 'dirOptTitle', 'dirOptDesc', 'dirOptTag', 'dirOptZoomBtn', './assets/sisceba_dashboard_real.png', './assets/sisceba_dashboard_real.png', 'Cuadros estadísticos', 'Semáforo de rendimiento general, Promedio UCE (16.4/20) y porcentajes de aprobación consolidados por nivel escolar.', 'ANALÍTICA Y RENDIMIENTO')">
+                    onclick="selectRoleOption(this, 'dirOptTitle', 'dirOptDesc', 'dirOptTag', 'Cuadros estadísticos (Calificaciones)', 'Semáforo de rendimiento general, Promedio UCE (16.4/20) y porcentajes de aprobación consolidados por nivel escolar.', 'ANALÍTICA Y RENDIMIENTO')"
+                    onmouseenter="selectRoleOption(this, 'dirOptTitle', 'dirOptDesc', 'dirOptTag', 'Cuadros estadísticos (Calificaciones)', 'Semáforo de rendimiento general, Promedio UCE (16.4/20) y porcentajes de aprobación consolidados por nivel escolar.', 'ANALÍTICA Y RENDIMIENTO')">
               <span class="role-option-icon">📈</span>
               <div class="role-option-info">
                 <span class="role-option-title">Cuadros estadísticos</span>
                 <span class="role-option-scope">Calificaciones por curso</span>
               </div>
-              <div class="role-option-thumb">
-                <img src="./assets/sisceba_dashboard_real.png" alt="Cuadros estadísticos" loading="lazy">
-              </div>
             </button>
             <button type="button" class="role-option-item" 
-                    onclick="selectRoleOption(this, 'dirOptImg', 'dirOptTitle', 'dirOptDesc', 'dirOptTag', 'dirOptZoomBtn', './assets/consultas_asistencia.png', './assets/consultas_asistencia.png', 'Cuadros estadísticos', 'Monitoreo continuo del umbral del 25% de inasistencias acumuladas y reportes de alertas tempranas para dirección.', 'AUDITORÍA DE ASISTENCIA')"
-                    onmouseenter="selectRoleOption(this, 'dirOptImg', 'dirOptTitle', 'dirOptDesc', 'dirOptTag', 'dirOptZoomBtn', './assets/consultas_asistencia.png', './assets/consultas_asistencia.png', 'Cuadros estadísticos', 'Monitoreo continuo del umbral del 25% de inasistencias acumuladas y reportes de alertas tempranas para dirección.', 'AUDITORÍA DE ASISTENCIA')">
+                    onclick="selectRoleOption(this, 'dirOptTitle', 'dirOptDesc', 'dirOptTag', 'Cuadros estadísticos (Asistencia)', 'Monitoreo continuo del umbral del 25% de inasistencias acumuladas y reportes de alertas tempranas para dirección.', 'AUDITORÍA DE ASISTENCIA')"
+                    onmouseenter="selectRoleOption(this, 'dirOptTitle', 'dirOptDesc', 'dirOptTag', 'Cuadros estadísticos (Asistencia)', 'Monitoreo continuo del umbral del 25% de inasistencias acumuladas y reportes de alertas tempranas para dirección.', 'AUDITORÍA DE ASISTENCIA')">
               <span class="role-option-icon">📊</span>
               <div class="role-option-info">
                 <span class="role-option-title">Cuadros estadísticos</span>
                 <span class="role-option-scope">Asistencia por curso</span>
               </div>
-              <div class="role-option-thumb">
-                <img src="./assets/consultas_asistencia.png" alt="Cuadros estadísticos" loading="lazy">
-              </div>
             </button>
             <button type="button" class="role-option-item" 
-                    onclick="selectRoleOption(this, 'dirOptImg', 'dirOptTitle', 'dirOptDesc', 'dirOptTag', 'dirOptZoomBtn', './assets/gestion_conductas.png', './assets/gestion_conductas.png', 'Cuadros estadísticos', 'Métricas agregadas de faltas, reconocimientos al mérito y acuerdos escolares para el consejo directivo.', 'ESTADÍSTICAS DE CONVIVENCIA')"
-                    onmouseenter="selectRoleOption(this, 'dirOptImg', 'dirOptTitle', 'dirOptDesc', 'dirOptTag', 'dirOptZoomBtn', './assets/gestion_conductas.png', './assets/gestion_conductas.png', 'Cuadros estadísticos', 'Métricas agregadas de faltas, reconocimientos al mérito y acuerdos escolares para el consejo directivo.', 'ESTADÍSTICAS DE CONVIVENCIA')">
+                    onclick="selectRoleOption(this, 'dirOptTitle', 'dirOptDesc', 'dirOptTag', 'Cuadros estadísticos (Conducta)', 'Métricas agregadas de faltas, reconocimientos al mérito y acuerdos escolares para el consejo directivo.', 'ESTADÍSTICAS DE CONVIVENCIA')"
+                    onmouseenter="selectRoleOption(this, 'dirOptTitle', 'dirOptDesc', 'dirOptTag', 'Cuadros estadísticos (Conducta)', 'Métricas agregadas de faltas, reconocimientos al mérito y acuerdos escolares para el consejo directivo.', 'ESTADÍSTICAS DE CONVIVENCIA')">
               <span class="role-option-icon">📋</span>
               <div class="role-option-info">
                 <span class="role-option-title">Cuadros estadísticos</span>
                 <span class="role-option-scope">Registros de conducta por curso</span>
               </div>
-              <div class="role-option-thumb">
-                <img src="./assets/gestion_conductas.png" alt="Cuadros estadísticos" loading="lazy">
-              </div>
             </button>
             <button type="button" class="role-option-item" 
-                    onclick="selectRoleOption(this, 'dirOptImg', 'dirOptTitle', 'dirOptDesc', 'dirOptTag', 'dirOptZoomBtn', './assets/gestion_crp.png', './assets/gestion_crp.png', 'Estudiantes Grupos CRP', 'Gestión centralizada de nóminas de robótica aplicada, teatro, música, medios digitales y agroecología sin duplicidad.', 'INSCRIPCIÓN CRP')"
-                    onmouseenter="selectRoleOption(this, 'dirOptImg', 'dirOptTitle', 'dirOptDesc', 'dirOptTag', 'dirOptZoomBtn', './assets/gestion_crp.png', './assets/gestion_crp.png', 'Estudiantes Grupos CRP', 'Gestión centralizada de nóminas de robótica aplicada, teatro, música, medios digitales y agroecología sin duplicidad.', 'INSCRIPCIÓN CRP')">
+                    onclick="selectRoleOption(this, 'dirOptTitle', 'dirOptDesc', 'dirOptTag', 'Estudiantes Grupos CRP', 'Gestión centralizada de nóminas de robótica aplicada, teatro, música, medios digitales y agroecología sin duplicidad.', 'INSCRIPCIÓN CRP')"
+                    onmouseenter="selectRoleOption(this, 'dirOptTitle', 'dirOptDesc', 'dirOptTag', 'Estudiantes Grupos CRP', 'Gestión centralizada de nóminas de robótica aplicada, teatro, música, medios digitales y agroecología sin duplicidad.', 'INSCRIPCIÓN CRP')">
               <span class="role-option-icon">🎨</span>
               <div class="role-option-info">
                 <span class="role-option-title">Estudiantes Grupos CRP</span>
                 <span class="role-option-scope">Creación, Recreación y Producción</span>
               </div>
-              <div class="role-option-thumb">
-                <img src="./assets/gestion_crp.png" alt="Estudiantes Grupos CRP" loading="lazy">
-              </div>
             </button>
             <button type="button" class="role-option-item" 
-                    onclick="selectRoleOption(this, 'dirOptImg', 'dirOptTitle', 'dirOptDesc', 'dirOptTag', 'dirOptZoomBtn', './assets/gestion_crp.png', './assets/gestion_crp.png', 'Carga de notas CRP', 'Supervisión de actas evaluativas y calificaciones de talleres CRP para la aprobación reglamentaria del lapso.', 'CARGA DOCENTE CRP')"
-                    onmouseenter="selectRoleOption(this, 'dirOptImg', 'dirOptTitle', 'dirOptDesc', 'dirOptTag', 'dirOptZoomBtn', './assets/gestion_crp.png', './assets/gestion_crp.png', 'Carga de notas CRP', 'Supervisión de actas evaluativas y calificaciones de talleres CRP para la aprobación reglamentaria del lapso.', 'CARGA DOCENTE CRP')">
+                    onclick="selectRoleOption(this, 'dirOptTitle', 'dirOptDesc', 'dirOptTag', 'Carga de notas CRP', 'Supervisión de actas evaluativas y calificaciones de talleres CRP para la aprobación reglamentaria del lapso.', 'CARGA DOCENTE CRP')"
+                    onmouseenter="selectRoleOption(this, 'dirOptTitle', 'dirOptDesc', 'dirOptTag', 'Carga de notas CRP', 'Supervisión de actas evaluativas y calificaciones de talleres CRP para la aprobación reglamentaria del lapso.', 'CARGA DOCENTE CRP')">
               <span class="role-option-icon">📥</span>
               <div class="role-option-info">
                 <span class="role-option-title">Carga de notas CRP</span>
                 <span class="role-option-scope">Reporte de carga de calificaciones</span>
               </div>
-              <div class="role-option-thumb">
-                <img src="./assets/gestion_crp.png" alt="Carga de notas CRP" loading="lazy">
-              </div>
             </button>
           </div>
         </div>
 
-        <!-- Panel Derecho: Showcase con Captura en Vivo -->
+        <!-- Panel Derecho: Módulo de Interfaz del Rol (Preparado para 1 Captura) -->
         <div class="role-showcase-panel">
           <div class="role-showcase-header">
             <div class="showcase-header-left">
@@ -3493,17 +3643,52 @@
                 <span class="showcase-dot yellow"></span>
                 <span class="showcase-dot green"></span>
               </div>
-              <span id="dirOptTag" class="showcase-tag-pill">SUPERVISIÓN ACADÉMICA</span>
+              <span id="dirOptTag" class="showcase-tag-pill">SUPERVISIÓN GENERAL</span>
               <span id="dirOptTitle" class="showcase-option-title">Estrategias evaluadas</span>
             </div>
-            <button type="button" id="dirOptZoomBtn" class="showcase-zoom-btn" onclick="openZoom('./assets/sisceba_dashboard_real.png', 'SUPERVISIÓN ACADÉMICA: Estrategias evaluadas')">
-              🔍 Ampliar Captura
-            </button>
+            <span class="role-single-cap-pill">1 Captura de Interfaz</span>
           </div>
 
-          <div class="role-showcase-viewport" onclick="openZoom('./assets/sisceba_dashboard_real.png', 'SUPERVISIÓN ACADÉMICA: Estrategias evaluadas')">
-            <img id="dirOptImg" src="./assets/sisceba_dashboard_real.png" alt="Estrategias evaluadas" loading="lazy">
-            <span class="viewport-zoom-hint">🔍 Clic para pantalla completa</span>
+          <div class="role-interface-canvas">
+            <div class="canvas-topbar">
+              <div class="canvas-sys-info">
+                <span class="canvas-dot-pulse"></span>
+                <span class="canvas-brand">SICE-CBA</span>
+                <span class="canvas-slash">/</span>
+                <span class="canvas-role-badge">🏛️ Entorno Directora</span>
+              </div>
+              <div class="canvas-tabs-preview">
+                <span class="canvas-tab active">Supervisión Global</span>
+                <span class="canvas-tab">Auditoría de Malla</span>
+                <span class="canvas-tab">Control Lapsos</span>
+              </div>
+            </div>
+
+            <div class="canvas-pillars-grid">
+              <div class="canvas-pillar-card">
+                <span class="pillar-icon">📊</span>
+                <span class="pillar-title">Auditoría Integral</span>
+                <span class="pillar-desc">Monitoreo unificado de Inicial, Primaria y Media General (18 asignaturas).</span>
+              </div>
+              <div class="canvas-pillar-card">
+                <span class="pillar-icon">⏱️</span>
+                <span class="pillar-title">Control de Asistencia</span>
+                <span class="pillar-desc">Pases en portería, índice de puntualidad 98.4% y umbral LOE Art. 109.</span>
+              </div>
+              <div class="canvas-pillar-card">
+                <span class="pillar-icon">⚖️</span>
+                <span class="pillar-title">Convivencia y Talleres</span>
+                <span class="pillar-desc">Bitácora de conducta de ambos padres y nóminas centralizadas CRP.</span>
+              </div>
+            </div>
+
+            <div class="role-capture-slot">
+              <div class="capture-slot-icon">🖥️</div>
+              <div class="capture-slot-content">
+                <span class="capture-slot-title">Espacio Preparado para Captura de Interfaz del Rol</span>
+                <span class="capture-slot-sub">Se incorporará la captura representativa de la interfaz del personal directivo</span>
+              </div>
+            </div>
           </div>
 
           <div class="role-showcase-footer">
@@ -3521,77 +3706,62 @@
       <p class="slide-subtitle">Acompañamiento pedagógico formativo, áreas de desarrollo en la primera infancia y escala literal oficial (A a E):</p>
 
       <div class="role-slide-layout role-ini">
-        <!-- Panel Izquierdo: Lista de Tareas / Opciones -->
+        <!-- Panel Izquierdo: Lista de Tareas Recurrentes -->
         <div class="role-options-panel">
           <div class="role-panel-header">
-            <span class="role-panel-header-title">🧸 Tareas Recurrentes</span>
+            <span class="role-panel-header-title">🧸 Tareas Recurrentes del Rol</span>
             <span class="role-panel-badge" style="background: rgba(212, 175, 55, 0.16); border: 1px solid var(--cba-gold); color: var(--cba-gold);">5 Tareas</span>
           </div>
           <div class="role-options-list">
             <button type="button" class="role-option-item active" 
-                    onclick="selectRoleOption(this, 'iniOptImg', 'iniOptTitle', 'iniOptDesc', 'iniOptTag', 'iniOptZoomBtn', './assets/sisceba_inicial_sabana.png', './assets/sisceba_inicial_sabana.png', 'Indicadores evaluados', 'Banco oficial de indicadores adaptados al currículo de educación inicial y áreas de desarrollo del niño.', 'INDICADORES PEDAGÓGICOS')"
-                    onmouseenter="selectRoleOption(this, 'iniOptImg', 'iniOptTitle', 'iniOptDesc', 'iniOptTag', 'iniOptZoomBtn', './assets/sisceba_inicial_sabana.png', './assets/sisceba_inicial_sabana.png', 'Indicadores evaluados', 'Banco oficial de indicadores adaptados al currículo de educación inicial y áreas de desarrollo del niño.', 'INDICADORES PEDAGÓGICOS')">
+                    onclick="selectRoleOption(this, 'iniOptTitle', 'iniOptDesc', 'iniOptTag', 'Indicadores evaluados', 'Banco oficial de indicadores adaptados al currículo de educación inicial y áreas de desarrollo del niño.', 'INDICADORES PEDAGÓGICOS')"
+                    onmouseenter="selectRoleOption(this, 'iniOptTitle', 'iniOptDesc', 'iniOptTag', 'Indicadores evaluados', 'Banco oficial de indicadores adaptados al currículo de educación inicial y áreas de desarrollo del niño.', 'INDICADORES PEDAGÓGICOS')">
               <span class="role-option-icon">🧸</span>
               <div class="role-option-info">
                 <span class="role-option-title">Indicadores evaluados</span>
                 <span class="role-option-scope">Reporte de indicadores pedagógicos</span>
               </div>
-              <div class="role-option-thumb">
-                <img src="./assets/sisceba_inicial_sabana.png" alt="Indicadores evaluados" loading="lazy">
-              </div>
             </button>
             <button type="button" class="role-option-item" 
-                    onclick="selectRoleOption(this, 'iniOptImg', 'iniOptTitle', 'iniOptDesc', 'iniOptTag', 'iniOptZoomBtn', './assets/sisceba_inicial_sabana.png', './assets/sisceba_inicial_sabana.png', 'Indicadores Actitudinales', 'Registro cualitativo de adaptación socioemocional, hábitos de trabajo y convivencia en edad temprana.', 'EVALUACIÓN ACTITUDINAL')"
-                    onmouseenter="selectRoleOption(this, 'iniOptImg', 'iniOptTitle', 'iniOptDesc', 'iniOptTag', 'iniOptZoomBtn', './assets/sisceba_inicial_sabana.png', './assets/sisceba_inicial_sabana.png', 'Indicadores Actitudinales', 'Registro cualitativo de adaptación socioemocional, hábitos de trabajo y convivencia en edad temprana.', 'EVALUACIÓN ACTITUDINAL')">
+                    onclick="selectRoleOption(this, 'iniOptTitle', 'iniOptDesc', 'iniOptTag', 'Indicadores Actitudinales', 'Registro cualitativo de adaptación socioemocional, hábitos de trabajo y convivencia en edad temprana.', 'EVALUACIÓN ACTITUDINAL')"
+                    onmouseenter="selectRoleOption(this, 'iniOptTitle', 'iniOptDesc', 'iniOptTag', 'Indicadores Actitudinales', 'Registro cualitativo de adaptación socioemocional, hábitos de trabajo y convivencia en edad temprana.', 'EVALUACIÓN ACTITUDINAL')">
               <span class="role-option-icon">⭐</span>
               <div class="role-option-info">
                 <span class="role-option-title">Indicadores Actitudinales</span>
                 <span class="role-option-scope">Reporte específico evaluado</span>
               </div>
-              <div class="role-option-thumb">
-                <img src="./assets/sisceba_inicial_sabana.png" alt="Indicadores Actitudinales" loading="lazy">
-              </div>
             </button>
             <button type="button" class="role-option-item" 
-                    onclick="selectRoleOption(this, 'iniOptImg', 'iniOptTitle', 'iniOptDesc', 'iniOptTag', 'iniOptZoomBtn', './assets/sisceba_inicial_sabana.png', './assets/sisceba_inicial_sabana.png', 'Consulta de evaluación', 'Expediente detallado del progreso formativo del infante con valoraciones literales (A, B, C, D, E) y observaciones.', 'INFORME CUALITATIVO')"
-                    onmouseenter="selectRoleOption(this, 'iniOptImg', 'iniOptTitle', 'iniOptDesc', 'iniOptTag', 'iniOptZoomBtn', './assets/sisceba_inicial_sabana.png', './assets/sisceba_inicial_sabana.png', 'Consulta de evaluación', 'Expediente detallado del progreso formativo del infante con valoraciones literales (A, B, C, D, E) y observaciones.', 'INFORME CUALITATIVO')">
+                    onclick="selectRoleOption(this, 'iniOptTitle', 'iniOptDesc', 'iniOptTag', 'Consulta de evaluación individual', 'Expediente detallado del progreso formativo del infante con valoraciones literales (A, B, C, D, E) y observaciones.', 'INFORME CUALITATIVO')"
+                    onmouseenter="selectRoleOption(this, 'iniOptTitle', 'iniOptDesc', 'iniOptTag', 'Consulta de evaluación individual', 'Expediente detallado del progreso formativo del infante con valoraciones literales (A, B, C, D, E) y observaciones.', 'INFORME CUALITATIVO')">
               <span class="role-option-icon">🔍</span>
               <div class="role-option-info">
                 <span class="role-option-title">Consulta de evaluación</span>
                 <span class="role-option-scope">Individual por estudiante</span>
               </div>
-              <div class="role-option-thumb">
-                <img src="./assets/sisceba_inicial_sabana.png" alt="Consulta de evaluación" loading="lazy">
-              </div>
             </button>
             <button type="button" class="role-option-item" 
-                    onclick="selectRoleOption(this, 'iniOptImg', 'iniOptTitle', 'iniOptDesc', 'iniOptTag', 'iniOptZoomBtn', './assets/sisceba_inicial_sabana.png', './assets/sisceba_inicial_sabana.png', 'Consulta de evaluación', 'Visión panorámica de las salas de 3, 4 y 5 años con áreas de desarrollo (Personal, Ambiente, Música, Plásticas).', 'SÁBANA DE SALA')"
-                    onmouseenter="selectRoleOption(this, 'iniOptImg', 'iniOptTitle', 'iniOptDesc', 'iniOptTag', 'iniOptZoomBtn', './assets/sisceba_inicial_sabana.png', './assets/sisceba_inicial_sabana.png', 'Consulta de evaluación', 'Visión panorámica de las salas de 3, 4 y 5 años con áreas de desarrollo (Personal, Ambiente, Música, Plásticas).', 'SÁBANA DE SALA')">
+                    onclick="selectRoleOption(this, 'iniOptTitle', 'iniOptDesc', 'iniOptTag', 'Consulta de evaluación consolidada', 'Visión panorámica de las salas de 3, 4 y 5 años con áreas de desarrollo (Personal, Ambiente, Música, Plásticas).', 'SÁBANA DE SALA')"
+                    onmouseenter="selectRoleOption(this, 'iniOptTitle', 'iniOptDesc', 'iniOptTag', 'Consulta de evaluación consolidada', 'Visión panorámica de las salas de 3, 4 y 5 años con áreas de desarrollo (Personal, Ambiente, Música, Plásticas).', 'SÁBANA DE SALA')">
               <span class="role-option-icon">📑</span>
               <div class="role-option-info">
                 <span class="role-option-title">Consulta de evaluación</span>
                 <span class="role-option-scope">Consolidada por curso</span>
               </div>
-              <div class="role-option-thumb">
-                <img src="./assets/sisceba_inicial_sabana.png" alt="Consulta de evaluación" loading="lazy">
-              </div>
             </button>
             <button type="button" class="role-option-item" 
-                    onclick="selectRoleOption(this, 'iniOptImg', 'iniOptTitle', 'iniOptDesc', 'iniOptTag', 'iniOptZoomBtn', './assets/sisceba_inicial_sabana.png', './assets/sisceba_inicial_sabana.png', 'Cuadros estadísticos', 'Porcentaje de infantes valorados, avance de carga por sala y semáforo de cumplimiento pedagógico en educación inicial.', 'MÉTRICAS Y COBERTURA')"
-                    onmouseenter="selectRoleOption(this, 'iniOptImg', 'iniOptTitle', 'iniOptDesc', 'iniOptTag', 'iniOptZoomBtn', './assets/sisceba_inicial_sabana.png', './assets/sisceba_inicial_sabana.png', 'Cuadros estadísticos', 'Porcentaje de infantes valorados, avance de carga por sala y semáforo de cumplimiento pedagógico en educación inicial.', 'MÉTRICAS Y COBERTURA')">
+                    onclick="selectRoleOption(this, 'iniOptTitle', 'iniOptDesc', 'iniOptTag', 'Cuadros estadísticos de valoración', 'Porcentaje de infantes valorados, avance de carga por sala y semáforo de cumplimiento pedagógico en educación inicial.', 'MÉTRICAS Y COBERTURA')"
+                    onmouseenter="selectRoleOption(this, 'iniOptTitle', 'iniOptDesc', 'iniOptTag', 'Cuadros estadísticos de valoración', 'Porcentaje de infantes valorados, avance de carga por sala y semáforo de cumplimiento pedagógico en educación inicial.', 'MÉTRICAS Y COBERTURA')">
               <span class="role-option-icon">📈</span>
               <div class="role-option-info">
                 <span class="role-option-title">Cuadros estadísticos</span>
                 <span class="role-option-scope">Valoración por curso y estudiante</span>
               </div>
-              <div class="role-option-thumb">
-                <img src="./assets/sisceba_inicial_sabana.png" alt="Cuadros estadísticos" loading="lazy">
-              </div>
             </button>
           </div>
         </div>
 
-        <!-- Panel Derecho: Showcase con Captura en Vivo -->
+        <!-- Panel Derecho: Módulo de Interfaz del Rol (Preparado para 1 Captura) -->
         <div class="role-showcase-panel">
           <div class="role-showcase-header">
             <div class="showcase-header-left">
@@ -3600,17 +3770,52 @@
                 <span class="showcase-dot yellow"></span>
                 <span class="showcase-dot green"></span>
               </div>
-              <span id="iniOptTag" class="showcase-tag-pill">INDICADORES PEDAGÓGICOS</span>
+              <span id="iniOptTag" class="showcase-tag-pill" style="border-color: #3B82F6; color: #60A5FA; background: rgba(59, 130, 246, 0.16);">INDICADORES PEDAGÓGICOS</span>
               <span id="iniOptTitle" class="showcase-option-title">Indicadores evaluados</span>
             </div>
-            <button type="button" id="iniOptZoomBtn" class="showcase-zoom-btn" onclick="openZoom('./assets/sisceba_inicial_sabana.png', 'INDICADORES PEDAGÓGICOS: Indicadores evaluados')">
-              🔍 Ampliar Captura
-            </button>
+            <span class="role-single-cap-pill" style="border-color: #3B82F6; color: #60A5FA;">1 Captura de Interfaz</span>
           </div>
 
-          <div class="role-showcase-viewport" onclick="openZoom('./assets/sisceba_inicial_sabana.png', 'INDICADORES PEDAGÓGICOS: Indicadores evaluados')">
-            <img id="iniOptImg" src="./assets/sisceba_inicial_sabana.png" alt="Indicadores evaluados" loading="lazy">
-            <span class="viewport-zoom-hint">🔍 Clic para pantalla completa</span>
+          <div class="role-interface-canvas">
+            <div class="canvas-topbar">
+              <div class="canvas-sys-info">
+                <span class="canvas-dot-pulse" style="background: #3B82F6;"></span>
+                <span class="canvas-brand">SICE-CBA</span>
+                <span class="canvas-slash">/</span>
+                <span class="canvas-role-badge">🧸 Coord. Inicial</span>
+              </div>
+              <div class="canvas-tabs-preview">
+                <span class="canvas-tab active" style="border-color: #3B82F6; color: #60A5FA;">Maternal & Preescolar</span>
+                <span class="canvas-tab">Salas 3, 4 y 5 Años</span>
+                <span class="canvas-tab">Escala Literal (A-E)</span>
+              </div>
+            </div>
+
+            <div class="canvas-pillars-grid">
+              <div class="canvas-pillar-card">
+                <span class="pillar-icon">🧸</span>
+                <span class="pillar-title">Escala Literal MPPE</span>
+                <span class="pillar-desc">Valoración adaptada (A, B, C, D, E) respetando la normativa de primera infancia.</span>
+              </div>
+              <div class="canvas-pillar-card">
+                <span class="pillar-icon">🎨</span>
+                <span class="pillar-title">Áreas de Desarrollo</span>
+                <span class="pillar-desc">Formación Personal, Social, Ambiente, Artes Plásticas y Educación Física.</span>
+              </div>
+              <div class="canvas-pillar-card">
+                <span class="pillar-icon">📑</span>
+                <span class="pillar-title">Boletines Cualitativos</span>
+                <span class="pillar-desc">Informes descriptivos individuales y sábanas de sala con emisión inmediata.</span>
+              </div>
+            </div>
+
+            <div class="role-capture-slot">
+              <div class="capture-slot-icon">🖥️</div>
+              <div class="capture-slot-content">
+                <span class="capture-slot-title">Espacio Preparado para Captura de Interfaz del Rol</span>
+                <span class="capture-slot-sub">Se incorporará la captura representativa de la interfaz de Coordinación Inicial</span>
+              </div>
+            </div>
           </div>
 
           <div class="role-showcase-footer">
@@ -3628,113 +3833,89 @@
       <p class="slide-subtitle">Seguimiento de competencias fundamentales, evaluación continua, asistencia y doble pensum (MPPE vs CBA):</p>
 
       <div class="role-slide-layout role-pri">
-        <!-- Panel Izquierdo: Lista de Tareas / Opciones -->
+        <!-- Panel Izquierdo: Lista de Tareas Recurrentes -->
         <div class="role-options-panel">
           <div class="role-panel-header">
-            <span class="role-panel-header-title">🌱 Tareas Recurrentes</span>
-            <span class="role-panel-badge" style="background: rgba(212, 175, 55, 0.16); border: 1px solid var(--cba-gold); color: var(--cba-gold);">8 Tareas</span>
+            <span class="role-panel-header-title">🌱 Tareas Recurrentes del Rol</span>
+            <span class="role-panel-badge" style="background: rgba(16, 185, 129, 0.16); border: 1px solid #10B981; color: #10B981;">8 Tareas</span>
           </div>
           <div class="role-options-list">
             <button type="button" class="role-option-item active" 
-                    onclick="selectRoleOption(this, 'priOptImg', 'priOptTitle', 'priOptDesc', 'priOptTag', 'priOptZoomBtn', './assets/sisceba_primaria_sabana.png', './assets/sisceba_primaria_sabana.png', 'Indicadores evaluados', 'Evaluación formativa cualitativa oficial MPPE (Logrado • En Proceso • Iniciado) en competencias fundamentales.', 'INDICADORES PRIMARIA')"
-                    onmouseenter="selectRoleOption(this, 'priOptImg', 'priOptTitle', 'priOptDesc', 'priOptTag', 'priOptZoomBtn', './assets/sisceba_primaria_sabana.png', './assets/sisceba_primaria_sabana.png', 'Indicadores evaluados', 'Evaluación formativa cualitativa oficial MPPE (Logrado • En Proceso • Iniciado) en competencias fundamentales.', 'INDICADORES PRIMARIA')">
+                    onclick="selectRoleOption(this, 'priOptTitle', 'priOptDesc', 'priOptTag', 'Indicadores evaluados', 'Evaluación formativa cualitativa oficial MPPE (Logrado • En Proceso • Iniciado) en competencias fundamentales.', 'INDICADORES PRIMARIA')"
+                    onmouseenter="selectRoleOption(this, 'priOptTitle', 'priOptDesc', 'priOptTag', 'Indicadores evaluados', 'Evaluación formativa cualitativa oficial MPPE (Logrado • En Proceso • Iniciado) en competencias fundamentales.', 'INDICADORES PRIMARIA')">
               <span class="role-option-icon">🎯</span>
               <div class="role-option-info">
                 <span class="role-option-title">Indicadores evaluados</span>
                 <span class="role-option-scope">Por curso y por docente</span>
               </div>
-              <div class="role-option-thumb">
-                <img src="./assets/sisceba_primaria_sabana.png" alt="Indicadores evaluados" loading="lazy">
-              </div>
             </button>
             <button type="button" class="role-option-item" 
-                    onclick="selectRoleOption(this, 'priOptImg', 'priOptTitle', 'priOptDesc', 'priOptTag', 'priOptZoomBtn', './assets/consultas_asistencia.png', './assets/consultas_asistencia.png', 'Registros de asistencia', 'Control diario por aula con justificación de ausencias, pases de portería y seguimiento de puntualidad escolar.', 'ASISTENCIA 1.° A 6.°')"
-                    onmouseenter="selectRoleOption(this, 'priOptImg', 'priOptTitle', 'priOptDesc', 'priOptTag', 'priOptZoomBtn', './assets/consultas_asistencia.png', './assets/consultas_asistencia.png', 'Registros de asistencia', 'Control diario por aula con justificación de ausencias, pases de portería y seguimiento de puntualidad escolar.', 'ASISTENCIA 1.° A 6.°')">
+                    onclick="selectRoleOption(this, 'priOptTitle', 'priOptDesc', 'priOptTag', 'Registros de asistencia', 'Control diario por aula con justificación de ausencias, pases de portería y seguimiento de puntualidad escolar.', 'ASISTENCIA 1.° A 6.°')"
+                    onmouseenter="selectRoleOption(this, 'priOptTitle', 'priOptDesc', 'priOptTag', 'Registros de asistencia', 'Control diario por aula con justificación de ausencias, pases de portería y seguimiento de puntualidad escolar.', 'ASISTENCIA 1.° A 6.°')">
               <span class="role-option-icon">📅</span>
               <div class="role-option-info">
                 <span class="role-option-title">Registros de asistencia</span>
                 <span class="role-option-scope">Por curso y por estudiante</span>
               </div>
-              <div class="role-option-thumb">
-                <img src="./assets/consultas_asistencia.png" alt="Registros de asistencia" loading="lazy">
-              </div>
             </button>
             <button type="button" class="role-option-item" 
-                    onclick="selectRoleOption(this, 'priOptImg', 'priOptTitle', 'priOptDesc', 'priOptTag', 'priOptZoomBtn', './assets/gestion_conductas.png', './assets/gestion_conductas.png', 'Registros de conducta', 'Registro preventivo de acuerdos de convivencia, hábitos escolares y reconocimientos al mérito de primaria.', 'SEGUIMIENTO CONDUCTUAL')"
-                    onmouseenter="selectRoleOption(this, 'priOptImg', 'priOptTitle', 'priOptDesc', 'priOptTag', 'priOptZoomBtn', './assets/gestion_conductas.png', './assets/gestion_conductas.png', 'Registros de conducta', 'Registro preventivo de acuerdos de convivencia, hábitos escolares y reconocimientos al mérito de primaria.', 'SEGUIMIENTO CONDUCTUAL')">
+                    onclick="selectRoleOption(this, 'priOptTitle', 'priOptDesc', 'priOptTag', 'Registros de conducta', 'Registro preventivo de acuerdos de convivencia, hábitos escolares y reconocimientos al mérito de primaria.', 'SEGUIMIENTO CONDUCTUAL')"
+                    onmouseenter="selectRoleOption(this, 'priOptTitle', 'priOptDesc', 'priOptTag', 'Registros de conducta', 'Registro preventivo de acuerdos de convivencia, hábitos escolares y reconocimientos al mérito de primaria.', 'SEGUIMIENTO CONDUCTUAL')">
               <span class="role-option-icon">⚖️</span>
               <div class="role-option-info">
                 <span class="role-option-title">Registros de conducta</span>
                 <span class="role-option-scope">Por curso y por estudiante</span>
               </div>
-              <div class="role-option-thumb">
-                <img src="./assets/gestion_conductas.png" alt="Registros de conducta" loading="lazy">
-              </div>
             </button>
             <button type="button" class="role-option-item" 
-                    onclick="selectRoleOption(this, 'priOptImg', 'priOptTitle', 'priOptDesc', 'priOptTag', 'priOptZoomBtn', './assets/sisceba_primaria_sabana.png', './assets/sisceba_primaria_sabana.png', 'Calificaciones / estudiante', 'Escala cualitativa oficial MPPE (L, EP, I) junto a la ponderación del pensum institucional de Bellas Artes.', 'BOLETÍN Y PROMEDIOS')"
-                    onmouseenter="selectRoleOption(this, 'priOptImg', 'priOptTitle', 'priOptDesc', 'priOptTag', 'priOptZoomBtn', './assets/sisceba_primaria_sabana.png', './assets/sisceba_primaria_sabana.png', 'Calificaciones / estudiante', 'Escala cualitativa oficial MPPE (L, EP, I) junto a la ponderación del pensum institucional de Bellas Artes.', 'BOLETÍN Y PROMEDIOS')">
+                    onclick="selectRoleOption(this, 'priOptTitle', 'priOptDesc', 'priOptTag', 'Calificaciones / estudiante', 'Escala cualitativa oficial MPPE (L, EP, I) junto a la ponderación del pensum institucional de Bellas Artes.', 'BOLETÍN Y PROMEDIOS')"
+                    onmouseenter="selectRoleOption(this, 'priOptTitle', 'priOptDesc', 'priOptTag', 'Calificaciones / estudiante', 'Escala cualitativa oficial MPPE (L, EP, I) junto a la ponderación del pensum institucional de Bellas Artes.', 'BOLETÍN Y PROMEDIOS')">
               <span class="role-option-icon">📝</span>
               <div class="role-option-info">
                 <span class="role-option-title">Calificaciones / estudiante</span>
                 <span class="role-option-scope">Promedio MPPE y Promedio CBA</span>
               </div>
-              <div class="role-option-thumb">
-                <img src="./assets/sisceba_primaria_sabana.png" alt="Calificaciones / estudiante" loading="lazy">
-              </div>
             </button>
             <button type="button" class="role-option-item" 
-                    onclick="selectRoleOption(this, 'priOptImg', 'priOptTitle', 'priOptDesc', 'priOptTag', 'priOptZoomBtn', './assets/sisceba_primaria_sabana.png', './assets/sisceba_primaria_sabana.png', 'Calificaciones por curso', 'Sábana reactiva en tiempo real de 1.° a 6.° Grado, con soporte oficial de Secciones A, B y Sección U (Única).', 'SÁBANA DE PRIMARIA')"
-                    onmouseenter="selectRoleOption(this, 'priOptImg', 'priOptTitle', 'priOptDesc', 'priOptTag', 'priOptZoomBtn', './assets/sisceba_primaria_sabana.png', './assets/sisceba_primaria_sabana.png', 'Calificaciones por curso', 'Sábana reactiva en tiempo real de 1.° a 6.° Grado, con soporte oficial de Secciones A, B y Sección U (Única).', 'SÁBANA DE PRIMARIA')">
+                    onclick="selectRoleOption(this, 'priOptTitle', 'priOptDesc', 'priOptTag', 'Calificaciones por curso', 'Sábana reactiva en tiempo real de 1.° a 6.° Grado, con soporte oficial de Secciones A, B y Sección U (Única).', 'SÁBANA DE PRIMARIA')"
+                    onmouseenter="selectRoleOption(this, 'priOptTitle', 'priOptDesc', 'priOptTag', 'Calificaciones por curso', 'Sábana reactiva en tiempo real de 1.° a 6.° Grado, con soporte oficial de Secciones A, B y Sección U (Única).', 'SÁBANA DE PRIMARIA')">
               <span class="role-option-icon">📊</span>
               <div class="role-option-info">
                 <span class="role-option-title">Calificaciones por curso</span>
                 <span class="role-option-scope">Pensum MPPE y Pensum CBA</span>
               </div>
-              <div class="role-option-thumb">
-                <img src="./assets/sisceba_primaria_sabana.png" alt="Calificaciones por curso" loading="lazy">
-              </div>
             </button>
             <button type="button" class="role-option-item" 
-                    onclick="selectRoleOption(this, 'priOptImg', 'priOptTitle', 'priOptDesc', 'priOptTag', 'priOptZoomBtn', './assets/sisceba_primaria_sabana.png', './assets/sisceba_primaria_sabana.png', 'Cuadros estadísticos', 'Consolidado gráfico de niveles de logro (L, EP, I) por asignatura y grado para orientación y refuerzo pedagógico.', 'ESTADÍSTICAS RENDIMIENTO')"
-                    onmouseenter="selectRoleOption(this, 'priOptImg', 'priOptTitle', 'priOptDesc', 'priOptTag', 'priOptZoomBtn', './assets/sisceba_primaria_sabana.png', './assets/sisceba_primaria_sabana.png', 'Cuadros estadísticos', 'Consolidado gráfico de niveles de logro (L, EP, I) por asignatura y grado para orientación y refuerzo pedagógico.', 'ESTADÍSTICAS RENDIMIENTO')">
+                    onclick="selectRoleOption(this, 'priOptTitle', 'priOptDesc', 'priOptTag', 'Cuadros estadísticos (Calificaciones)', 'Consolidado gráfico de niveles de logro (L, EP, I) por asignatura y grado para orientación y refuerzo pedagógico.', 'ESTADÍSTICAS RENDIMIENTO')"
+                    onmouseenter="selectRoleOption(this, 'priOptTitle', 'priOptDesc', 'priOptTag', 'Cuadros estadísticos (Calificaciones)', 'Consolidado gráfico de niveles de logro (L, EP, I) por asignatura y grado para orientación y refuerzo pedagógico.', 'ESTADÍSTICAS RENDIMIENTO')">
               <span class="role-option-icon">📈</span>
               <div class="role-option-info">
                 <span class="role-option-title">Cuadros estadísticos</span>
                 <span class="role-option-scope">Calificaciones por curso</span>
               </div>
-              <div class="role-option-thumb">
-                <img src="./assets/sisceba_primaria_sabana.png" alt="Cuadros estadísticos" loading="lazy">
-              </div>
             </button>
             <button type="button" class="role-option-item" 
-                    onclick="selectRoleOption(this, 'priOptImg', 'priOptTitle', 'priOptDesc', 'priOptTag', 'priOptZoomBtn', './assets/consultas_asistencia.png', './assets/consultas_asistencia.png', 'Cuadros estadísticos', 'Semáforo de asistencia escolar (índice 98.4%) y detección temprana de ausentismo para coordinación de bienestar.', 'ÍNDICES DE AUSENTISMO')"
-                    onmouseenter="selectRoleOption(this, 'priOptImg', 'priOptTitle', 'priOptDesc', 'priOptTag', 'priOptZoomBtn', './assets/consultas_asistencia.png', './assets/consultas_asistencia.png', 'Cuadros estadísticos', 'Semáforo de asistencia escolar (índice 98.4%) y detección temprana de ausentismo para coordinación de bienestar.', 'ÍNDICES DE AUSENTISMO')">
+                    onclick="selectRoleOption(this, 'priOptTitle', 'priOptDesc', 'priOptTag', 'Cuadros estadísticos (Asistencia)', 'Semáforo de asistencia escolar (índice 98.4%) y detección temprana de ausentismo para coordinación de bienestar.', 'ÍNDICES DE AUSENTISMO')"
+                    onmouseenter="selectRoleOption(this, 'priOptTitle', 'priOptDesc', 'priOptTag', 'Cuadros estadísticos (Asistencia)', 'Semáforo de asistencia escolar (índice 98.4%) y detección temprana de ausentismo para coordinación de bienestar.', 'ÍNDICES DE AUSENTISMO')">
               <span class="role-option-icon">📊</span>
               <div class="role-option-info">
                 <span class="role-option-title">Cuadros estadísticos</span>
                 <span class="role-option-scope">Asistencia por curso</span>
               </div>
-              <div class="role-option-thumb">
-                <img src="./assets/consultas_asistencia.png" alt="Cuadros estadísticos" loading="lazy">
-              </div>
             </button>
             <button type="button" class="role-option-item" 
-                    onclick="selectRoleOption(this, 'priOptImg', 'priOptTitle', 'priOptDesc', 'priOptTag', 'priOptZoomBtn', './assets/gestion_conductas.png', './assets/gestion_conductas.png', 'Cuadros estadísticos', 'Monitoreo preventivo del clima escolar y cumplimiento de los acuerdos de convivencia en todos los grados.', 'AUDITORÍA CONVIVENCIA')"
-                    onmouseenter="selectRoleOption(this, 'priOptImg', 'priOptTitle', 'priOptDesc', 'priOptTag', 'priOptZoomBtn', './assets/gestion_conductas.png', './assets/gestion_conductas.png', 'Cuadros estadísticos', 'Monitoreo preventivo del clima escolar y cumplimiento de los acuerdos de convivencia en todos los grados.', 'AUDITORÍA CONVIVENCIA')">
+                    onclick="selectRoleOption(this, 'priOptTitle', 'priOptDesc', 'priOptTag', 'Cuadros estadísticos (Conducta)', 'Monitoreo preventivo del clima escolar y cumplimiento de los acuerdos de convivencia en todos los grados.', 'AUDITORÍA CONVIVENCIA')"
+                    onmouseenter="selectRoleOption(this, 'priOptTitle', 'priOptDesc', 'priOptTag', 'Cuadros estadísticos (Conducta)', 'Monitoreo preventivo del clima escolar y cumplimiento de los acuerdos de convivencia en todos los grados.', 'AUDITORÍA CONVIVENCIA')">
               <span class="role-option-icon">📋</span>
               <div class="role-option-info">
                 <span class="role-option-title">Cuadros estadísticos</span>
                 <span class="role-option-scope">Registros de conducta por curso</span>
               </div>
-              <div class="role-option-thumb">
-                <img src="./assets/gestion_conductas.png" alt="Cuadros estadísticos" loading="lazy">
-              </div>
             </button>
           </div>
         </div>
 
-        <!-- Panel Derecho: Showcase con Captura en Vivo -->
+        <!-- Panel Derecho: Módulo de Interfaz del Rol (Preparado para 1 Captura) -->
         <div class="role-showcase-panel">
           <div class="role-showcase-header">
             <div class="showcase-header-left">
@@ -3743,17 +3924,52 @@
                 <span class="showcase-dot yellow"></span>
                 <span class="showcase-dot green"></span>
               </div>
-              <span id="priOptTag" class="showcase-tag-pill">INDICADORES PRIMARIA</span>
+              <span id="priOptTag" class="showcase-tag-pill" style="border-color: #10B981; color: #34D399; background: rgba(16, 185, 129, 0.16);">INDICADORES PRIMARIA</span>
               <span id="priOptTitle" class="showcase-option-title">Indicadores evaluados</span>
             </div>
-            <button type="button" id="priOptZoomBtn" class="showcase-zoom-btn" onclick="openZoom('./assets/sisceba_primaria_sabana.png', 'INDICADORES PRIMARIA: Indicadores evaluados')">
-              🔍 Ampliar Captura
-            </button>
+            <span class="role-single-cap-pill" style="border-color: #10B981; color: #34D399;">1 Captura de Interfaz</span>
           </div>
 
-          <div class="role-showcase-viewport" onclick="openZoom('./assets/sisceba_primaria_sabana.png', 'INDICADORES PRIMARIA: Indicadores evaluados')">
-            <img id="priOptImg" src="./assets/sisceba_primaria_sabana.png" alt="Indicadores evaluados" loading="lazy">
-            <span class="viewport-zoom-hint">🔍 Clic para pantalla completa</span>
+          <div class="role-interface-canvas">
+            <div class="canvas-topbar">
+              <div class="canvas-sys-info">
+                <span class="canvas-dot-pulse" style="background: #10B981;"></span>
+                <span class="canvas-brand">SICE-CBA</span>
+                <span class="canvas-slash">/</span>
+                <span class="canvas-role-badge">🌱 Coord. Primaria</span>
+              </div>
+              <div class="canvas-tabs-preview">
+                <span class="canvas-tab active" style="border-color: #10B981; color: #34D399;">1.° a 6.° Grado</span>
+                <span class="canvas-tab">Escala (L, EP, I)</span>
+                <span class="canvas-tab">Doble Pensum</span>
+              </div>
+            </div>
+
+            <div class="canvas-pillars-grid">
+              <div class="canvas-pillar-card">
+                <span class="pillar-icon">🌱</span>
+                <span class="pillar-title">Escala Formativa MPPE</span>
+                <span class="pillar-desc">Logrado (L), En Proceso (EP) e Iniciado (I) con apreciaciones descriptivas.</span>
+              </div>
+              <div class="canvas-pillar-card">
+                <span class="pillar-icon">📚</span>
+                <span class="pillar-title">Pensum MPPE vs CBA</span>
+                <span class="pillar-desc">Malla ministerial integrada con materias artísticas e institucionales CBA.</span>
+              </div>
+              <div class="canvas-pillar-card">
+                <span class="pillar-icon">⏱️</span>
+                <span class="pillar-title">Asistencia Diaria</span>
+                <span class="pillar-desc">Puntualidad por aula, cómputo de faltas y alertas de prevención escolar.</span>
+              </div>
+            </div>
+
+            <div class="role-capture-slot">
+              <div class="capture-slot-icon">🖥️</div>
+              <div class="capture-slot-content">
+                <span class="capture-slot-title">Espacio Preparado para Captura de Interfaz del Rol</span>
+                <span class="capture-slot-sub">Se incorporará la captura representativa de la interfaz de Coordinación Primaria</span>
+              </div>
+            </div>
           </div>
 
           <div class="role-showcase-footer">
@@ -3771,137 +3987,107 @@
       <p class="slide-subtitle">Gestión rigurosa de la escala vigesimal (01-20), doble pensum, Grupos CRP y auditoría LOE Art. 109:</p>
 
       <div class="role-slide-layout role-med">
-        <!-- Panel Izquierdo: Lista de Tareas / Opciones -->
+        <!-- Panel Izquierdo: Lista de Tareas Recurrentes -->
         <div class="role-options-panel">
           <div class="role-panel-header">
-            <span class="role-panel-header-title">🎓 Tareas Recurrentes</span>
-            <span class="role-panel-badge" style="background: rgba(212, 175, 55, 0.16); border: 1px solid var(--cba-gold); color: var(--cba-gold);">10 Tareas</span>
+            <span class="role-panel-header-title">🎓 Tareas Recurrentes del Rol</span>
+            <span class="role-panel-badge" style="background: rgba(168, 85, 247, 0.16); border: 1px solid #A855F7; color: #A855F7;">10 Tareas</span>
           </div>
           <div class="role-options-list">
             <button type="button" class="role-option-item active" 
-                    onclick="selectRoleOption(this, 'medOptImg', 'medOptTitle', 'medOptDesc', 'medOptTag', 'medOptZoomBtn', './assets/sisceba_dashboard_real.png', './assets/sisceba_dashboard_real.png', 'Estrategias evaluadas', 'Control normado de planes de evaluación, ponderaciones vigesimales (máx. 20 pts) y fechas reglamentarias.', 'PLANIFICACIÓN DE LAPSO')"
-                    onmouseenter="selectRoleOption(this, 'medOptImg', 'medOptTitle', 'medOptDesc', 'medOptTag', 'medOptZoomBtn', './assets/sisceba_dashboard_real.png', './assets/sisceba_dashboard_real.png', 'Estrategias evaluadas', 'Control normado de planes de evaluación, ponderaciones vigesimales (máx. 20 pts) y fechas reglamentarias.', 'PLANIFICACIÓN DE LAPSO')">
+                    onclick="selectRoleOption(this, 'medOptTitle', 'medOptDesc', 'medOptTag', 'Estrategias evaluadas', 'Control normado de planes de evaluación, ponderaciones vigesimales (máx. 20 pts) y fechas reglamentarias.', 'PLANIFICACIÓN DE LAPSO')"
+                    onmouseenter="selectRoleOption(this, 'medOptTitle', 'medOptDesc', 'medOptTag', 'Estrategias evaluadas', 'Control normado de planes de evaluación, ponderaciones vigesimales (máx. 20 pts) y fechas reglamentarias.', 'PLANIFICACIÓN DE LAPSO')">
               <span class="role-option-icon">🎯</span>
               <div class="role-option-info">
                 <span class="role-option-title">Estrategias evaluadas</span>
                 <span class="role-option-scope">Por curso y por docente</span>
               </div>
-              <div class="role-option-thumb">
-                <img src="./assets/sisceba_dashboard_real.png" alt="Estrategias evaluadas" loading="lazy">
-              </div>
             </button>
             <button type="button" class="role-option-item" 
-                    onclick="selectRoleOption(this, 'medOptImg', 'medOptTitle', 'medOptDesc', 'medOptTag', 'medOptZoomBtn', './assets/consultas_asistencia.png', './assets/consultas_asistencia.png', 'Registros de asistencia', 'Control de asistencia por hora académica con cómputo de horas válidas para derecho a evaluación sumativa.', 'ASISTENCIA POR MATERIA')"
-                    onmouseenter="selectRoleOption(this, 'medOptImg', 'medOptTitle', 'medOptDesc', 'medOptTag', 'medOptZoomBtn', './assets/consultas_asistencia.png', './assets/consultas_asistencia.png', 'Registros de asistencia', 'Control de asistencia por hora académica con cómputo de horas válidas para derecho a evaluación sumativa.', 'ASISTENCIA POR MATERIA')">
+                    onclick="selectRoleOption(this, 'medOptTitle', 'medOptDesc', 'medOptTag', 'Registros de asistencia', 'Control de asistencia por hora académica con cómputo de horas válidas para derecho a evaluación sumativa.', 'ASISTENCIA POR MATERIA')"
+                    onmouseenter="selectRoleOption(this, 'medOptTitle', 'medOptDesc', 'medOptTag', 'Registros de asistencia', 'Control de asistencia por hora académica con cómputo de horas válidas para derecho a evaluación sumativa.', 'ASISTENCIA POR MATERIA')">
               <span class="role-option-icon">📅</span>
               <div class="role-option-info">
                 <span class="role-option-title">Registros de asistencia</span>
                 <span class="role-option-scope">Por curso y por estudiante</span>
               </div>
-              <div class="role-option-thumb">
-                <img src="./assets/consultas_asistencia.png" alt="Registros de asistencia" loading="lazy">
-              </div>
             </button>
             <button type="button" class="role-option-item" 
-                    onclick="selectRoleOption(this, 'medOptImg', 'medOptTitle', 'medOptDesc', 'medOptTag', 'medOptZoomBtn', './assets/gestion_conductas.png', './assets/gestion_conductas.png', 'Registros de conducta', 'Historial disciplinario de bachillerato, compromisos pedagógicos y citaciones oficiales a padres.', 'EXPEDIENTE DISCIPLINARIO')"
-                    onmouseenter="selectRoleOption(this, 'medOptImg', 'medOptTitle', 'medOptDesc', 'medOptTag', 'medOptZoomBtn', './assets/gestion_conductas.png', './assets/gestion_conductas.png', 'Registros de conducta', 'Historial disciplinario de bachillerato, compromisos pedagógicos y citaciones oficiales a padres.', 'EXPEDIENTE DISCIPLINARIO')">
+                    onclick="selectRoleOption(this, 'medOptTitle', 'medOptDesc', 'medOptTag', 'Registros de conducta', 'Historial disciplinario de bachillerato, compromisos pedagógicos y citaciones oficiales a padres.', 'EXPEDIENTE DISCIPLINARIO')"
+                    onmouseenter="selectRoleOption(this, 'medOptTitle', 'medOptDesc', 'medOptTag', 'Registros de conducta', 'Historial disciplinario de bachillerato, compromisos pedagógicos y citaciones oficiales a padres.', 'EXPEDIENTE DISCIPLINARIO')">
               <span class="role-option-icon">⚖️</span>
               <div class="role-option-info">
                 <span class="role-option-title">Registros de conducta</span>
                 <span class="role-option-scope">Por curso y por estudiante</span>
               </div>
-              <div class="role-option-thumb">
-                <img src="./assets/gestion_conductas.png" alt="Registros de conducta" loading="lazy">
-              </div>
             </button>
             <button type="button" class="role-option-item" 
-                    onclick="selectRoleOption(this, 'medOptImg', 'medOptTitle', 'medOptDesc', 'medOptTag', 'medOptZoomBtn', './assets/sisceba_consultas_real.png', './assets/sisceba_consultas_real.png', 'Calificaciones / estudiante', 'Cálculo matemático exacto en escala 01-20 (mínimo aprobatorio 10 pts) y promedio ponderado institucional CBA.', 'PROMEDIOS VIGESIMALES')"
-                    onmouseenter="selectRoleOption(this, 'medOptImg', 'medOptTitle', 'medOptDesc', 'medOptTag', 'medOptZoomBtn', './assets/sisceba_consultas_real.png', './assets/sisceba_consultas_real.png', 'Calificaciones / estudiante', 'Cálculo matemático exacto en escala 01-20 (mínimo aprobatorio 10 pts) y promedio ponderado institucional CBA.', 'PROMEDIOS VIGESIMALES')">
+                    onclick="selectRoleOption(this, 'medOptTitle', 'medOptDesc', 'medOptTag', 'Calificaciones / estudiante', 'Cálculo matemático exacto en escala 01-20 (mínimo aprobatorio 10 pts) y promedio ponderado institucional CBA.', 'PROMEDIOS VIGESIMALES')"
+                    onmouseenter="selectRoleOption(this, 'medOptTitle', 'medOptDesc', 'medOptTag', 'Calificaciones / estudiante', 'Cálculo matemático exacto en escala 01-20 (mínimo aprobatorio 10 pts) y promedio ponderado institucional CBA.', 'PROMEDIOS VIGESIMALES')">
               <span class="role-option-icon">📝</span>
               <div class="role-option-info">
                 <span class="role-option-title">Calificaciones / estudiante</span>
                 <span class="role-option-scope">Promedio MPPE y Promedio CBA</span>
               </div>
-              <div class="role-option-thumb">
-                <img src="./assets/sisceba_consultas_real.png" alt="Calificaciones / estudiante" loading="lazy">
-              </div>
             </button>
             <button type="button" class="role-option-item" 
-                    onclick="selectRoleOption(this, 'medOptImg', 'medOptTitle', 'medOptDesc', 'medOptTag', 'medOptZoomBtn', './assets/sisceba_consultas_real.png', './assets/sisceba_consultas_real.png', 'Calificaciones por curso', 'Matriz digital de 1.° a 5.° Año con materias oficiales MPPE y especialidades Bellas Artes (Robótica, Inglés).', 'SÁBANA DE BACHILLERATO')"
-                    onmouseenter="selectRoleOption(this, 'medOptImg', 'medOptTitle', 'medOptDesc', 'medOptTag', 'medOptZoomBtn', './assets/sisceba_consultas_real.png', './assets/sisceba_consultas_real.png', 'Calificaciones por curso', 'Matriz digital de 1.° a 5.° Año con materias oficiales MPPE y especialidades Bellas Artes (Robótica, Inglés).', 'SÁBANA DE BACHILLERATO')">
+                    onclick="selectRoleOption(this, 'medOptTitle', 'medOptDesc', 'medOptTag', 'Calificaciones por curso', 'Matriz digital de 1.° a 5.° Año con materias oficiales MPPE y especialidades Bellas Artes (Robótica, Inglés).', 'SÁBANA DE BACHILLERATO')"
+                    onmouseenter="selectRoleOption(this, 'medOptTitle', 'medOptDesc', 'medOptTag', 'Calificaciones por curso', 'Matriz digital de 1.° a 5.° Año con materias oficiales MPPE y especialidades Bellas Artes (Robótica, Inglés).', 'SÁBANA DE BACHILLERATO')">
               <span class="role-option-icon">📊</span>
               <div class="role-option-info">
                 <span class="role-option-title">Calificaciones por curso</span>
                 <span class="role-option-scope">Pensum MPPE y Pensum CBA</span>
               </div>
-              <div class="role-option-thumb">
-                <img src="./assets/sisceba_consultas_real.png" alt="Calificaciones por curso" loading="lazy">
-              </div>
             </button>
             <button type="button" class="role-option-item" 
-                    onclick="selectRoleOption(this, 'medOptImg', 'medOptTitle', 'medOptDesc', 'medOptTag', 'medOptZoomBtn', './assets/sisceba_dashboard_real.png', './assets/sisceba_dashboard_real.png', 'Cuadros estadísticos', 'Reportes de aprobación/reprobación, materias de mayor exigencia técnica y cuadro de honor estudiantil.', 'CURVAS DE RENDIMIENTO')"
-                    onmouseenter="selectRoleOption(this, 'medOptImg', 'medOptTitle', 'medOptDesc', 'medOptTag', 'medOptZoomBtn', './assets/sisceba_dashboard_real.png', './assets/sisceba_dashboard_real.png', 'Cuadros estadísticos', 'Reportes de aprobación/reprobación, materias de mayor exigencia técnica y cuadro de honor estudiantil.', 'CURVAS DE RENDIMIENTO')">
+                    onclick="selectRoleOption(this, 'medOptTitle', 'medOptDesc', 'medOptTag', 'Cuadros estadísticos (Calificaciones)', 'Reportes de aprobación/reprobación, materias de mayor exigencia técnica y cuadro de honor estudiantil.', 'CURVAS DE RENDIMIENTO')"
+                    onmouseenter="selectRoleOption(this, 'medOptTitle', 'medOptDesc', 'medOptTag', 'Cuadros estadísticos (Calificaciones)', 'Reportes de aprobación/reprobación, materias de mayor exigencia técnica y cuadro de honor estudiantil.', 'CURVAS DE RENDIMIENTO')">
               <span class="role-option-icon">📈</span>
               <div class="role-option-info">
                 <span class="role-option-title">Cuadros estadísticos</span>
                 <span class="role-option-scope">Calificaciones por curso</span>
               </div>
-              <div class="role-option-thumb">
-                <img src="./assets/sisceba_dashboard_real.png" alt="Cuadros estadísticos" loading="lazy">
-              </div>
             </button>
             <button type="button" class="role-option-item" 
-                    onclick="selectRoleOption(this, 'medOptImg', 'medOptTitle', 'medOptDesc', 'medOptTag', 'medOptZoomBtn', './assets/consultas_asistencia.png', './assets/consultas_asistencia.png', 'Cuadros estadísticos', 'Monitoreo estricto del umbral del 25% de inasistencias no justificadas para la toma de decisiones oportunas.', 'AUDITORÍA LOE ART. 109')"
-                    onmouseenter="selectRoleOption(this, 'medOptImg', 'medOptTitle', 'medOptDesc', 'medOptTag', 'medOptZoomBtn', './assets/consultas_asistencia.png', './assets/consultas_asistencia.png', 'Cuadros estadísticos', 'Monitoreo estricto del umbral del 25% de inasistencias no justificadas para la toma de decisiones oportunas.', 'AUDITORÍA LOE ART. 109')">
+                    onclick="selectRoleOption(this, 'medOptTitle', 'medOptDesc', 'medOptTag', 'Cuadros estadísticos (Asistencia)', 'Monitoreo estricto del umbral del 25% de inasistencias no justificadas para la toma de decisiones oportunas.', 'AUDITORÍA LOE ART. 109')"
+                    onmouseenter="selectRoleOption(this, 'medOptTitle', 'medOptDesc', 'medOptTag', 'Cuadros estadísticos (Asistencia)', 'Monitoreo estricto del umbral del 25% de inasistencias no justificadas para la toma de decisiones oportunas.', 'AUDITORÍA LOE ART. 109')">
               <span class="role-option-icon">📊</span>
               <div class="role-option-info">
                 <span class="role-option-title">Cuadros estadísticos</span>
                 <span class="role-option-scope">Asistencia por curso</span>
               </div>
-              <div class="role-option-thumb">
-                <img src="./assets/consultas_asistencia.png" alt="Cuadros estadísticos" loading="lazy">
-              </div>
             </button>
             <button type="button" class="role-option-item" 
-                    onclick="selectRoleOption(this, 'medOptImg', 'medOptTitle', 'medOptDesc', 'medOptTag', 'medOptZoomBtn', './assets/gestion_conductas.png', './assets/gestion_conductas.png', 'Cuadros estadísticos', 'Consolidado de incidencias y acuerdos para consejos de sección y coordinación de orientación vocacional.', 'CONVIVENCIA BACHILLERATO')"
-                    onmouseenter="selectRoleOption(this, 'medOptImg', 'medOptTitle', 'medOptDesc', 'medOptTag', 'medOptZoomBtn', './assets/gestion_conductas.png', './assets/gestion_conductas.png', 'Cuadros estadísticos', 'Consolidado de incidencias y acuerdos para consejos de sección y coordinación de orientación vocacional.', 'CONVIVENCIA BACHILLERATO')">
+                    onclick="selectRoleOption(this, 'medOptTitle', 'medOptDesc', 'medOptTag', 'Cuadros estadísticos (Conducta)', 'Consolidado de incidencias y acuerdos para consejos de sección y coordinación de orientación vocacional.', 'CONVIVENCIA BACHILLERATO')"
+                    onmouseenter="selectRoleOption(this, 'medOptTitle', 'medOptDesc', 'medOptTag', 'Cuadros estadísticos (Conducta)', 'Consolidado de incidencias y acuerdos para consejos de sección y coordinación de orientación vocacional.', 'CONVIVENCIA BACHILLERATO')">
               <span class="role-option-icon">📋</span>
               <div class="role-option-info">
                 <span class="role-option-title">Cuadros estadísticos</span>
                 <span class="role-option-scope">Registros de conducta por curso</span>
               </div>
-              <div class="role-option-thumb">
-                <img src="./assets/gestion_conductas.png" alt="Cuadros estadísticos" loading="lazy">
-              </div>
             </button>
             <button type="button" class="role-option-item" 
-                    onclick="selectRoleOption(this, 'medOptImg', 'medOptTitle', 'medOptDesc', 'medOptTag', 'medOptZoomBtn', './assets/gestion_crp.png', './assets/gestion_crp.png', 'Estudiantes Grupos CRP', 'Gestión integral de talleres CRP (Robótica, Teatro, Ensamble de Música, Medios Digitales, Agroecología).', 'ASIGNACIÓN GRUPOS CRP')"
-                    onmouseenter="selectRoleOption(this, 'medOptImg', 'medOptTitle', 'medOptDesc', 'medOptTag', 'medOptZoomBtn', './assets/gestion_crp.png', './assets/gestion_crp.png', 'Estudiantes Grupos CRP', 'Gestión integral de talleres CRP (Robótica, Teatro, Ensamble de Música, Medios Digitales, Agroecología).', 'ASIGNACIÓN GRUPOS CRP')">
+                    onclick="selectRoleOption(this, 'medOptTitle', 'medOptDesc', 'medOptTag', 'Estudiantes Grupos CRP', 'Gestión integral de talleres CRP (Robótica, Teatro, Ensamble de Música, Medios Digitales, Agroecología).', 'ASIGNACIÓN GRUPOS CRP')"
+                    onmouseenter="selectRoleOption(this, 'medOptTitle', 'medOptDesc', 'medOptTag', 'Estudiantes Grupos CRP', 'Gestión integral de talleres CRP (Robótica, Teatro, Ensamble de Música, Medios Digitales, Agroecología).', 'ASIGNACIÓN GRUPOS CRP')">
               <span class="role-option-icon">🎨</span>
               <div class="role-option-info">
                 <span class="role-option-title">Estudiantes Grupos CRP</span>
                 <span class="role-option-scope">Creación, Recreación y Producción</span>
               </div>
-              <div class="role-option-thumb">
-                <img src="./assets/gestion_crp.png" alt="Estudiantes Grupos CRP" loading="lazy">
-              </div>
             </button>
             <button type="button" class="role-option-item" 
-                    onclick="selectRoleOption(this, 'medOptImg', 'medOptTitle', 'medOptDesc', 'medOptTag', 'medOptZoomBtn', './assets/gestion_crp.png', './assets/gestion_crp.png', 'Carga de notas CRP', 'Control estricto de actas y calificaciones cualitativas de CRP para la certificación oficial del lapso.', 'CIERRE DE NOTAS CRP')"
-                    onmouseenter="selectRoleOption(this, 'medOptImg', 'medOptTitle', 'medOptDesc', 'medOptTag', 'medOptZoomBtn', './assets/gestion_crp.png', './assets/gestion_crp.png', 'Carga de notas CRP', 'Control estricto de actas y calificaciones cualitativas de CRP para la certificación oficial del lapso.', 'CIERRE DE NOTAS CRP')">
+                    onclick="selectRoleOption(this, 'medOptTitle', 'medOptDesc', 'medOptTag', 'Carga de notas CRP', 'Control estricto de actas y calificaciones cualitativas de CRP para la certificación oficial del lapso.', 'CIERRE DE NOTAS CRP')"
+                    onmouseenter="selectRoleOption(this, 'medOptTitle', 'medOptDesc', 'medOptTag', 'Carga de notas CRP', 'Control estricto de actas y calificaciones cualitativas de CRP para la certificación oficial del lapso.', 'CIERRE DE NOTAS CRP')">
               <span class="role-option-icon">📥</span>
               <div class="role-option-info">
                 <span class="role-option-title">Carga de notas CRP</span>
                 <span class="role-option-scope">Reporte de carga de calificaciones</span>
               </div>
-              <div class="role-option-thumb">
-                <img src="./assets/gestion_crp.png" alt="Carga de notas CRP" loading="lazy">
-              </div>
             </button>
           </div>
         </div>
 
-        <!-- Panel Derecho: Showcase con Captura en Vivo -->
+        <!-- Panel Derecho: Módulo de Interfaz del Rol (Preparado para 1 Captura) -->
         <div class="role-showcase-panel">
           <div class="role-showcase-header">
             <div class="showcase-header-left">
@@ -3910,17 +4096,52 @@
                 <span class="showcase-dot yellow"></span>
                 <span class="showcase-dot green"></span>
               </div>
-              <span id="medOptTag" class="showcase-tag-pill">PLANIFICACIÓN DE LAPSO</span>
+              <span id="medOptTag" class="showcase-tag-pill" style="border-color: #A855F7; color: #C084FC; background: rgba(168, 85, 247, 0.16);">PLANIFICACIÓN DE LAPSO</span>
               <span id="medOptTitle" class="showcase-option-title">Estrategias evaluadas</span>
             </div>
-            <button type="button" id="medOptZoomBtn" class="showcase-zoom-btn" onclick="openZoom('./assets/sisceba_dashboard_real.png', 'PLANIFICACIÓN DE LAPSO: Estrategias evaluadas')">
-              🔍 Ampliar Captura
-            </button>
+            <span class="role-single-cap-pill" style="border-color: #A855F7; color: #C084FC;">1 Captura de Interfaz</span>
           </div>
 
-          <div class="role-showcase-viewport" onclick="openZoom('./assets/sisceba_dashboard_real.png', 'PLANIFICACIÓN DE LAPSO: Estrategias evaluadas')">
-            <img id="medOptImg" src="./assets/sisceba_dashboard_real.png" alt="Estrategias evaluadas" loading="lazy">
-            <span class="viewport-zoom-hint">🔍 Clic para pantalla completa</span>
+          <div class="role-interface-canvas">
+            <div class="canvas-topbar">
+              <div class="canvas-sys-info">
+                <span class="canvas-dot-pulse" style="background: #A855F7;"></span>
+                <span class="canvas-brand">SICE-CBA</span>
+                <span class="canvas-slash">/</span>
+                <span class="canvas-role-badge">🎓 Coord. Media General</span>
+              </div>
+              <div class="canvas-tabs-preview">
+                <span class="canvas-tab active" style="border-color: #A855F7; color: #C084FC;">1.° a 5.° Año</span>
+                <span class="canvas-tab">Escala 01-20 Vigesimal</span>
+                <span class="canvas-tab">Talleres CRP</span>
+              </div>
+            </div>
+
+            <div class="canvas-pillars-grid">
+              <div class="canvas-pillar-card">
+                <span class="pillar-icon">🎓</span>
+                <span class="pillar-title">Escala 01-20 Vigesimal</span>
+                <span class="pillar-desc">Cálculo exacto, mínimo aprobatorio 10 pts y promedios ponderados CBA.</span>
+              </div>
+              <div class="canvas-pillar-card">
+                <span class="pillar-icon">🎨</span>
+                <span class="pillar-title">Talleres Activos CRP</span>
+                <span class="pillar-desc">Robótica Maker, Teatro, Ensamble Musical, Medios Digitales y Agroecología.</span>
+              </div>
+              <div class="canvas-pillar-card">
+                <span class="pillar-icon">⚖️</span>
+                <span class="pillar-title">Auditoría LOE Art. 109</span>
+                <span class="pillar-desc">Cálculo porcentual de inasistencias y alertas tempranas del umbral del 25%.</span>
+              </div>
+            </div>
+
+            <div class="role-capture-slot">
+              <div class="capture-slot-icon">🖥️</div>
+              <div class="capture-slot-content">
+                <span class="capture-slot-title">Espacio Preparado para Captura de Interfaz del Rol</span>
+                <span class="capture-slot-sub">Se incorporará la captura representativa de la interfaz de Coordinación Media General</span>
+              </div>
+            </div>
           </div>
 
           <div class="role-showcase-footer">
@@ -4251,25 +4472,13 @@
     }, false);
 
     
-    // Selector Interactivo de Opciones y Capturas por Rol
-    function selectRoleOption(optionEl, imgId, titleId, descId, tagId, zoomBtnId, imgSrc, fullImgSrc, title, desc, tag) {
+    // Selector de Tareas por Rol
+    function selectRoleOption(optionEl, titleId, descId, tagId, title, desc, tag) {
       const list = optionEl.closest('.role-options-list');
       if (list) {
         list.querySelectorAll('.role-option-item').forEach(el => el.classList.remove('active'));
       }
       optionEl.classList.add('active');
-
-      const img = document.getElementById(imgId);
-      if (img) {
-        img.style.opacity = '0.35';
-        img.style.transform = 'scale(0.98)';
-        setTimeout(() => {
-          img.src = imgSrc;
-          img.alt = title;
-          img.style.opacity = '1';
-          img.style.transform = 'scale(1)';
-        }, 90);
-      }
 
       const titleEl = document.getElementById(titleId);
       if (titleEl) titleEl.textContent = title;
@@ -4279,16 +4488,6 @@
 
       const tagEl = document.getElementById(tagId);
       if (tagEl) tagEl.textContent = tag;
-
-      const zoomBtn = document.getElementById(zoomBtnId);
-      if (zoomBtn) {
-        zoomBtn.onclick = () => openZoom(fullImgSrc || imgSrc, `${tag}: ${title}`);
-      }
-
-      const viewport = img ? img.closest('.role-showcase-viewport') : null;
-      if (viewport) {
-        viewport.onclick = () => openZoom(fullImgSrc || imgSrc, `${tag}: ${title}`);
-      }
     }
 
     // Hash navigation support (e.g. #3 or #slide-3)
