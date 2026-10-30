@@ -184,7 +184,7 @@
       padding: 3px 12px !important;
     }
 
-    /* Portada: Tarjetas de estadísticas de alto contraste */
+    /* Portada: Tarjetas y Elementos de Alto Contraste */
     body.light-mode .hero-stat-card {
       background: #FFFDF5 !important;
       border: 2px solid #D97706 !important;
@@ -199,6 +199,98 @@
       color: #0F172A !important;
       font-weight: 700 !important;
       font-size: 12.5px !important;
+    }
+    body.light-mode .hero-cover-badge {
+      background: #FEF3C7 !important;
+      border: 1.5px solid #D97706 !important;
+    }
+    body.light-mode .hero-badge-title {
+      color: #92400E !important;
+      font-weight: 900 !important;
+    }
+    body.light-mode .hero-badge-pill {
+      background: #DCFCE7 !important;
+      border-color: #059669 !important;
+      color: #065F46 !important;
+      font-weight: 900 !important;
+    }
+    body.light-mode .hero-cover-title {
+      background: linear-gradient(135deg, #000000 30%, #1E3A8A 70%, #92400E 100%) !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+      font-weight: 900 !important;
+    }
+    body.light-mode .hero-cover-desc {
+      color: #0F172A !important;
+      font-weight: 600 !important;
+    }
+    body.light-mode .roadmap-card {
+      background: #FFFFFF !important;
+      border: 2px solid #CBD5E1 !important;
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.08) !important;
+    }
+    body.light-mode .roadmap-card.phase-active {
+      border: 2.5px solid #059669 !important;
+      background: #F0FDF4 !important;
+    }
+    body.light-mode .roadmap-card.phase-scheduled {
+      border: 2.5px solid #D97706 !important;
+      background: #FFFDF5 !important;
+    }
+    body.light-mode .phase-chip {
+      background: #DCFCE7 !important;
+      color: #065F46 !important;
+      border-color: #059669 !important;
+      font-weight: 900 !important;
+    }
+    body.light-mode .phase-chip.gold {
+      background: #FEF3C7 !important;
+      color: #78350F !important;
+      border-color: #D97706 !important;
+      font-weight: 900 !important;
+    }
+    body.light-mode .status-live-chip {
+      color: #065F46 !important;
+      font-weight: 900 !important;
+    }
+    body.light-mode .status-target-chip {
+      color: #92400E !important;
+      font-weight: 900 !important;
+    }
+    body.light-mode .roadmap-phase-title {
+      color: #000000 !important;
+      font-weight: 900 !important;
+    }
+    body.light-mode .roadmap-phase-desc {
+      color: #1E293B !important;
+      font-weight: 600 !important;
+    }
+    body.light-mode .roadmap-tag {
+      background: #F1F5F9 !important;
+      color: #0F172A !important;
+      border-color: #94A3B8 !important;
+      font-weight: 800 !important;
+    }
+    body.light-mode .roadmap-tag.gold {
+      background: #FEF3C7 !important;
+      color: #78350F !important;
+      border-color: #D97706 !important;
+      font-weight: 900 !important;
+    }
+    body.light-mode .arrow-circle {
+      background: #FEF3C7 !important;
+      border-color: #D97706 !important;
+      color: #92400E !important;
+    }
+    body.light-mode .hero-cover-right .inst-pillar-item {
+      background: rgba(255, 255, 255, 0.08) !important;
+      border: 1px solid rgba(217, 119, 6, 0.45) !important;
+    }
+    body.light-mode .hero-cover-right .pillar-text strong {
+      color: #FFFFFF !important;
+    }
+    body.light-mode .hero-cover-right .pillar-text small {
+      color: #E2E8F0 !important;
     }
 
     /* Slide 2: 3 Puntos Críticos (Modo Claro de Alto Contraste) */
@@ -1104,30 +1196,44 @@
     .slide.active .task-card,
     .slide.active .feature-card,
     .slide.active .hero-stat-card,
-    .slide.active .hero-visual {
+    .slide.active .hero-visual,
+    .slide.active .hero-cover-badge,
+    .slide.active .roadmap-card,
+    .slide.active .roadmap-arrow-divider {
       animation: slideCardStagger 0.5s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+    }
+
+    .slide.active .hero-cover-badge {
+      animation-delay: 0.06s;
     }
 
     .slide.active .crit-card:nth-child(1),
     .slide.active .comp-col:nth-child(1),
     .slide.active .task-card:nth-child(1),
     .slide.active .feature-card:nth-child(1),
-    .slide.active .hero-stat-card:nth-child(1) {
+    .slide.active .hero-stat-card:nth-child(1),
+    .slide.active .roadmap-card.phase-active {
       animation-delay: 0.12s;
+    }
+
+    .slide.active .roadmap-arrow-divider {
+      animation-delay: 0.18s;
     }
 
     .slide.active .crit-card:nth-child(2),
     .slide.active .comp-col:nth-child(2),
     .slide.active .task-card:nth-child(2),
     .slide.active .feature-card:nth-child(2),
-    .slide.active .hero-stat-card:nth-child(2) {
-      animation-delay: 0.20s;
+    .slide.active .hero-stat-card:nth-child(2),
+    .slide.active .roadmap-card.phase-scheduled {
+      animation-delay: 0.22s;
     }
 
     .slide.active .crit-card:nth-child(3),
     .slide.active .task-card:nth-child(3),
     .slide.active .feature-card:nth-child(3),
-    .slide.active .hero-visual {
+    .slide.active .hero-visual,
+    .slide.active .hero-cover-right {
       animation-delay: 0.28s;
     }
 
