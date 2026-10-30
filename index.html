@@ -2834,13 +2834,47 @@
   <script>
     const slides = Array.from(document.querySelectorAll('.slide'));
     let currentIndex = 0;
+    const transitionTypes = ['slide', 'fade', 'cube', 'stack'];
+
+    // Manejo de Transiciones Animadas entre Diapositivas
+    function setTransition(type, save = true) {
+      if (!transitionTypes.includes(type)) type = 'slide';
+      document.body.setAttribute('data-transition', type);
+      const select = document.getElementById('transitionSelect');
+      if (select && select.value !== type) {
+        select.value = type;
+      }
+      if (save) {
+        localStorage.setItem('siceba_transition', type);
+      }
+    }
+
+    function changeTransition(type) {
+      setTransition(type, true);
+    }
+
+    function cycleTransition() {
+      const current = document.body.getAttribute('data-transition') || 'slide';
+      const nextIdx = (transitionTypes.indexOf(current) + 1) % transitionTypes.length;
+      setTransition(transitionTypes[nextIdx], true);
+    }
+
+    // Inicializar transición guardada (por defecto 'slide' fluido)
+    const savedTransition = localStorage.getItem('siceba_transition') || 'slide';
+    setTransition(savedTransition, false);
 
     function updatePresentation() {
-      slides.forEach(s => s.classList.remove('active'));
-      const activeSlide = slides[currentIndex];
-      if (activeSlide) {
-        activeSlide.classList.add('active');
-      }
+      slides.forEach((slide, idx) => {
+        slide.classList.remove('active', 'past', 'future');
+        if (idx === currentIndex) {
+          slide.classList.add('active');
+          slide.scrollTop = 0;
+        } else if (idx < currentIndex) {
+          slide.classList.add('past');
+        } else {
+          slide.classList.add('future');
+        }
+      });
 
       // Update counter and progress
       const counter = document.getElementById('slideCounter');
@@ -2927,6 +2961,8 @@
         toggleDrawer();
       } else if (e.key === 'd' || e.key === 'D') {
         toggleTheme();
+      } else if (e.key === 'm' || e.key === 'M') {
+        cycleTransition();
       }
     });
 
