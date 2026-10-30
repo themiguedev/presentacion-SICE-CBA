@@ -18,7 +18,6 @@ El sistema se encuentra actualmente en **fase activa de validaciÃ³n y pruebas 
 
 1. **Portada & Estado del Proyecto:**
    - PresentaciÃ³n institucional, escudo oficial y distinciÃ³n del plan: *Fase 1: Pruebas Locales* âž” *Fase 2: Despliegue en Servidores del Colegio*.
-   - Principios rectores: Secciones estrictas A y B, y apego 100% a la legalidad MPPE.
 
 2. **De CEO a SICE-CBA en 3 Puntos CrÃ­ticos:**
    - **Infraestructura:** Servidores físicos vulnerables a fluctuaciones eléctricas vs. Sistema y base de datos integrados en un mismo servidor con opción de enlace a la nube sincronizado para garantizar máxima estabilidad.
