@@ -1,336 +1,82 @@
 ================================================================================
-                    ESTRUCTURA DE LA PRESENTACIÓN EJECUTIVA
-                     SICE-CBA: CONTROL DE ESTUDIOS MODERNO
+           ESTRUCTURA DE LA PRESENTACIÓN: SICE-CBA (COLEGIO BELLAS ARTES)
 ================================================================================
 
-DATOS GENERALES DE LA INSTITUCIÓN Y PROYECTO:
----------------------------------------------
-* Institución:        U.E.P. Colegio Bellas Artes (CBA)
-* Ubicación:          Maracaibo, Estado Zulia, Venezuela
-* Código DEA:         S0432D2305
-* Sistema Evaluado:   SICE-CBA (Plataforma 2026+ SPA / PostgreSQL 16 / On-Premise)
-* Sistema Histórico:  CEO (Control Estudiantil Online / Lidsoftware, PHP clásico 2012)
-* Estado Actual:      Fase 1: Pruebas y Validación Local -> Hacia Fase 2: Servidores CBA
-* Repositorio:        https://github.com/themiguedev/presentacion-SICE-CBA
-* Total Diapositivas: 9 Diapositivas Interactivas
-
-================================================================================
-                         ÍNDICE GENERAL DE DIAPOSITIVAS
-================================================================================
-
-[01] DIAPOSITIVA 1: Portada Institucional y Estado del Proyecto
-[02] DIAPOSITIVA 2: Diagnóstico y Transformación: De CEO a SICE-CBA en 3 Puntos Críticos
-[03] DIAPOSITIVA 3: Comparativa Visual: Escritorio Principal & Centro de Comando
-[04] DIAPOSITIVA 4: Operatividad Directiva: Rol Directora (Supervisión General - 10 Tareas)
-[05] DIAPOSITIVA 5: Nivel Maternal y Preescolar: Rol Coordinación Inicial (5 Tareas)
-[06] DIAPOSITIVA 6: Nivel Primaria (1.° a 6.° Grado): Rol Coordinación Primaria (8 Tareas)
-[07] DIAPOSITIVA 7: Nivel Media General (1.° a 5.° Año): Rol Coordinación Media (10 Tareas)
-[08] DIAPOSITIVA 8: Reglas de Negocio Oficiales MPPE y Roles Blindados de Personal
-[09] DIAPOSITIVA 9: Plan de Despliegue a Servidores del Colegio & Preguntas y Respuestas
-
-================================================================================
-                      DESGLOSE DETALLADO POR DIAPOSITIVA
-================================================================================
+INSTITUCIÓN: U.E.P. Colegio Bellas Artes · Código DEA: S0432D2305
+PROPÓSITO:   Comparativa ejecutiva CEO vs. SICE-CBA y Plan de Despliegue 2026
+TOTAL:       9 Diapositivas
 
 --------------------------------------------------------------------------------
-[01] DIAPOSITIVA 1: PORTADA & ESTADO DEL PROYECTO
+DIAPOSITIVAS
 --------------------------------------------------------------------------------
-* Audiencia / Categoría: ALL (Todos: Directiva, Docentes, Personal Técnico)
-* Encabezado: "Modernización · Homologación 2026"
-* Título Principal: "SICE-CBA: Evolución del Control de Estudios"
-* Subtítulo / Descripción:
-  - Presentación ejecutiva comparativa frente al sistema histórico CEO.
-  - Enfoque actual: Fase activa de homologación local con miras a la aprobación
-    y despliegue definitivo en la infraestructura de hardware propio del colegio.
-* Ejes de Planificación Mostrados:
-  - Fase 1 [En Curso]: Validación y Pruebas Locales (Homologación de notas,
-    matrícula, boletines y cálculo de promedios).
-  - Fase 2 [Próximo Hito]: Servidores del Colegio (Despliegue en red interna y
-    hardware local propio CBA).
-* Identidad Institucional:
-  - Escudo oficial dorado Bellas Artes.
-  - Lemas: "Excelencia Académica" y "Soberanía de Datos · Servidores Propios".
 
---------------------------------------------------------------------------------
-[02] DIAPOSITIVA 2: DE CEO A SICE-CBA EN 3 PUNTOS CRÍTICOS
---------------------------------------------------------------------------------
-* Audiencia / Categoría: ALL
-* Tag / Etiqueta: "Diagnóstico y Transformación · 3 Ejes Fundamentales"
-* Título: "De CEO a SICE–CBA en 3 Puntos Críticos"
-* Subtítulo: "Principales cuellos de botella del sistema histórico frente a las
-  soluciones de alto impacto del nuevo sistema:"
-* Tres Tarjetas Comparativas (Cuello de Botella vs. Solución SICE-CBA):
+1. PORTADA & ESTADO DEL PROYECTO
+   - Presentación institucional y escudo CBA.
+   - Estado actual: Fase 1 (Pruebas Locales) -> Próximo: Fase 2 (Servidores CBA).
 
-  1. INFRAESTRUCTURA (Estabilidad & Servidores):
-     - CEO (Anterior / Inestable): Fluctuaciones eléctricas reinician servidores
-       físicos vulnerables, provocando caídas de servicio e inaccesibilidad.
-     - SICE-CBA (Nuevo / Resiliente): Servidor local unificado (aplicación y base
-       de datos en alta velocidad) con opción de sincronización redundante en la
-       nube para garantizar cero caídas.
-     - Insignias clave: Cero Caídas | Sincronización Nube | Host Local.
+2. DE CEO A SICE-CBA EN 3 PUNTOS CRÍTICOS
+   - Infraestructura: Servidor local unificado + enlace nube (Cero caídas).
+   - Velocidad: SPA reactiva con guardado automático celda por celda (Sin F5).
+   - Control: Soporte oficial para Sección U (Única) además de Secciones A y B.
 
-  2. VELOCIDAD Y FLUIDEZ (Rendimiento Reactivo):
-     - CEO (Anterior / F5 & Lentitud): PHP clásico de 2012, más de 136 URLs
-       dispersas, recarga completa de pantalla en cada acción y constante riesgo
-       de pérdida de notas ingresadas.
-     - SICE-CBA (Nuevo / Instantáneo): SPA (Single Page Application) moderna y
-       reactiva. Guardado automático celda por celda en tiempo real (Auto-Save)
-       sin necesidad de recargar la página ni perder datos jamás.
-     - Insignias clave: 0 Recargas F5 | Auto-Save Celda x Celda | SPA Instantánea.
+3. ESCRITORIO PRINCIPAL & CENTRO DE COMANDO (COMPARATIVA VISUAL)
+   - CEO: Menú lateral rígido de 2012, tablas lentas y fragmentadas.
+   - SICE-CBA: Panel en tiempo real con métricas clave y buscador global (Ctrl+K).
 
-  3. CONTROL (Gestión de Secciones y Organización):
-     - CEO (Anterior / Rígido): Manejo exclusivo de secciones A y B, sin soporte
-       para sección única.
-     - SICE-CBA (Nuevo / Flexible): Implementación nativa de la Sección U (Única),
-       además de A y B, adaptándose con exactitud a la realidad de cada grado.
-     - Insignias clave: Secciones A y B | Sección U (Única) | Normativa Oficial.
+4. ROL DIRECTORA: SUPERVISIÓN GENERAL (10 TAREAS)
+   - Estrategias de aula por docente y curso.
+   - Control diario de asistencia (Portería y umbral LOE Art. 109).
+   - Bitácora de conducta y acuerdos escolares.
+   - Calificaciones por estudiante y curso con Doble Pensum (MPPE y CBA).
+   - Cuadros estadísticos (Rendimiento, asistencia y conducta).
+   - Gestión y carga de notas de Grupos CRP.
 
---------------------------------------------------------------------------------
-[03] DIAPOSITIVA 3: ESCRITORIO PRINCIPAL & CENTRO DE COMANDO
---------------------------------------------------------------------------------
-* Audiencia / Categoría: ALL
-* Tag / Etiqueta: "Comparativa Visual · Experiencia de Usuario"
-* Título: "Escritorio Principal & Centro de Comando"
-* Subtítulo: "De un panel estático y desordenado a un centro de control con
-  métricas e indicadores en vivo."
-* Comparación Cara a Cara (Pantalla Dividida 50/50 con Capturas Reales en HD):
-  - Lado Izquierdo (CEO - Sistema Anterior):
-    * Captura de pantalla real de la interfaz PHP de 2012.
-    * Menú lateral rígido con opciones redundantes que sobrecargaban al usuario.
-    * Consultas lentas para refrescar contadores, sin buscador rápido.
-  - Lado Derecho (SICE-CBA - Nuevo Sistema):
-    * Captura real del panel "Academic Pulse Hero" con estadísticas en vivo.
-    * Buscador universal instantáneo accesible mediante atajo (Ctrl+K).
-    * Accesos directos a matriculación, sábanas de notas y reportes con un clic.
-* Funcionalidad Interactiva: Modal de zoom en alta definición al hacer clic.
+5. ROL COORDINACIÓN INICIAL: MATERNAL & PREESCOLAR (5 TAREAS)
+   - Banco de indicadores por áreas de desarrollo de la primera infancia.
+   - Reporte de indicadores actitudinales y socioemocionales.
+   - Evaluación cualitativa individual y sábana consolidada de salas.
+   - Escala oficial literal exclusiva: A, B, C, D, E (Sin notas numéricas).
+   - Estadísticas de avance y cobertura pedagógica.
+
+6. ROL COORDINACIÓN PRIMARIA: 1.° A 6.° GRADO (8 TAREAS)
+   - Indicadores cualitativos oficiales MPPE: Logrado (L), En Proceso (EP), Iniciado (I).
+   - Asistencia diaria por aula y control de disciplina/conducta.
+   - Doble pensum formativo: Boletín oficial MPPE y asignaturas CBA.
+   - Sábana digital reactiva para Secciones A, B y Sección U.
+   - Cuadros estadísticos de rendimiento, ausentismo y convivencia.
+
+7. ROL COORDINACIÓN MEDIA GENERAL: 1.° A 5.° AÑO (10 TAREAS)
+   - Control de planes de evaluación y ponderaciones sobre 20 puntos.
+   - Asistencia por hora académica y auditoría de inasistencias (LOE Art. 109).
+   - Expediente disciplinario de bachillerato y citaciones.
+   - Doble pensum vigesimal (Escala 01 a 20; mínimo aprobatorio 10 pts).
+   - Sábana completa de 1.° a 5.° Año y cuadros de rendimiento.
+   - Asignación de nóminas y cierre de actas en Grupos CRP.
+
+8. ESCALAS EVALUATIVAS OFICIALES Y ROLES DE PERSONAL
+   - Inicial: Escala Literal Oficial (A - E).
+   - Primaria: Escala Cualitativa Formativa (L, EP, I).
+   - Media General: Escala Vigesimal Cuantitativa (01 - 20).
+   - Seguridad de Roles:
+     * Secretaría: Solo Asistencia y Conducta (Bloqueo total a notas).
+     * Docente: Planificación y Notas de sus materias.
+     * Administrador: Matrícula, Usuarios y Auditoría global.
+
+9. PLAN DE DESPLIEGUE A SERVIDORES DEL CBA & PREGUNTAS
+   - Ruta en 4 Fases:
+     1. Pruebas Locales (En curso).
+     2. Instalación en Servidores del Colegio (PostgreSQL 16 + Node.js).
+     3. Inducción al Personal y Códigos de Acceso.
+     4. Apagado definitivo y migración desde CEO.
+   - Espacio de Preguntas y Respuestas.
 
 --------------------------------------------------------------------------------
-[04] DIAPOSITIVA 4: OPERATIVIDAD DIRECTIVA (ROL DIRECTORA)
+ATAJOS DE NAVEGACIÓN
 --------------------------------------------------------------------------------
-* Audiencia / Categoría: DIRECTIVA
-* Tag / Etiqueta: "Operatividad Directiva · 10 Tareas · Supervisión General"
-* Título: "Rol Directora: Supervisión General"
-* Subtítulo: "Monitoreo continuo de los 3 subsistemas, doble pensum y auditoría
-  pedagógica institucional:"
-* Módulo Interactivo: Selector lateral de 10 tareas con showcase visual dinámico:
-
-  1. Estrategias evaluadas (Por curso y por docente):
-     - Auditoría en tiempo real de la malla curricular (18 materias) y avance
-       programático de cada docente.
-  2. Registros de asistencia (Por curso y por estudiante):
-     - Control diario con registro de pases en portería, índice CBA (98.4%) y
-       alertas tempranas según LOE Art. 109.
-  3. Registros de conducta (Por curso y por estudiante):
-     - Bitácora disciplinaria institucional: seguimiento de faltas leves,
-       graves y reconocimientos al mérito vinculados a ambos padres.
-  4. Calificaciones por estudiante (Promedio MPPE y Promedio CBA):
-     - Cálculo automático simultáneo de promedios ponderados ministeriales MPPE
-       y promedios internos CBA sin recargas.
-  5. Calificaciones por curso (Pensum MPPE y Pensum CBA):
-     - Sábana institucional completa con desglose de materias oficiales y
-       materias del programa de formación artística Bellas Artes.
-  6. Cuadros estadísticos de calificaciones por curso:
-     - Semáforo de rendimiento general, Promedio UCE (16.4/20) y porcentajes
-       consolidados de aprobación.
-  7. Cuadros estadísticos de asistencia por curso:
-     - Monitoreo preventivo del umbral del 25% de inasistencias acumuladas
-       para la toma de decisiones por Dirección.
-  8. Cuadros estadísticos de registros de conducta por curso:
-     - Métricas agregadas de comportamiento, reconocimientos y acuerdos
-       escolares para el Consejo Directivo.
-  9. Estudiantes Grupos CRP (Creación, Recreación y Producción):
-     - Gestión centralizada de nóminas de robótica, teatro, música, medios
-       digitales y agroecología sin duplicidad.
-  10. Carga de notas CRP (Reporte de carga docente):
-      - Supervisión de actas evaluativas y calificaciones de talleres para el
-        cierre reglamentario de cada lapso.
-
---------------------------------------------------------------------------------
-[05] DIAPOSITIVA 5: ROL COORDINACIÓN INICIAL (MATERNAL & PREESCOLAR)
---------------------------------------------------------------------------------
-* Audiencia / Categoría: DOCENTES & DIRECTIVA
-* Tag / Etiqueta: "Nivel Maternal & Preescolar · 5 Tareas · Valoración Cualitativa"
-* Título: "Rol Coordinación Inicial: Maternal & Preescolar"
-* Subtítulo: "Acompañamiento pedagógico formativo, áreas de desarrollo en la
-  primera infancia y escala literal oficial (A a E):"
-* Módulo Interactivo: Selector de 5 tareas con showcase de capturas de sala:
-
-  1. Indicadores evaluados (Reporte de indicadores pedagógicos):
-     - Banco oficial de indicadores adaptados al currículo de educación inicial
-       y áreas evolutivas del niño.
-  2. Indicadores Actitudinales (Reporte específico evaluado):
-     - Registro cualitativo de adaptación socioemocional, hábitos de trabajo y
-       convivencia armónica en edad temprana.
-  3. Consulta de evaluación individual por estudiante:
-     - Expediente detallado del progreso formativo del infante con valoraciones
-       literales (A, B, C, D, E) y observaciones descriptivas.
-  4. Consulta de evaluación consolidada por curso:
-     - Visión panorámica de las salas de 3, 4 y 5 años con áreas de desarrollo
-       (Personal, Social, Ambiente, Expresión Plástica y Musical).
-  5. Cuadros estadísticos (Valoración por curso y estudiante):
-     - Porcentaje de infantes valorados, avance de carga por sala y semáforo
-       de cumplimiento pedagógico.
-
---------------------------------------------------------------------------------
-[06] DIAPOSITIVA 6: ROL COORDINACIÓN PRIMARIA (1.° A 6.° GRADO)
---------------------------------------------------------------------------------
-* Audiencia / Categoría: DOCENTES & DIRECTIVA
-* Tag / Etiqueta: "Nivel Primaria (1.° a 6.° Grado) · 8 Tareas · Doble Pensum"
-* Título: "Rol Coordinación Primaria: 1.° a 6.° Grado"
-* Subtítulo: "Seguimiento de competencias fundamentales, evaluación continua,
-  asistencia y doble pensum (MPPE vs CBA):"
-* Módulo Interactivo: Selector de 8 tareas con showcase en vivo de sábanas:
-
-  1. Indicadores evaluados (Por curso y por docente):
-     - Evaluación formativa cualitativa oficial MPPE en competencias básicas
-       (Logrado · En Proceso · Iniciado).
-  2. Registros de asistencia (Por curso y por estudiante):
-     - Control diario de aula con justificación de inasistencias, control de
-       portería y seguimiento de puntualidad.
-  3. Registros de conducta (Por curso y por estudiante):
-     - Registro preventivo de acuerdos de convivencia escolar, hábitos y
-       reconocimientos al mérito en primaria.
-  4. Calificaciones por estudiante (Promedio MPPE y Promedio CBA):
-     - Escala cualitativa oficial ministerial (L, EP, I) articulada con la
-       ponderación del pensum institucional Bellas Artes.
-  5. Calificaciones por curso (Pensum MPPE y Pensum CBA):
-     - Sábana digital reactiva en tiempo real de 1.° a 6.° Grado, con soporte
-       oficial para Secciones A, B y Sección U (Única).
-  6. Cuadros estadísticos de calificaciones por curso:
-     - Consolidado gráfico de niveles de logro por asignatura y grado para
-       orientación y planes de nivelación.
-  7. Cuadros estadísticos de asistencia por curso:
-     - Semáforo de asistencia escolar (índice 98.4%) y detección temprana de
-       ausentismo crónico.
-  8. Cuadros estadísticos de conducta por curso:
-     - Monitoreo sistemático del clima escolar y cumplimiento de normativas.
-
---------------------------------------------------------------------------------
-[07] DIAPOSITIVA 7: ROL COORDINACIÓN MEDIA GENERAL (1.° A 5.° AÑO)
---------------------------------------------------------------------------------
-* Audiencia / Categoría: DOCENTES & DIRECTIVA
-* Tag / Etiqueta: "Nivel Media General (1.° a 5.° Año) · 10 Tareas · Escala 01-20"
-* Título: "Rol Coordinación Media General: 1.° a 5.° Año"
-* Subtítulo: "Gestión rigurosa de la escala vigesimal (01-20), doble pensum,
-  Grupos CRP y auditoría LOE Art. 109:"
-* Módulo Interactivo: Selector de 10 tareas con showcase visual dinámico:
-
-  1. Estrategias evaluadas (Por curso y por docente):
-     - Control normado de planes de evaluación, ponderaciones vigesimales
-       (máximo 20 puntos) y calendario de evaluaciones sumativas.
-  2. Registros de asistencia (Por curso y por estudiante):
-     - Control por hora de clase académica con cómputo de porcentaje de horas
-       para validar derecho a presentación de evaluaciones.
-  3. Registros de conducta (Por curso y por estudiante):
-     - Historial disciplinario de bachillerato, actas de compromiso pedagógico
-       y citaciones formales a representantes.
-  4. Calificaciones por estudiante (Promedio MPPE y Promedio CBA):
-     - Cálculo matemático exacto en escala 01-20 (mínimo aprobatorio de 10 pts)
-       y promedio ponderado institucional de Bellas Artes.
-  5. Calificaciones por curso (Pensum MPPE y Pensum CBA):
-     - Sábana digital de 1.° a 5.° Año con materias oficiales MPPE y
-       especialidades CBA (Robótica Aplicada, Inglés Avanzado, Artes).
-  6. Cuadros estadísticos de calificaciones por curso:
-     - Curvas de rendimiento, materias críticas y cuadro de honor estudiantil.
-  7. Cuadros estadísticos de asistencia por curso:
-     - Auditoría estricta del 25% de inasistencias injustificadas según LOE
-       Artículo 109 para emitir alertas normativas oportunas.
-  8. Cuadros estadísticos de registros de conducta por curso:
-     - Consolidado de incidencias y acuerdos para consejos de sección y
-       orientación vocacional.
-  9. Estudiantes Grupos CRP (Creación, Recreación y Producción):
-     - Nóminas de talleres extracurriculares y formativos (Robótica, Teatro,
-       Ensamble Musical, Medios Audiovisuales, Agroecología).
-  10. Carga de notas CRP (Reporte de carga de calificaciones):
-      - Validación de actas cualitativas de CRP requeridas para la certificación
-        oficial de notas de bachillerato.
-
---------------------------------------------------------------------------------
-[08] DIAPOSITIVA 8: REGLAS OFICIALES MPPE Y ROLES BLINDADOS
---------------------------------------------------------------------------------
-* Audiencia / Categoría: DOCENTES & DIRECTIVA
-* Tag / Etiqueta: "Reglas de Negocio Oficiales MPPE · Pedagógico & Roles"
-* Título: "Escalas Evaluativas Oficiales y Roles de Personal"
-* Subtítulo: "Alineación exacta con las normativas del Ministerio y segregación
-  de responsabilidades:"
-* Tres Columnas de Regulación y Seguridad Institucional:
-
-  1. EDUCACIÓN INICIAL:
-     - Escala Literal Oficial Exclusiva (A, B, C, D, E).
-     - Prohibición estricta de promedios numéricos o escala vigesimal.
-     - Registro descriptivo, formativo y de desarrollo madurativo.
-
-  2. EDUCACIÓN PRIMARIA:
-     - Escala Cualitativa Formativa por competencias.
-     - Indicadores oficiales: L (Logrado), P/EP (En Proceso), I (Iniciado).
-     - Informes descriptivos de competencias en lectura, cálculo y valores.
-
-  3. MEDIA GENERAL Y ROLES DE PERSONAL:
-     - Escala Cuantitativa Vigesimal (01 a 20 pts).
-     - Nota mínima aprobatoria oficial: 10 puntos.
-     - Matriz de Roles y Privilegios Estrictamente Blindados:
-       * SECRETARÍA: Acceso exclusivo a control de asistencias y conductas.
-         Bloqueo total de edición sobre notas y evaluaciones.
-       * DOCENTE: Carga de notas, estrategias y planes evaluativos solo en sus
-         materias y secciones asignadas.
-       * ADMINISTRADOR: Control global de matrícula, creación de usuarios,
-         respaldos de base de datos y auditoría de accesos.
-
---------------------------------------------------------------------------------
-[09] DIAPOSITIVA 9: PLAN DE DESPLIEGUE A SERVIDORES DEL CBA & PREGUNTAS
---------------------------------------------------------------------------------
-* Audiencia / Categoría: ALL
-* Tag / Etiqueta: "Plan de Despliegue · CBA 2026 · Ruta Metódica"
-* Título: "De Pruebas Locales a Producción Institucional"
-* Subtítulo: "Ruta de 4 fases para asegurar una transición sin interrupciones en
-  el Colegio Bellas Artes:"
-* Las 4 Fases Metódicas:
-  - Fase 1 [Fase Actual / En Curso]: Pruebas Locales
-    Simulación intensiva de notas, validación de escalas oficiales (Literal,
-    Cualitativa y Vigesimal), pruebas de carga y homologación con directivos.
-  - Fase 2 [Próximo Hito Decisivo]: Servidores del Colegio
-    Instalación y configuración del motor de base de datos PostgreSQL 16 y
-    servicio Node.js en el hardware propio del Colegio Bellas Artes.
-  - Fase 3: Inducción al Personal Docente y Administrativo
-    Emisión y entrega de Códigos de Autorización para registro seguro de cuentas
-    docentes y personal de secretaría. Capacitación guiada.
-  - Fase 4: Apagado y Desincorporación de CEO
-    Migración final de matrículas y expedientes; desconexión definitiva del
-    servidor web y hosting PHP antiguo de 2012.
-* Bloque de Interacción:
-  - "Preguntas y Respuestas": Espacio abierto para atender inquietudes de la
-    Dirección, Coordinaciones, Docentes y Personal de Soporte Técnico.
-
-================================================================================
-            CARACTERÍSTICAS TÉCNICAS E INTERACTIVAS DE LA PRESENTACIÓN
-================================================================================
-
-1. NAVEGACIÓN Y ATAJOS DE TECLADO:
-   * Flecha Derecha / Espacio / AvPág : Avanzar diapositiva
-   * Flecha Izquierda / RePág         : Retroceder diapositiva
-   * Inicio (Home) / Fin (End)        : Saltar a la primera o última diapositiva
-   * M                                : Alternar estilo de transición de diapositivas
-   * D                                : Alternar modo claro / azul marino CBA
-   * F                                : Pantalla completa (Fullscreen)
-   * T                                : Abrir / Cerrar Drawer (Índice lateral)
-   * Escape                           : Cerrar visor de imagen en pantalla completa
-   * Swipe Táctil (Izquierda/Derecha) : Gestos en dispositivos móviles y tablets
-
-2. ESTILOS DE TRANSICIÓN CINEMÁTICA (Aceleración GPU):
-   * ↔️ Deslizamiento (Slide - Predeterminado): Desplazamiento horizontal con profundidad.
-   * 🔍 Zoom & Fade: Escala progresiva y desvanecimiento cinemático suave.
-   * 🧊 Cubo 3D: Rotación tridimensional espacial sobre el eje vertical.
-   * ↕️ Vertical: Desplazamiento ejecutivo de arriba a abajo.
-
-3. SISTEMA DE FILTROS POR AUDIENCIA:
-   * "Todos" (ALL): Despliega la totalidad del deck.
-   * "Directiva": Resalta diapositivas de supervisión, estadísticas y auditoría.
-   * "Docentes": Destaca la operatividad por subsistema, evaluación y escalas.
-
-4. VISOR MODAL DE IMÁGENES (ZOOM HD):
-   * Permite hacer clic en cualquier captura de pantalla para inspeccionar a
-     máxima resolución los detalles de interfaz, sábanas y reportes.
-
-================================================================================
-U.E.P. Colegio Bellas Artes · Maracaibo, Venezuela · Innovación Educativa 2026
+* Flechas / Espacio : Avanzar / Retroceder diapositiva
+* F                 : Pantalla completa
+* T                 : Abrir / Cerrar índice lateral
+* D                 : Alternar modo claro / azul marino CBA
+* M                 : Cambiar animación de transición
+* Clic en imagen    : Ampliar captura en HD
 ================================================================================
