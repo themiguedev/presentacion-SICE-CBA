@@ -55,6 +55,17 @@ Además, los elementos internos de cada diapositiva (títulos, métricas, tarjet
 
 ---
 
+## 📱 Diseño 100% Responsive & Soporte Multiplataforma
+
+La presentación ha sido diseñada y optimizada para adaptarse fluidamente a cualquier resolución y dispositivo:
+- **💻 Pantallas de Escritorio y Laptops (>1200px / 992px):** Visualización ejecutiva panorámica con cuadrículas en paralelo (comparativas 50/50, centros de comando y tableros interactivos por rol).
+- **📱 Tablets (Vertical y Horizontal - 768px a 992px):** Reorganización automática de columnas a flujos verticales, tipografía equilibrada y navegación táctil fluida.
+- **📲 Smartphones (Hasta 540px):** Controles compactos en barras superior e inferior, márgenes optimizados, scroll vertical fluido e independiente dentro de cada diapositiva (`-webkit-overflow-scrolling: touch;`), e interfaces de tareas interactivas adaptadas a pantallas pequeñas.
+- **🔄 Modo Horizontal Móvil (Landscape / <620px alto):** Modos compactos para barras de control que maximizan el área de lectura en teléfonos en posición horizontal.
+- **👆 Gestos Táctiles (Swipe):** Detección inteligente de deslizamiento horizontal que discrimina gestos de scroll vertical para una navegación libre de saltos accidentales.
+
+---
+
 ## 🕹️ Navegación y Atajos de Teclado
 
 | Tecla / Acción | Función |

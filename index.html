@@ -879,6 +879,7 @@
       color: var(--text-main);
       overflow: hidden;
       height: 100vh;
+      height: 100dvh;
       width: 100vw;
       user-select: none;
       transition: background 0.3s ease, color 0.3s ease;
@@ -1047,12 +1048,37 @@
       display: flex;
       flex-direction: column;
       overflow-y: auto;
+      overflow-x: hidden;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(212, 175, 55, 0.4) transparent;
       will-change: transform, opacity, filter;
       backface-visibility: hidden;
       transform-style: preserve-3d;
       transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
                   opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1),
                   filter 0.45s ease;
+    }
+
+    .slide::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .slide::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .slide::-webkit-scrollbar-thumb {
+      background: rgba(212, 175, 55, 0.35);
+      border-radius: 4px;
+    }
+    .slide::-webkit-scrollbar-thumb:hover {
+      background: var(--cba-gold);
+    }
+    body.light-mode .slide {
+      scrollbar-color: #94A3B8 transparent;
+    }
+    body.light-mode .slide::-webkit-scrollbar-thumb {
+      background: #94A3B8;
     }
 
     /* 1. MODO DESLIZAMIENTO HORIZONTAL (Slide - Por defecto) */
@@ -1827,6 +1853,10 @@
       flex-direction: column;
       gap: 8px;
       overflow-y: auto;
+      overflow-x: hidden;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(212, 175, 55, 0.4) transparent;
       flex: 1;
     }
 
@@ -1941,6 +1971,10 @@
       flex-direction: column;
       gap: 5px;
       overflow-y: auto;
+      overflow-x: hidden;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(212, 175, 55, 0.4) transparent;
       flex: 1;
       min-height: 0;
       padding-right: 4px;
@@ -2603,6 +2637,10 @@
       flex-direction: column;
       padding: 18px;
       overflow-y: auto;
+      overflow-x: hidden;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(212, 175, 55, 0.4) transparent;
     }
 
     .drawer.open {
@@ -2732,6 +2770,10 @@
       flex-direction: column;
       gap: 4px;
       overflow-y: auto;
+      overflow-x: hidden;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(212, 175, 55, 0.4) transparent;
       flex: 1;
       min-height: 0;
       padding-right: 4px;
@@ -3241,6 +3283,608 @@
       line-height: 1.35;
     }
     body.light-mode .capture-slot-sub { color: #64748B; }
+
+    /* ==========================================================================
+       SISTEMA RESPONSIVE INSTITUCIONAL CBA (Mobile, Tablet, Desktop & Landscape)
+       ========================================================================== */
+
+    /* 1. DISPOSITIVOS GRANDES / LAPTOPS COMPACTAS (Hasta 1200px) */
+    @media (max-width: 1200px) {
+      .slide {
+        padding: 26px 32px;
+        max-width: 1120px;
+      }
+      .hero-h1,
+      .hero-cover-title {
+        font-size: 34px;
+      }
+      .hero-cover-layout {
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 28px;
+      }
+      .hero-layout {
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 24px;
+      }
+      .role-slide-layout {
+        grid-template-columns: 360px 1fr;
+        gap: 14px;
+      }
+      .comp-media-wrapper {
+        height: 220px;
+      }
+      .crit-grid {
+        gap: 12px;
+      }
+    }
+
+    /* 2. TABLETS HORIZONTALES & PANTALLAS MEDIANAS (Hasta 992px) */
+    @media (max-width: 992px) {
+      .top-bar {
+        padding: 0 16px;
+      }
+      .bottom-bar {
+        padding: 0 16px;
+      }
+      .slide-viewport {
+        padding: 14px 16px;
+      }
+      .slide {
+        width: 98%;
+        height: 96%;
+        max-height: none;
+        padding: 22px 22px;
+        border-radius: 14px;
+      }
+      .slide-title {
+        font-size: 24px;
+      }
+      .hero-h1,
+      .hero-cover-title {
+        font-size: 28px;
+      }
+      .slide-subtitle,
+      .hero-desc,
+      .hero-cover-desc {
+        font-size: 13.5px;
+        margin-bottom: 16px;
+      }
+      .hero-cover-layout {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        height: auto;
+      }
+      .hero-min-visual {
+        padding: 22px 18px;
+      }
+      .animated-crest {
+        width: 85px;
+        height: 85px;
+      }
+      .role-slide-layout {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        height: auto;
+      }
+      .role-options-panel {
+        max-height: 230px;
+      }
+      .role-showcase-panel {
+        min-height: auto;
+      }
+      .card-grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .comp-media-wrapper {
+        height: 200px;
+      }
+      .progress-track {
+        max-width: 260px;
+      }
+    }
+
+    /* 3. TABLETS VERTICALES Y SMARTPHONES GRANDES (Hasta 768px) */
+    @media (max-width: 768px) {
+      .top-bar {
+        height: 54px;
+        padding: 0 12px;
+      }
+      .bottom-bar {
+        height: 50px;
+        padding: 0 12px;
+      }
+      .slide-viewport {
+        top: 54px;
+        bottom: 50px;
+        padding: 10px 8px;
+      }
+      .slide {
+        width: 100%;
+        height: 100%;
+        max-width: 100%;
+        border-radius: 12px;
+        padding: 18px 14px;
+      }
+
+      /* Tipografía adaptada */
+      .hero-h1,
+      .hero-cover-title {
+        font-size: 24px;
+        letter-spacing: -0.3px;
+        margin-bottom: 10px;
+      }
+      .slide-title {
+        font-size: 20px;
+        margin-bottom: 6px;
+      }
+      .slide-subtitle,
+      .hero-desc,
+      .hero-cover-desc {
+        font-size: 13px;
+        line-height: 1.45;
+        margin-bottom: 14px;
+      }
+      .slide-tag {
+        font-size: 10px;
+        letter-spacing: 1px;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+      .audience-pill-tag {
+        margin-left: 0;
+        font-size: 9.5px;
+        padding: 2px 8px;
+      }
+
+      /* Grids en columna vertical */
+      .crit-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        height: auto;
+      }
+      .crit-card {
+        padding: 13px;
+      }
+      .crit-emoji-box {
+        height: 44px;
+      }
+      .crit-anim-emoji {
+        font-size: 28px;
+      }
+      .crit-pills-row {
+        flex-wrap: wrap;
+        gap: 5px;
+      }
+      .comparison-container {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        height: auto;
+      }
+      .comp-col {
+        padding: 14px;
+      }
+      .comp-media-wrapper {
+        height: 185px;
+      }
+      .card-grid-3 {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        height: auto;
+      }
+      .hero-min-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+      .hero-card-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+      .hero-layout {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        height: auto;
+      }
+      .hero-visual {
+        padding: 18px;
+      }
+      .role-slide-layout {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        height: auto;
+      }
+      .role-options-panel {
+        max-height: 210px;
+      }
+      .canvas-pillars-grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+      .canvas-topbar {
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+      .canvas-tabs-preview {
+        overflow-x: auto;
+        max-width: 100%;
+      }
+      .canvas-tab {
+        white-space: nowrap;
+      }
+      .progress-track {
+        max-width: 150px;
+        margin: 0 10px;
+      }
+      .slide-counter {
+        font-size: 12px;
+      }
+      .nav-btn {
+        padding: 6px 12px;
+        font-size: 12px;
+      }
+      .drawer {
+        width: 290px;
+      }
+    }
+
+    /* 4. SMARTPHONES ESTÁNDAR Y PANTALLAS PEQUEÑAS (Hasta 540px) */
+    @media (max-width: 540px) {
+      .top-bar {
+        height: 50px;
+        padding: 0 8px;
+      }
+      .brand-group {
+        gap: 6px;
+      }
+      .brand-logo {
+        width: 28px;
+        height: 28px;
+      }
+      .brand-title {
+        font-size: 13.5px;
+      }
+      .top-actions {
+        gap: 4px;
+      }
+      .transition-pill-control {
+        height: 32px;
+        padding: 0 6px;
+        gap: 3px;
+      }
+      .transition-select {
+        font-size: 11px;
+        max-width: 86px;
+      }
+      .action-icon-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 13px;
+      }
+      .bottom-bar {
+        height: 48px;
+        padding: 0 8px;
+      }
+      .slide-viewport {
+        top: 50px;
+        bottom: 48px;
+        padding: 6px 4px;
+      }
+      .slide {
+        padding: 14px 10px;
+        border-radius: 10px;
+      }
+
+      /* Tipografía móvil */
+      .hero-h1,
+      .hero-cover-title {
+        font-size: 21px;
+        line-height: 1.22;
+        margin-bottom: 8px;
+      }
+      .slide-title {
+        font-size: 17.5px;
+        line-height: 1.25;
+        margin-bottom: 5px;
+      }
+      .slide-subtitle,
+      .hero-desc,
+      .hero-cover-desc {
+        font-size: 12px;
+        line-height: 1.45;
+        margin-bottom: 12px;
+      }
+      .hero-cover-badge {
+        font-size: 9.5px;
+        padding: 3px 9px;
+        margin-bottom: 10px;
+      }
+      .animated-emoji-rocket {
+        font-size: 15px;
+      }
+
+      /* Tarjetas y componentes */
+      .hero-min-grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+      .hero-card-grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+      .hero-min-card {
+        padding: 12px 14px;
+      }
+      .card-phase-num {
+        font-size: 18px;
+      }
+      .card-main-title {
+        font-size: 12.5px;
+      }
+      .card-sub-label {
+        font-size: 11px;
+      }
+      .hero-min-visual {
+        padding: 18px 12px;
+      }
+      .animated-crest {
+        width: 72px;
+        height: 72px;
+      }
+      .min-visual-name {
+        font-size: 15px;
+        margin: 10px 0 2px 0;
+      }
+      .min-visual-sub {
+        font-size: 11px;
+        margin-bottom: 12px;
+      }
+      .min-visual-pill {
+        font-size: 10px;
+        padding: 4px 10px;
+      }
+      .crit-card {
+        padding: 11px 12px;
+      }
+      .crit-title {
+        font-size: 14.5px;
+      }
+      .crit-subtitle {
+        font-size: 11px;
+      }
+      .crit-emoji-box {
+        height: 40px;
+        font-size: 24px;
+        margin-bottom: 8px;
+      }
+      .crit-block {
+        padding: 8px 10px;
+      }
+      .crit-block-title {
+        font-size: 11.5px;
+      }
+      .crit-block-pill {
+        font-size: 9.5px;
+      }
+      .crit-block-text {
+        font-size: 11.5px;
+      }
+      .crit-pills-row {
+        gap: 4px;
+      }
+      .crit-pill {
+        font-size: 10px;
+        padding: 2.5px 7px;
+      }
+      .comp-media-wrapper {
+        height: 160px;
+        margin-bottom: 10px;
+      }
+      .comp-list-item {
+        font-size: 11.5px;
+        gap: 7px;
+      }
+      .card-grid-4 {
+        grid-template-columns: 1fr;
+      }
+      .role-options-panel {
+        max-height: 190px;
+        padding: 8px;
+      }
+      .role-option-item {
+        padding: 6px 8px;
+        gap: 6px;
+      }
+      .role-option-icon {
+        font-size: 14px;
+      }
+      .role-option-title {
+        font-size: 11px;
+      }
+      .role-option-scope {
+        font-size: 9.5px;
+      }
+      .role-showcase-panel {
+        padding: 8px 10px;
+      }
+      .showcase-option-title {
+        font-size: 11px;
+        max-width: 135px;
+      }
+      .role-showcase-viewport {
+        min-height: 160px;
+        height: 180px;
+      }
+      .role-capture-slot {
+        padding: 12px 10px;
+        gap: 10px;
+      }
+      .capture-slot-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 20px;
+      }
+      .capture-slot-title {
+        font-size: 11px;
+      }
+      .capture-slot-sub {
+        font-size: 9px;
+      }
+      .showcase-desc-highlight {
+        font-size: 10.5px;
+      }
+      #dirOptDesc, #iniOptDesc, #priOptDesc, #medOptDesc {
+        font-size: 10.5px;
+      }
+      .feature-card {
+        padding: 12px;
+      }
+      .feature-card-title {
+        font-size: 15px;
+      }
+      .feature-card-desc {
+        font-size: 12px;
+      }
+      .scale-box {
+        font-size: 11px;
+        padding: 8px 10px;
+      }
+      .progress-track {
+        max-width: 75px;
+        margin: 0 6px;
+        height: 5px;
+      }
+      .slide-counter {
+        font-size: 11px;
+      }
+      .nav-btn {
+        padding: 5px 8px;
+        font-size: 10.5px;
+        gap: 3px;
+      }
+      .drawer {
+        width: 86vw;
+        right: -90vw;
+        top: 50px;
+        bottom: 48px;
+        padding: 12px;
+      }
+      .zoom-modal {
+        padding: 10px;
+      }
+      .zoom-modal-content {
+        max-width: 98vw;
+        max-height: 88vh;
+      }
+      .zoom-modal-img {
+        max-width: 98vw;
+        max-height: 72vh;
+      }
+      .zoom-modal-caption {
+        font-size: 11px;
+        padding: 8px 10px;
+        flex-direction: column;
+        gap: 6px;
+        align-items: flex-start;
+      }
+    }
+
+    /* 5. MODO HORIZONTAL EN SMARTPHONES & ALTURAS COMPACTAS (Hasta 620px de alto) */
+    @media (max-height: 620px) {
+      .top-bar {
+        height: 42px;
+        padding: 0 10px;
+      }
+      .brand-logo {
+        width: 24px;
+        height: 24px;
+      }
+      .brand-title {
+        font-size: 13px;
+      }
+      .transition-pill-control {
+        height: 28px;
+        padding: 0 4px;
+      }
+      .action-icon-btn {
+        width: 28px;
+        height: 28px;
+        font-size: 12px;
+      }
+      .bottom-bar {
+        height: 40px;
+        padding: 0 10px;
+      }
+      .nav-btn {
+        padding: 4px 8px;
+        font-size: 10.5px;
+      }
+      .slide-viewport {
+        top: 42px;
+        bottom: 40px;
+        padding: 6px 10px;
+      }
+      .slide {
+        padding: 10px 14px;
+        max-height: 100%;
+        border-radius: 8px;
+      }
+      .slide-title,
+      .hero-h1,
+      .hero-cover-title {
+        font-size: 18px;
+        margin-bottom: 4px;
+      }
+      .slide-subtitle,
+      .hero-desc,
+      .hero-cover-desc {
+        font-size: 11.5px;
+        margin-bottom: 8px;
+      }
+      .slide-tag {
+        font-size: 9.5px;
+        margin-bottom: 2px;
+      }
+      .hero-cover-layout {
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 14px;
+      }
+      .hero-cover-badge {
+        margin-bottom: 6px;
+        padding: 2px 7px;
+        font-size: 9px;
+      }
+      .animated-crest {
+        width: 55px;
+        height: 55px;
+      }
+      .hero-min-visual {
+        padding: 12px 10px;
+      }
+      .min-visual-name {
+        font-size: 13px;
+        margin: 6px 0 2px 0;
+      }
+      .min-visual-sub {
+        font-size: 9.5px;
+        margin-bottom: 6px;
+      }
+      .min-visual-pill {
+        font-size: 9px;
+        padding: 2px 8px;
+      }
+      .role-options-panel {
+        max-height: 140px;
+      }
+      .role-showcase-panel {
+        min-height: 170px;
+      }
+      .comp-media-wrapper {
+        height: 130px;
+      }
+      .drawer {
+        top: 42px;
+        bottom: 40px;
+      }
+    }
 
   </style>
 </head>
@@ -4390,6 +5034,7 @@
       if (document.getElementById('zoomModal').classList.contains('open')) {
         if (e.key === 'Escape') closeZoom();
         return;
+  
       }
       if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
         e.preventDefault();
@@ -4464,12 +5109,37 @@
 
     // Touch Swipe Support
     let touchStartX = 0;
-    window.addEventListener('touchstart', e => touchStartX = e.changedTouches[0].screenX, false);
+    let touchStartY = 0;
+    let touchStartTime = 0;
+    window.addEventListener('touchstart', e => {
+      if (e.touches.length === 1) {
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+        touchStartTime = Date.now();
+      }
+    }, { passive: true });
     window.addEventListener('touchend', e => {
-      const touchEndX = e.changedTouches[0].screenX;
-      if (touchStartX - touchEndX > 50) nextSlide();
-      else if (touchEndX - touchStartX > 50) prevSlide();
-    }, false);
+      const zoomModal = document.getElementById('zoomModal');
+      if (zoomModal && zoomModal.classList.contains('open')) return;
+      const drawer = document.getElementById('slideDrawer');
+      if (drawer && drawer.classList.contains('open')) return;
+
+      if (e.changedTouches.length === 1) {
+        const touchEndX = e.changedTouches[0].clientX;
+        const touchEndY = e.changedTouches[0].clientY;
+        const deltaX = touchStartX - touchEndX;
+        const deltaY = touchStartY - touchEndY;
+        const deltaTime = Date.now() - touchStartTime;
+
+        if (Math.abs(deltaX) > 48 && Math.abs(deltaX) > Math.abs(deltaY) * 1.5 && deltaTime < 700) {
+          if (deltaX > 0) nextSlide();
+          else prevSlide();
+        }
+      }
+
+
+
+    }, { passive: true });
 
     
     // Selector de Tareas por Rol
