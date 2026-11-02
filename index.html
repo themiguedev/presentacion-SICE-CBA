@@ -385,6 +385,30 @@
     body.light-mode .crit-block.modern .crit-block-text strong {
       color: #022C22 !important;
     }
+    body.light-mode .crit-block.msg-item {
+      background: #FFFBEB !important;
+      border: 1px solid #FDE68A !important;
+      border-left: 3.5px solid #D97706 !important;
+    }
+    body.light-mode .crit-block.msg-item .crit-block-title {
+      color: #92400E !important;
+    }
+    body.light-mode .crit-block.msg-item .crit-block-pill.msg-pill {
+      background: #FEF3C7 !important;
+      color: #92400E !important;
+      border: 1px solid #FBBF24 !important;
+    }
+    body.light-mode .crit-block.msg-item .crit-block-pill.msg-pill.urgent {
+      background: #FEE2E2 !important;
+      color: #991B1B !important;
+      border: 1px solid #F87171 !important;
+    }
+    body.light-mode .crit-block.msg-item .crit-block-text {
+      color: #78350F !important;
+    }
+    body.light-mode .crit-block.msg-item .crit-block-text strong {
+      color: #451A03 !important;
+    }
     body.light-mode .crit-pill {
       background: #F1F5F9 !important;
       border: 1px solid #CBD5E1 !important;
@@ -2451,6 +2475,29 @@
     .emoji-control {
       animation: shieldGleam 3s ease-in-out infinite;
     }
+    .emoji-msg {
+      animation: bellRingGleam 3s ease-in-out infinite;
+    }
+
+    @keyframes bellRingGleam {
+      0%, 100% {
+        transform: rotate(0deg) scale(1);
+        filter: drop-shadow(0 0 6px rgba(245, 158, 11, 0.4));
+      }
+      20% {
+        transform: rotate(-10deg) scale(1.08);
+      }
+      40% {
+        transform: rotate(10deg) scale(1.08);
+      }
+      60% {
+        transform: rotate(-6deg) scale(1.06);
+        filter: drop-shadow(0 0 16px rgba(245, 158, 11, 0.75));
+      }
+      80% {
+        transform: rotate(4deg) scale(1.03);
+      }
+    }
 
     .crit-card:hover .crit-anim-emoji {
       transform: scale(1.18);
@@ -2484,6 +2531,35 @@
       background: rgba(16, 185, 129, 0.09);
       border: 1px solid rgba(16, 185, 129, 0.25);
       border-left: 3.5px solid #10B981;
+    }
+
+    .crit-block.msg-item {
+      background: rgba(245, 158, 11, 0.08);
+      border: 1px solid rgba(245, 158, 11, 0.22);
+      border-left: 3.5px solid #F59E0B;
+      padding: 5px 8px;
+    }
+
+    .crit-block.msg-item .crit-block-title {
+      color: #FBBF24;
+      font-size: 10px;
+    }
+
+    .crit-block.msg-item .crit-block-pill.msg-pill {
+      background: rgba(245, 158, 11, 0.2);
+      color: #FDE68A;
+      border: 1px solid rgba(245, 158, 11, 0.35);
+      font-size: 8px;
+    }
+
+    .crit-block.msg-item .crit-block-pill.msg-pill.urgent {
+      background: rgba(239, 68, 68, 0.2);
+      color: #FCA5A5;
+      border: 1px solid rgba(239, 68, 68, 0.4);
+    }
+
+    .crit-card:nth-child(3) .crit-blocks-container {
+      gap: 5px;
     }
 
     .crit-block-head {
@@ -3624,7 +3700,7 @@
             <div class="hero-min-card active-card">
               <div class="card-head">
                 <span class="card-phase-num">Fase 1</span>
-                <span class="card-status-dot"><span class="pulse-dot-sm"></span> En Curso</span>
+                <span class="card-status-dot"><span class="pulse-dot-sm"></span> En Espera</span>
               </div>
               <div class="card-main-title">Validación y Pruebas Locales</div>
               <div class="card-sub-label">Homologación de notas, matrícula y boletines</div>
@@ -3649,10 +3725,9 @@
       </div>
     </section>
 
-    <!-- DIAPOSITIVA 2: De CEO a SICE-CBA en 3 Puntos Críticos -->
+    <!-- DIAPOSITIVA 2: De CEO a SICE-CBA -->
     <section class="slide" data-index="1" data-category="ALL">
-      <div class="slide-tag">Diagnóstico y Transformación</div>
-      <h2 class="slide-title">De CEO a SICE–CBA en 3 Puntos Críticos</h2>
+      <h2 class="slide-title">De CEO a SICE–CBA</h2>
 
       <div class="crit-grid">
         <!-- 1. INFRAESTRUCTURA -->
@@ -3664,7 +3739,7 @@
               </div>
               <div>
                 <h3 class="crit-title">1. Infraestructura</h3>
-                <span class="crit-subtitle">Estabilidad & Servidores</span>
+                <span class="crit-subtitle">Estabilidad y Disponibilidad</span>
               </div>
             </div>
           </div>
@@ -3682,7 +3757,7 @@
                 <span class="crit-block-pill">Inestable</span>
               </div>
               <p class="crit-block-text">
-                <strong>⚡ Fluctuación Eléctrica:</strong> Cualquier corte o variación de energía reinicia los servidores físicos del colegio, causando inestabilidad crítica y caídas de servicio.
+                <strong>⚡ Cortes de Electricidad:</strong> Cualquier variación eléctrica apaga los servidores del colegio, interrumpiendo el trabajo de los docentes y dejando el sistema fuera de servicio.
               </p>
             </div>
 
@@ -3690,18 +3765,18 @@
             <div class="crit-block modern">
               <div class="crit-block-head">
                 <span class="crit-block-title">✨ SICE-CBA (Nuevo)</span>
-                <span class="crit-block-pill">Resiliente</span>
+                <span class="crit-block-pill">Estable</span>
               </div>
               <p class="crit-block-text">
-                <strong>🖥️ Servidor Unificado + ☁️ Nube:</strong> Sistema y base de datos operan en el mismo servidor local de alto rendimiento, con opción de sincronización redundante externa en la nube para garantizar cero inestabilidad.
+                <strong>🖥️ Servidor en el Colegio + ☁️ Sistema en la Nube:</strong> Todo opera en un servidor local para trabajar, con copia y sincronía automática en la nube para garantizar que el sistema nunca se detenga cuando ocurran fluctuaciones o apagones de electricidad.
               </p>
             </div>
           </div>
 
           <div class="crit-pills-row">
-            <span class="crit-pill">🔌 Cero Caídas</span>
-            <span class="crit-pill">☁️ Sincronización Nube</span>
-            <span class="crit-pill">🖥️ Host Local</span>
+            <span class="crit-pill">🛡️ Sin Caídas de Servicio</span>
+            <span class="crit-pill">☁️ Respaldo en la Nube</span>
+            <span class="crit-pill">💻 Operativo en el Plantel</span>
           </div>
         </div>
 
@@ -3713,8 +3788,8 @@
                 ⚡
               </div>
               <div>
-                <h3 class="crit-title">2. Velocidad y Fluidez</h3>
-                <span class="crit-subtitle">Rendimiento Reactivo</span>
+                <h3 class="crit-title">2. Optimización</h3>
+                <span class="crit-subtitle">Respuesta Inmediata y sin Esperas</span>
               </div>
             </div>
           </div>
@@ -3729,10 +3804,10 @@
             <div class="crit-block legacy">
               <div class="crit-block-head">
                 <span class="crit-block-title">🛑 CEO (Anterior)</span>
-                <span class="crit-block-pill">F5 & Lentitud</span>
+                <span class="crit-block-pill">Lento y Manual</span>
               </div>
               <p class="crit-block-text">
-                <strong>🐌 PHP Clásico (2012):</strong> Más de 136 URLs dispersas. Recargas completas de pantalla (F5) en cada acción con constante riesgo de pérdida de notas y datos digitados.
+                <strong>🐌 Sistema Antiguo:</strong> Cada clic recargaba toda la pantalla desde cero. Si fallaba la conexión o la electricidad antes de guardar, se perdían las notas y datos recién ingresados.
               </p>
             </div>
 
@@ -3743,65 +3818,81 @@
                 <span class="crit-block-pill">Instantáneo</span>
               </div>
               <p class="crit-block-text">
-                <strong>⚡ SPA Reactiva + 💾 Auto-Save:</strong> Aplicación de página única ultra rápida y fluida. Guardado continuo celda por celda en tiempo real sin perder jamás información académica.
+                <strong>⚡ Navegación Fluida + 💾 Guardado Automático:</strong> Funciona como una aplicación web moderna sin recargar la pantalla. Cada nota ingresada se guarda al instante celda por celda, protegiendo toda la información académica.
               </p>
             </div>
           </div>
 
           <div class="crit-pills-row">
-            <span class="crit-pill">⏱️ 0 Recargas F5</span>
-            <span class="crit-pill">💾 Auto-Save Celda × Celda</span>
-            <span class="crit-pill">⚡ SPA Instantánea</span>
+            <span class="crit-pill">🚫 Cero Esperas de Carga</span>
+            <span class="crit-pill">💾 Guarda Nota por Nota</span>
+            <span class="crit-pill">⚡ Respuesta al Instante</span>
           </div>
         </div>
 
-        <!-- 3. CONTROL -->
+        <!-- 3. COMUNICACIÓN / MENSAJERÍA -->
         <div class="crit-card">
           <div class="crit-card-header">
             <div class="crit-header-left">
               <div class="crit-icon-circle">
-                ⚖️
+                📢
               </div>
               <div>
-                <h3 class="crit-title">3. Control</h3>
-                <span class="crit-subtitle">Gestión de Secciones</span>
+                <h3 class="crit-title">3. Comunicación</h3>
+                <span class="crit-subtitle">Módulo de Mensajería y Comunicados</span>
               </div>
             </div>
           </div>
 
           <!-- Emoji animado representativo -->
           <div class="crit-emoji-box">
-            <span class="crit-anim-emoji emoji-control" role="img" aria-label="Control y Secciones">🛡️</span>
+            <span class="crit-anim-emoji emoji-msg" role="img" aria-label="Mensajería y Comunicados">🔔</span>
           </div>
 
           <div class="crit-blocks-container">
-            <!-- CEO ANTERIOR -->
-            <div class="crit-block legacy">
+            <!-- LLEGA A TODOS LOS ROLES REQUERIDOS -->
+            <div class="crit-block msg-item">
               <div class="crit-block-head">
-                <span class="crit-block-title">🛑 CEO (Anterior)</span>
-                <span class="crit-block-pill">Solo A y B</span>
+                <span class="crit-block-title">🔔 Llega a todos los roles requeridos</span>
+                <span class="crit-block-pill msg-pill">Multicanal</span>
               </div>
               <p class="crit-block-text">
-                <strong>🔒 Secciones Rígidas:</strong> Únicamente maneja las secciones A y B, sin soporte para sección única.
+                El aviso dentro del sistema. También se puede enviar directo al Gmail y WhatsApp.
               </p>
             </div>
 
-            <!-- SICE-CBA NUEVO -->
-            <div class="crit-block modern">
+            <!-- SE ENVÍA SOLO A QUIEN LO NECESITA -->
+            <div class="crit-block msg-item">
               <div class="crit-block-head">
-                <span class="crit-block-title">✨ SICE-CBA (Nuevo)</span>
-                <span class="crit-block-pill">Sección U</span>
+                <span class="crit-block-title">🎯 Se envía solo a quien lo necesita</span>
+                <span class="crit-block-pill msg-pill">Segmentado</span>
               </div>
               <p class="crit-block-text">
-                <strong>🗂️ Implementación Sección U:</strong> Se implementó la sección U (Única), adaptándose a las necesidades reales de cada grado institucional.
+                Se puede mandar un mensaje a todo el colegio o solo a un grupo: solo a padres, solo a maestros o solo a un nivel (Inicial, Primaria o Bachillerato).
               </p>
             </div>
-          </div>
 
-          <div class="crit-pills-row">
-            <span class="crit-pill">🗂️ Secciones A y B</span>
-            <span class="crit-pill">✨ Sección U (Única)</span>
-            <span class="crit-pill">🏛️ Normativa Oficial</span>
+            <!-- AVISOS NORMALES Y URGENTES -->
+            <div class="crit-block msg-item">
+              <div class="crit-block-head">
+                <span class="crit-block-title">🚨 Avisos normales y urgentes</span>
+                <span class="crit-block-pill msg-pill urgent">Urgente</span>
+              </div>
+              <p class="crit-block-text">
+                Si es una emergencia o aviso de última hora, se marca como "Urgente" y queda destacado arriba para que nadie lo pase por alto.
+              </p>
+            </div>
+
+            <!-- TODO QUEDA REGISTRADO -->
+            <div class="crit-block msg-item">
+              <div class="crit-block-head">
+                <span class="crit-block-title">📋 Todo queda registrado</span>
+                <span class="crit-block-pill msg-pill">Historial</span>
+              </div>
+              <p class="crit-block-text">
+                Guarda un historial con la fecha, la hora y quién envió cada comunicado para que no haya dudas ni pérdidas de información.
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -3809,14 +3900,12 @@
 
     <!-- DIAPOSITIVA 3: Cara a Cara Visual - Escritorio y Operatividad Diaria -->
     <section class="slide" data-index="2" data-category="ALL">
-      <div class="slide-tag">Comparativa Visual</div>
-      <h2 class="slide-title">Escritorio Principal & Centro de Comando</h2>
+      <h2 class="slide-title">Escritorio Principal</h2>
 
       <div class="comparison-container">
         <div class="comp-col legacy">
           <div class="comp-header">
             <span class="comp-pill legacy">CEO (Sistema Anterior)</span>
-            <span style="font-size: 11px; color: #94A3B8;">Captura Real de la Sesión</span>
           </div>
           <div class="comp-media-wrapper" onclick="openZoom('./assets/ceo_dashboard_legacy.png', 'CEO Anterior: Escritorio real con menús fragmentados y tablas de 2012')">
             <img src="./assets/ceo_dashboard_legacy.png" alt="CEO Dashboard Real">
@@ -3829,7 +3918,7 @@
             </li>
             <li class="comp-list-item">
               <span class="comp-icon" style="color: #EF4444;">✕</span>
-              <span>Consultas lentas para actualizar contadores y sin soporte de búsqueda rápida.</span>
+              <span>Sin soporte de búsqueda rápida.</span>
             </li>
           </ul>
         </div>
@@ -3837,7 +3926,6 @@
         <div class="comp-col modern">
           <div class="comp-header">
             <span class="comp-pill modern">SICE-CBA (Nuevo Sistema)</span>
-            <span style="font-size: 11px; color: #34D399;">Academic Pulse Hero</span>
           </div>
           <div class="comp-media-wrapper" onclick="openZoom('./assets/sisceba_dashboard_real.png', 'SICE-CBA: Dashboard en tiempo real con estadísticas y accesos directos')">
             <img src="./assets/sisceba_dashboard_real.png" alt="SICE-CBA Dashboard">
@@ -3848,24 +3936,31 @@
               <span class="comp-icon" style="color: #10B981;">✓</span>
               <span>Buscador global <span class="kbd-hint">Ctrl+K</span> y atajos de teclado para navegación inmediata.</span>
             </li>
+            <li class="comp-list-item">
+              <span class="comp-icon" style="color: #10B981;">✓</span>
+              <span><strong>Adaptación al rol requerido:</strong> el sistema se adapta según qué rol posea la cuenta y muestra solo lo requerido.</span>
+            </li>
+            <li class="comp-list-item">
+              <span class="comp-icon" style="color: #10B981;">✓</span>
+              <span><strong>Modalidad del sistema:</strong> interfaz adaptable en modo Claro y Oscuro.</span>
+            </li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- DIAPOSITIVA 4: Rol Directora: Supervisión General -->
+    <!-- DIAPOSITIVA 4: Rol Directora -->
     <section class="slide" data-index="3" data-category="DIRECTIVA">
-      <div class="slide-tag">Operatividad Directiva</div>
-      <h2 class="slide-title"><span class="role-anim-emoji emoji-dir">🏛️</span> Rol Directora: Supervisión General</h2>
+      <h2 class="slide-title"><span class="role-anim-emoji emoji-dir">🏛️</span> Rol Directora:</h2>
 
       <div class="role-pillars-grid">
-        <!-- Pilar 1: Supervisión Pedagógica y Malla Curricular -->
+        <!-- Pilar 1: Supervisión -->
         <div class="role-pillar-card card-dir">
           <div class="pillar-card-header">
             <div class="pillar-header-left">
               <div class="pillar-avatar">🎯</div>
               <div class="pillar-title-wrap">
-                <h3 class="pillar-card-title">Supervisión Pedagógica 360°</h3>
+                <h3 class="pillar-card-title">Supervisión</h3>
               </div>
             </div>
           </div>
@@ -3873,32 +3968,31 @@
           <ul class="pillar-points-list">
             <li class="pillar-point-item">
               <span class="pillar-bullet">✦</span>
-              <div><strong>Auditoría docente:</strong> Monitoreo en tiempo real de estrategias de aula evaluadas, avance programático y planificación por curso.</div>
+              <div><strong>Auditoría docente:</strong> Monitoreo de estrategias de aula evaluadas, avance programático y planificación por curso.</div>
             </li>
             <li class="pillar-point-item">
               <span class="pillar-bullet">✦</span>
-              <div><strong>Doble Pensum integrado:</strong> Calificaciones oficiales MPPE y malla artística/interna CBA consolidadas sin discrepancias.</div>
+              <div><strong>Pensum integrado:</strong> Calificaciones MPPE y malla artística/interna CBA.</div>
             </li>
             <li class="pillar-point-item">
               <span class="pillar-bullet">✦</span>
-              <div><strong>Sábana ejecutiva en vivo:</strong> Visualización matricial de calificaciones por curso y estudiante con guardado reactivo sin recargas (F5).</div>
+              <div><strong>Sábana ejecutiva:</strong> Visualización de calificaciones por curso y estudiante con guardado automático.</div>
             </li>
           </ul>
 
           <div class="pillar-card-footer">
             <span class="pillar-pill">🎯 Auditoría Docente</span>
-            <span class="pillar-pill">⚡ Cero Recargas F5</span>
-            <span class="pillar-pill">📑 Doble Pensum MPPE & CBA</span>
+            <span class="pillar-pill">📑 Pensum MPPE & CBA</span>
           </div>
         </div>
 
-        <!-- Pilar 2: Asistencia Diaria y Convivencia -->
+        <!-- Pilar 2: Control Diario -->
         <div class="role-pillar-card card-dir">
           <div class="pillar-card-header">
             <div class="pillar-header-left">
               <div class="pillar-avatar">⚖️</div>
               <div class="pillar-title-wrap">
-                <h3 class="pillar-card-title">Control Diario & Convivencia</h3>
+                <h3 class="pillar-card-title">Control Diario</h3>
               </div>
             </div>
           </div>
@@ -3906,32 +4000,26 @@
           <ul class="pillar-points-list">
             <li class="pillar-point-item">
               <span class="pillar-bullet">✦</span>
-              <div><strong>Portería automatizada:</strong> Registro continuo de pases de acceso y cálculo del índice general de puntualidad y asistencia CBA (98.4%).</div>
+              <div><strong>Control de asistencias/inasistencias:</strong> Registro continuo de pases de acceso y cálculo del índice general de puntualidad y asistencia CBA.</div>
             </li>
             <li class="pillar-point-item">
               <span class="pillar-bullet">✦</span>
-              <div><strong>Alerta temprana LOE 109:</strong> Detección matemática oportuna del umbral del 25% de inasistencias para resguardo del derecho evaluativo.</div>
+              <div><strong>Alerta temprana:</strong> Detección matemática oportuna del umbral del 25% de inasistencias para resguardo del derecho evaluativo.</div>
             </li>
             <li class="pillar-point-item">
               <span class="pillar-bullet">✦</span>
-              <div><strong>Bitácora de convivencia:</strong> Registro de reconocimientos, acuerdos escolares y faltas con trazabilidad y notificación directa a ambos padres.</div>
+              <div><strong>Bitácora de convivencia:</strong> Registro de reconocimientos, acuerdos escolares y faltas de conducta con notificación directa a ambos padres.</div>
             </li>
           </ul>
-
-          <div class="pillar-card-footer">
-            <span class="pillar-pill">📅 Portería 98.4%</span>
-            <span class="pillar-pill">🛡️ Alerta LOE Art. 109</span>
-            <span class="pillar-pill">👨‍👩‍👧 Trazabilidad Padres</span>
-          </div>
         </div>
 
-        <!-- Pilar 3: Analítica de Dirección y Talleres CRP -->
+        <!-- Pilar 3: Analítica & Reportes para el MPPE -->
         <div class="role-pillar-card card-dir">
           <div class="pillar-card-header">
             <div class="pillar-header-left">
               <div class="pillar-avatar">📊</div>
               <div class="pillar-title-wrap">
-                <h3 class="pillar-card-title">Analítica & Talleres CRP</h3>
+                <h3 class="pillar-card-title">Analítica & Reportes para el MPPE</h3>
               </div>
             </div>
           </div>
@@ -3943,7 +4031,7 @@
             </li>
             <li class="pillar-point-item">
               <span class="pillar-bullet">✦</span>
-              <div><strong>Nóminas centralizadas CRP:</strong> Asignación única sin duplicidad en robótica, música, teatro, medios digitales y agroecología.</div>
+              <div><strong>Reportes estadísticos al MPPE:</strong> Reportes estadísticos para el recaudo del MPPE.</div>
             </li>
             <li class="pillar-point-item">
               <span class="pillar-bullet">✦</span>
@@ -3952,18 +4040,15 @@
           </ul>
 
           <div class="pillar-card-footer">
-            <span class="pillar-pill">📈 Semáforos de Rendimiento</span>
-            <span class="pillar-pill">🎨 Nóminas CRP</span>
             <span class="pillar-pill">🔒 Cierre de Actas</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- DIAPOSITIVA 5: Rol Coordinación Inicial: Preescolar -->
+    <!-- DIAPOSITIVA 5: Coordinación Inicial: Preescolar -->
     <section class="slide" data-index="4" data-category="DOCENTES DIRECTIVA">
-      <div class="slide-tag">Nivel Preescolar</div>
-      <h2 class="slide-title"><span class="role-anim-emoji emoji-ini">🧸</span> Rol Coordinación Inicial: Preescolar</h2>
+      <h2 class="slide-title"><span class="role-anim-emoji emoji-ini">🧸</span> Coordinación Inicial: Preescolar</h2>
 
       <div class="role-pillars-grid">
         <!-- Pilar 1: Áreas de Desarrollo Infantil -->
@@ -3980,11 +4065,11 @@
           <ul class="pillar-points-list">
             <li class="pillar-point-item">
               <span class="pillar-bullet">✦</span>
-              <div><strong>Banco normado de indicadores:</strong> Competencias formativas y socioemocionales adaptadas a las Salas de 3, 4 y 5 años.</div>
+              <div><strong>Banco normado de indicadores:</strong> Competencias formativas y socioemocionales adaptadas a las Salas de 4 y 5 años.</div>
             </li>
             <li class="pillar-point-item">
               <span class="pillar-bullet">✦</span>
-              <div><strong>Áreas de desarrollo integradas:</strong> Formación personal y social, relación con el ambiente, comunicación y expresión lúdico-artística.</div>
+              <div><strong>Áreas de desarrollo integradas:</strong> Formación personal y social en todas las áreas de formación.</div>
             </li>
             <li class="pillar-point-item">
               <span class="pillar-bullet">✦</span>
@@ -3993,13 +4078,13 @@
           </ul>
 
           <div class="pillar-card-footer">
-            <span class="pillar-pill">🧸 Salas 3, 4 y 5 Años</span>
+            <span class="pillar-pill">🧸 Salas de 4 y 5 Años</span>
             <span class="pillar-pill">🌱 Enfoque Formativo</span>
-            <span class="pillar-pill">⭐ Banco Oficial MPPE</span>
+            <span class="pillar-pill">⭐ Banco MPPE</span>
           </div>
         </div>
 
-        <!-- Pilar 2: Escala Literal (A - E) -->
+        <!-- Pilar 2: Escala Literal -->
         <div class="role-pillar-card card-ini">
           <div class="pillar-card-header">
             <div class="pillar-header-left">
@@ -4013,7 +4098,7 @@
           <ul class="pillar-points-list">
             <li class="pillar-point-item">
               <span class="pillar-bullet">✦</span>
-              <div><strong>Alineación ministerial MPPE:</strong> Escala estrictamente literal (<code>A</code> a <code>E</code>). El sistema bloquea promedios o escalas numéricas sobre 20.</div>
+              <div><strong>Alineación ministerial MPPE:</strong> Escala estrictamente literal <code>A</code> (adquirido), <code>P</code> (proceso), <code>PA</code> (por adquirir). El sistema bloquea promedios o escalas numéricas sobre 20.</div>
             </li>
             <li class="pillar-point-item">
               <span class="pillar-bullet">✦</span>
@@ -4027,18 +4112,17 @@
 
           <div class="pillar-card-footer">
             <span class="pillar-pill">🔒 Cero Notas Numéricas</span>
-            <span class="pillar-pill">📝 Informes Descriptivos</span>
-            <span class="pillar-pill">🛡️ Blindaje Ministerial</span>
+            <span class="pillar-pill">📄 Informes Descriptivos</span>
           </div>
         </div>
 
-        <!-- Pilar 3: Sábana de Salas & Cobertura -->
+        <!-- Pilar 3: Sábana de Salas -->
         <div class="role-pillar-card card-ini">
           <div class="pillar-card-header">
             <div class="pillar-header-left">
               <div class="pillar-avatar">📑</div>
               <div class="pillar-title-wrap">
-                <h3 class="pillar-card-title">Sábana de Salas & Cobertura</h3>
+                <h3 class="pillar-card-title">Sábana de Salas</h3>
               </div>
             </div>
           </div>
@@ -4046,11 +4130,11 @@
           <ul class="pillar-points-list">
             <li class="pillar-point-item">
               <span class="pillar-bullet">✦</span>
-              <div><strong>Sábana digital consolidada:</strong> Matriz panorámica de cada sala con visión integral de indicadores sin manipulación de archivos Excel.</div>
+              <div><strong>Sábana digital consolidada:</strong> Vista de cada sala con visión integral de indicadores.</div>
             </li>
             <li class="pillar-point-item">
               <span class="pillar-bullet">✦</span>
-              <div><strong>Semáforo de cobertura:</strong> Monitoreo en tiempo real del porcentaje de niños valorados y avance de carga docente por sala.</div>
+              <div><strong>Vista de cobertura:</strong> Monitoreo en tiempo real del porcentaje de niños valorados y avance de carga docente por sala.</div>
             </li>
             <li class="pillar-point-item">
               <span class="pillar-bullet">✦</span>
@@ -4060,8 +4144,7 @@
 
           <div class="pillar-card-footer">
             <span class="pillar-pill">📊 Sábana Consolidada</span>
-            <span class="pillar-pill">📈 Semáforo de Cobertura</span>
-            <span class="pillar-pill">⚡ Emisión en 1 Clic</span>
+            <span class="pillar-pill">📈 Vista de Cobertura</span>
           </div>
         </div>
       </div>
@@ -4069,11 +4152,10 @@
 
     <!-- DIAPOSITIVA 6: Rol Coordinación Primaria: 1.° a 6.° Grado -->
     <section class="slide" data-index="5" data-category="DOCENTES DIRECTIVA">
-      <div class="slide-tag">Nivel Primaria (1.° a 6.° Grado)</div>
-      <h2 class="slide-title"><span class="role-anim-emoji emoji-pri">🌱</span> Rol Coordinación Primaria: 1.° a 6.° Grado</h2>
+      <h2 class="slide-title"><span class="role-anim-emoji emoji-pri">🌱</span> Coordinación Primaria: 1.° a 6.° Grado</h2>
 
       <div class="role-pillars-grid">
-        <!-- Pilar 1: Evaluación Cualitativa Formativa MPPE -->
+        <!-- Pilar 1: Competencias Fundamentales -->
         <div class="role-pillar-card card-pri">
           <div class="pillar-card-header">
             <div class="pillar-header-left">
@@ -4101,18 +4183,18 @@
 
           <div class="pillar-card-footer">
             <span class="pillar-pill">🌱 Escala (L · A · P · I)</span>
-            <span class="pillar-pill">📚 Doble Pensum CBA</span>
-            <span class="pillar-pill">📄 Boletín Oficial PDF</span>
+            <span class="pillar-pill">📚 Pensum CBA</span>
+            <span class="pillar-pill">📄 Boletín PDF</span>
           </div>
         </div>
 
-        <!-- Pilar 2: Sábana Reactiva y Soporte Sección U -->
+        <!-- Pilar 2: Sábana Automatizada -->
         <div class="role-pillar-card card-pri">
           <div class="pillar-card-header">
             <div class="pillar-header-left">
               <div class="pillar-avatar">📊</div>
               <div class="pillar-title-wrap">
-                <h3 class="pillar-card-title">Sábana Reactiva & Sección U</h3>
+                <h3 class="pillar-card-title">Sábana Automatizada</h3>
               </div>
             </div>
           </div>
@@ -4120,11 +4202,7 @@
           <ul class="pillar-points-list">
             <li class="pillar-point-item">
               <span class="pillar-bullet">✦</span>
-              <div><strong>Soporte nativo Sección U (Única):</strong> Resuelve la limitación histórica de CEO que obligaba a simular secciones A y B forzadas.</div>
-            </li>
-            <li class="pillar-point-item">
-              <span class="pillar-bullet">✦</span>
-              <div><strong>Carga reactiva celda por celda:</strong> Guardado automático instantáneo al escribir o calificar, sin recargas de pantalla ni pérdida de datos.</div>
+              <div><strong>Carga automática dependiendo de la acción:</strong> Guardado automático al escribir o calificar, sin recargas de pantalla ni pérdida de datos.</div>
             </li>
             <li class="pillar-point-item">
               <span class="pillar-bullet">✦</span>
@@ -4133,19 +4211,18 @@
           </ul>
 
           <div class="pillar-card-footer">
-            <span class="pillar-pill">✨ Soporte Oficial Sección U</span>
             <span class="pillar-pill">⚡ Guardado Automático</span>
             <span class="pillar-pill">📊 Matriz 1.° a 6.°</span>
           </div>
         </div>
 
-        <!-- Pilar 3: Asistencia de Aula y Clima Escolar -->
+        <!-- Pilar 3: Control Diario -->
         <div class="role-pillar-card card-pri">
           <div class="pillar-card-header">
             <div class="pillar-header-left">
               <div class="pillar-avatar">⏱️</div>
               <div class="pillar-title-wrap">
-                <h3 class="pillar-card-title">Control Diario & Convivencia</h3>
+                <h3 class="pillar-card-title">Control Diario</h3>
               </div>
             </div>
           </div>
@@ -4153,7 +4230,7 @@
           <ul class="pillar-points-list">
             <li class="pillar-point-item">
               <span class="pillar-bullet">✦</span>
-              <div><strong>Puntualidad y ausentismo:</strong> Control diario por aula, justificación de inasistencias y cómputo del índice general CBA (98.4%).</div>
+              <div><strong>Puntualidad y ausentismo:</strong> Control diario por aula, justificación de inasistencias y cómputo del índice general CBA.</div>
             </li>
             <li class="pillar-point-item">
               <span class="pillar-bullet">✦</span>
@@ -4166,8 +4243,7 @@
           </ul>
 
           <div class="pillar-card-footer">
-            <span class="pillar-pill">⏱️ Asistencia Diaria 98.4%</span>
-            <span class="pillar-pill">⚖️ Clima Escolar</span>
+            <span class="pillar-pill">⏱️ Asistencia Diaria</span>
             <span class="pillar-pill">📈 Reportes de Grado</span>
           </div>
         </div>
@@ -4176,17 +4252,16 @@
 
     <!-- DIAPOSITIVA 7: Rol Coordinación Media General: 1.° a 5.° Año -->
     <section class="slide" data-index="6" data-category="DOCENTES DIRECTIVA">
-      <div class="slide-tag">Nivel Media General (1.° a 5.° Año)</div>
-      <h2 class="slide-title"><span class="role-anim-emoji emoji-med">🎓</span> Rol Coordinación Media General: 1.° a 5.° Año</h2>
+      <h2 class="slide-title"><span class="role-anim-emoji emoji-med">🎓</span> Coordinación Media General: 1.° a 5.° Año</h2>
 
       <div class="role-pillars-grid">
-        <!-- Pilar 1: Rigor Vigesimal & Planes de Aula -->
+        <!-- Pilar 1: Rigor Vigesimal & Planes -->
         <div class="role-pillar-card card-med">
           <div class="pillar-card-header">
             <div class="pillar-header-left">
               <div class="pillar-avatar">🎓</div>
               <div class="pillar-title-wrap">
-                <h3 class="pillar-card-title">Rigor Vigesimal & Planes</h3>
+                <h3 class="pillar-card-title">Planes</h3>
               </div>
             </div>
           </div>
@@ -4198,28 +4273,31 @@
             </li>
             <li class="pillar-point-item">
               <span class="pillar-bullet">✦</span>
-              <div><strong>Doble Pensum vigesimal:</strong> Cálculo matemático exacto para asignaturas MPPE y especialidades Bellas Artes (Robótica, Inglés).</div>
+              <div><strong>Doble Pensum:</strong> Cálculo matemático exacto para asignaturas MPPE y áreas integradas del Colegio Bellas Artes.</div>
             </li>
             <li class="pillar-point-item">
               <span class="pillar-bullet">✦</span>
-              <div><strong>Sábana de 1.° a 5.° Año:</strong> Matriz digital completa con promedios aritméticos y ponderados en tiempo real sin desfases.</div>
+              <div><strong>Sábana de 1.° a 5.° Año:</strong> Matriz digital completa con promedios y ponderados.</div>
+            </li>
+            <li class="pillar-point-item">
+              <span class="pillar-bullet">✦</span>
+              <div><strong>Curvas de rendimiento:</strong> Cuadros de honor automáticos y detección oportuna de asignaturas de mayor exigencia técnica.</div>
             </li>
           </ul>
 
           <div class="pillar-card-footer">
             <span class="pillar-pill">🎓 Escala 01-20</span>
-            <span class="pillar-pill">📐 Ponderación 100%</span>
-            <span class="pillar-pill">⚡ Sábana Reactiva</span>
+            <span class="pillar-pill">📐 Ponderación %</span>
           </div>
         </div>
 
-        <!-- Pilar 2: Asistencia por Materia & LOE 109 -->
+        <!-- Pilar 2: Auditoría & Faltas -->
         <div class="role-pillar-card card-med">
           <div class="pillar-card-header">
             <div class="pillar-header-left">
               <div class="pillar-avatar">⏱️</div>
               <div class="pillar-title-wrap">
-                <h3 class="pillar-card-title">Auditoría LOE 109 & Faltas</h3>
+                <h3 class="pillar-card-title">Auditoría & Faltas</h3>
               </div>
             </div>
           </div>
@@ -4231,7 +4309,7 @@
             </li>
             <li class="pillar-point-item">
               <span class="pillar-bullet">✦</span>
-              <div><strong>Auditoría LOE Art. 109:</strong> Cómputo automatizado de inasistencias con semáforo preventivo antes de alcanzar el 25% no justificado.</div>
+              <div><strong>Auditoría:</strong> Control automatizado de inasistencias con semáforo preventivo antes de alcanzar el 25% no justificado.</div>
             </li>
             <li class="pillar-point-item">
               <span class="pillar-bullet">✦</span>
@@ -4240,13 +4318,12 @@
           </ul>
 
           <div class="pillar-card-footer">
-            <span class="pillar-pill">⚖️ LOE Art. 109</span>
             <span class="pillar-pill">⏱️ Por Hora Académica</span>
             <span class="pillar-pill">📋 Expediente Digital</span>
           </div>
         </div>
 
-        <!-- Pilar 3: Grupos CRP & Analítica -->
+        <!-- Pilar 3: Talleres CRP & Analítica -->
         <div class="role-pillar-card card-med">
           <div class="pillar-card-header">
             <div class="pillar-header-left">
@@ -4260,15 +4337,11 @@
           <ul class="pillar-points-list">
             <li class="pillar-point-item">
               <span class="pillar-bullet">✦</span>
-              <div><strong>Nóminas centralizadas CRP:</strong> Asignación única en Robótica Maker, Teatro, Ensamble Musical, Medios y Agroecología.</div>
+              <div><strong>Nóminas centralizadas CRP:</strong> Asignación única en los talleres ofrecidos.</div>
             </li>
             <li class="pillar-point-item">
               <span class="pillar-bullet">✦</span>
               <div><strong>Cierre de actas evaluativas:</strong> Control de carga de calificaciones cualitativas de CRP requeridas para la certificación del lapso.</div>
-            </li>
-            <li class="pillar-point-item">
-              <span class="pillar-bullet">✦</span>
-              <div><strong>Curvas de rendimiento:</strong> Cuadros de honor automáticos y detección oportuna de asignaturas de mayor exigencia técnica.</div>
             </li>
           </ul>
 
@@ -4283,8 +4356,7 @@
 
     <!-- DIAPOSITIVA 8: Rol Departamento de Orientación (7 Tareas) -->
     <section class="slide" data-index="7" data-category="DOCENTES DIRECTIVA">
-      <div class="slide-tag">Acompañamiento & Convivencia Escolar</div>
-      <h2 class="slide-title"><span class="role-anim-emoji emoji-ori">🧭</span> Rol Departamento de Orientación</h2>
+      <h2 class="slide-title"><span class="role-anim-emoji emoji-ori">🧭</span> Departamento de Orientación</h2>
 
       <div class="role-pillars-grid">
         <!-- Pilar 1: Diagnóstico Pedagógico & Adecuaciones -->
@@ -4342,7 +4414,7 @@
             </li>
             <li class="pillar-point-item">
               <span class="pillar-bullet">✦</span>
-              <div><strong>Vinculación con familias:</strong> Trazabilidad de acuerdos pedagógicos y citaciones a representantes con resguardo confidencial de expedientes.</div>
+              <div><strong>Vinculación con familias:</strong> Seguimiento de acuerdos pedagógicos y citaciones a representantes con resguardo confidencial de expedientes.</div>
             </li>
           </ul>
 
@@ -4359,7 +4431,7 @@
             <div class="pillar-header-left">
               <div class="pillar-avatar">📊</div>
               <div class="pillar-title-wrap">
-                <h3 class="pillar-card-title">Analítica & Doble Pensum</h3>
+                <h3 class="pillar-card-title">Analítica</h3>
               </div>
             </div>
           </div>
@@ -4375,7 +4447,7 @@
             </li>
             <li class="pillar-point-item">
               <span class="pillar-bullet">✦</span>
-              <div><strong>Cuadros estadísticos de conducta:</strong> Consolidado por curso sobre clima de aula, faltas y reconocimientos al mérito para el consejo de orientación.</div>
+              <div><strong>Cuadros estadísticos de conducta:</strong> Consolidado por curso sobre clima de aula, reconocimientos al mérito y faltas para el consejo de orientación.</div>
             </li>
           </ul>
 
@@ -4388,63 +4460,10 @@
       </div>
     </section>
 
-    <!-- DIAPOSITIVA 9: Normativa Legal MPPE y Roles Blindados -->
-    <section class="slide" data-index="8" data-category="DOCENTES DIRECTIVA">
-      <div class="slide-tag">Reglas de Negocio Oficiales MPPE</div>
-      <h2 class="slide-title">Escalas Evaluativas y Roles de Personal</h2>
-
-      <div class="card-grid-3">
-        <div class="feature-card">
-          <div class="feature-icon-circle" style="background: rgba(59, 130, 246, 0.18); color: #93C5FD; border: 1px solid rgba(59, 130, 246, 0.35);">
-            🧸
-          </div>
-          <h3 class="feature-card-title">Educación Inicial</h3>
-          <p class="feature-card-desc">
-            Escala <strong>Literal</strong>. Prohibidos promedios o escalas numéricas sobre 20.
-          </p>
-          <div class="scale-box inicial">
-            <strong>Escala Literal:</strong> <code>A</code>, <code>B</code>, <code>C</code>, <code>D</code>, <code>E</code>.<br>
-            Evaluación descriptiva formativa.
-          </div>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon-circle" style="background: rgba(16, 185, 129, 0.18); color: #6EE7B7; border: 1px solid rgba(16, 185, 129, 0.35);">
-            🌱
-          </div>
-          <h3 class="feature-card-title">Educación Primaria</h3>
-          <p class="feature-card-desc">
-            Evaluación <strong>Cualitativa</strong> por competencias e indicadores de aprendizaje.
-          </p>
-          <div class="scale-box primaria">
-            <strong>Indicadores:</strong><br>
-            <code>L</code> (Logrado) · <code>A</code> (Avanzado) · <code>P</code> (Proceso) · <code>I</code> (Iniciado).
-          </div>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon-circle" style="background: rgba(251, 191, 36, 0.18); color: #FDE68A; border: 1px solid rgba(251, 191, 36, 0.35);">
-            🎓
-          </div>
-          <h3 class="feature-card-title">Media General & Roles</h3>
-          <p class="feature-card-desc">
-            Escala <strong>Cuantitativa</strong> con actas y ponderaciones por lapso.
-          </p>
-          <div class="scale-box media">
-            <strong>Seguridad de Roles:</strong><br>
-            • <em>Secretaría:</em> Asistencia y Conducta (sin notas).<br>
-            • <em>Docente:</em> Evaluación y Planificación.<br>
-            • <em>Admin:</em> Matrícula y Usuarios.
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- DIAPOSITIVA 10: Infraestructura y Ruta hacia los Servidores del Plantel -->
-    <section class="slide" data-index="9" data-category="ALL">
+    <!-- DIAPOSITIVA 9: Infraestructura y Ruta hacia los Servidores del Plantel -->
+    <section class="slide" data-index="8" data-category="ALL">
       <div class="hero-layout">
         <div>
-          <div class="slide-tag">Plan de Despliegue · CBA 2026</div>
           <h2 class="hero-h1" style="font-size: 34px;">De Pruebas Locales a Producción Institucional</h2>
           <p class="hero-desc">
             El sistema se consolida en un plan de 4 fases para asegurar una transición sin interrupciones en la <strong>Unidad Educativa Bellas Artes</strong>.

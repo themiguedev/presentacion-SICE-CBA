@@ -14,10 +14,10 @@ DIAPOSITIVAS
    - Presentación institucional y escudo CBA.
    - Estado actual: Fase 1 (Pruebas Locales) -> Próximo: Fase 2 (Servidores CBA).
 
-2. DE CEO A SICE-CBA EN 3 PUNTOS CRÍTICOS
+2. DE CEO A SICE-CBA
    - Infraestructura: Servidor local unificado + enlace nube (Cero caídas).
    - Velocidad: SPA reactiva con guardado automático celda por celda (Sin F5).
-   - Control: Soporte oficial para Sección U (Única) además de Secciones A y B.
+   - Comunicación: Módulo de Mensajería y Comunicados (multicanal, segmentación por roles/niveles, alertas urgentes e historial registrado).
 
 3. ESCRITORIO PRINCIPAL & CENTRO DE COMANDO (COMPARATIVA VISUAL)
    - CEO: Menú lateral rígido de 2012, tablas lentas y fragmentadas.
@@ -62,16 +62,7 @@ DIAPOSITIVAS
    - Cuadros estadísticos de asistencia por curso.
    - Cuadros estadísticos de registro de conducta por curso.
 
-9. ESCALAS EVALUATIVAS Y ROLES DE PERSONAL
-   - Inicial: Escala Literal Oficial (A - E).
-   - Primaria: Escala Cualitativa (L, A, P, I).
-   - Media General: Escala Cuantitativa.
-   - Seguridad de Roles:
-     * Secretaría: Solo Asistencia y Conducta (Bloqueo total a notas).
-     * Docente: Planificación y Notas de sus materias.
-     * Administrador: Matrícula, Usuarios y Auditoría global.
-
-10. PLAN DE DESPLIEGUE A SERVIDORES DEL CBA & PREGUNTAS
+9. PLAN DE DESPLIEGUE A SERVIDORES DEL CBA & PREGUNTAS
    - Ruta en 4 Fases:
      1. Pruebas Locales (En curso).
      2. Instalación en Servidores del Colegio (PostgreSQL 16 + Node.js).

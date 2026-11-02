@@ -19,10 +19,10 @@ El sistema se encuentra actualmente en **fase activa de validación y pruebas lo
 1. **Portada & Estado del Proyecto:**
    - Presentación institucional, escudo oficial y distinción del plan: *Fase 1: Pruebas Locales* ➔ *Fase 2: Despliegue en Servidores del Colegio*.
 
-2. **De CEO a SICE-CBA en 3 Puntos Críticos:**
+2. **De CEO a SICE-CBA:**
    - **Infraestructura:** Servidores físicos vulnerables a fluctuaciones eléctricas vs. Sistema y base de datos integrados en un mismo servidor con opción de enlace a la nube sincronizado para garantizar máxima estabilidad.
    - **Velocidad y Fluidez:** Recargas lentas de pantalla (F5) vs. Guardado continuo celda por celda sin pérdida de notas.
-   - **Control:** Manejo exclusivo de secciones A y B en CEO vs. Implementación de la sección U (Única) en SICE-CBA.
+   - **Comunicación:** Módulo integral de mensajería y comunicados multicanal (campanita web, email, WhatsApp/SMS, segmentación por rol/nivel, alertas urgentes y auditoría de envíos).
 
 3. **Cara a Cara Visual: Escritorio y Centro de Comando:**
    - Comparativa 50/50 con capturas reales de alta definición entre el panel estático de CEO y el *Academic Pulse Hero* en tiempo real de SICE-CBA con buscador global (Ctrl+K).
@@ -34,11 +34,7 @@ El sistema se encuentra actualmente en **fase activa de validación y pruebas lo
    - **Coordinación Docente de Media General:** Registro de estrategias evaluadas, asistencia, disciplina, **Doble Pensum (escala vigesimal 01 a 20)**, cuadros estadísticos y **Grupos CRP**.
    - **Departamento de Orientación (7 Tareas):** Reporte de indicadores evaluados (por nivel, curso y estudiante), reporte de estrategias cargadas (por curso y estudiante), registros de conducta y de asistencia (por nivel, curso y estudiante), y cuadros estadísticos de indicadores (con **Doble Pensum: MPPE y CBA**), de asistencia y de conducta por curso.
 
-5. **Escalas Evaluativas y Roles de Personal:**
-   - Detalle por subsistema (Inicial Literal, Primaria Cualitativa, Media General Cuantitativa).
-   - Segregación de roles (SECRETARIA blindada con acceso exclusivo a Inasistencias y Conducta; DOCENTE en Evaluación; ADMINISTRADOR en Matrícula y Usuarios).
-
-6. **Plan de Despliegue a Servidores del Plantel & Preguntas y Respuestas:**
+5. **Plan de Despliegue a Servidores del Plantel & Preguntas y Respuestas:**
    - Ruta de 4 fases hacia la producción definitiva en la infraestructura del colegio y espacio abierto para directivos y docentes.
 
 ---
