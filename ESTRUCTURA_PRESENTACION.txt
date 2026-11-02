@@ -4,7 +4,7 @@
 
 INSTITUCIÓN: U.E.P. Colegio Bellas Artes · Código DEA: S0432D2305
 PROPÓSITO:   Comparativa ejecutiva CEO vs. SICE-CBA y Plan de Despliegue 2026
-TOTAL:       9 Diapositivas
+TOTAL:       10 Diapositivas
 
 --------------------------------------------------------------------------------
 DIAPOSITIVAS
@@ -53,7 +53,16 @@ DIAPOSITIVAS
    - Sábana completa de 1.° a 5.° Año y cuadros de rendimiento.
    - Asignación de nóminas y cierre de actas en Grupos CRP.
 
-8. ESCALAS EVALUATIVAS Y ROLES DE PERSONAL
+8. ROL DEPARTAMENTO DE ORIENTACIÓN: SEGUIMIENTO & BIENESTAR (3 PILARES MAESTROS / 7 TAREAS)
+   - Reporte de los indicadores evaluados: por nivel, curso y estudiante.
+   - Reporte de estrategias de evaluación cargadas: por curso y estudiante.
+   - Reporte de registros de conductas: por nivel, curso y estudiante.
+   - Reporte de registros de asistencia: por nivel, curso y estudiante.
+   - Cuadros estadísticos de indicadores evaluados por curso: pensum MPPE y pensum CBA.
+   - Cuadros estadísticos de asistencia por curso.
+   - Cuadros estadísticos de registro de conducta por curso.
+
+9. ESCALAS EVALUATIVAS Y ROLES DE PERSONAL
    - Inicial: Escala Literal Oficial (A - E).
    - Primaria: Escala Cualitativa (A, L, P, I).
    - Media General: Escala Cuantitativa.
@@ -62,7 +71,7 @@ DIAPOSITIVAS
      * Docente: Planificación y Notas de sus materias.
      * Administrador: Matrícula, Usuarios y Auditoría global.
 
-9. PLAN DE DESPLIEGUE A SERVIDORES DEL CBA & PREGUNTAS
+10. PLAN DE DESPLIEGUE A SERVIDORES DEL CBA & PREGUNTAS
    - Ruta en 4 Fases:
      1. Pruebas Locales (En curso).
      2. Instalación en Servidores del Colegio (PostgreSQL 16 + Node.js).

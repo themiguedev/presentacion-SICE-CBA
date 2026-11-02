@@ -32,6 +32,7 @@ El sistema se encuentra actualmente en **fase activa de validación y pruebas lo
    - **Coordinación Docente de Inicial:** Indicadores evaluados, **Indicadores Actitudinales**, consultas de evaluación por estudiante y curso, y estadísticas formativas en escala literal (A a E).
    - **Coordinación Docente de Primaria:** Indicadores por curso/docente, asistencia, disciplina, **Doble Pensum (MPPE y CBA)**, cuadros estadísticos y escala cualitativa (A, L, P, I).
    - **Coordinación Docente de Media General:** Registro de estrategias evaluadas, asistencia, disciplina, **Doble Pensum (escala vigesimal 01 a 20)**, cuadros estadísticos y **Grupos CRP**.
+   - **Departamento de Orientación (7 Tareas):** Reporte de indicadores evaluados (por nivel, curso y estudiante), reporte de estrategias cargadas (por curso y estudiante), registros de conducta y de asistencia (por nivel, curso y estudiante), y cuadros estadísticos de indicadores (con **Doble Pensum: MPPE y CBA**), de asistencia y de conducta por curso.
 
 5. **Escalas Evaluativas y Roles de Personal:**
    - Detalle por subsistema (Inicial Literal, Primaria Cualitativa, Media General Cuantitativa).
