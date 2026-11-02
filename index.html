@@ -1379,7 +1379,7 @@
       font-weight: 800;
       color: var(--text-main);
       line-height: 1.25;
-      margin-bottom: 6px;
+      margin-bottom: 14px;
       letter-spacing: -0.4px;
     }
 
@@ -2704,585 +2704,274 @@
     }
   
     /* ==========================================================================
-       LAYOUT MASTER-DETAIL: DIAPOSITIVAS POR ROL (TAREAS CON CAPTURAS EN VIVO)
+       LAYOUT MINIMALISTA: 3 PILARES MAESTROS POR ROL (DIAPOSITIVAS 4, 5, 6 Y 7)
        ========================================================================== */
-    .role-slide-layout {
+    .role-pillars-grid {
       display: grid;
-      grid-template-columns: 440px 1fr;
+      grid-template-columns: repeat(3, 1fr);
       gap: 16px;
       flex: 1;
       min-height: 0;
-      margin-top: 6px;
+      align-items: stretch;
+      margin-top: 10px;
     }
 
-    /* Panel Izquierdo: Lista Interactiva de Opciones */
-    .role-options-panel {
-      display: flex;
-      flex-direction: column;
-      min-height: 0;
+    .role-pillar-card {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
-      border-radius: 12px;
-      padding: 10px 12px;
-      box-shadow: var(--card-shadow);
-    }
-    body.light-mode .role-options-panel {
-      background: #FFFFFF;
-      border: 1.5px solid #CBD5E1;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
-    }
-
-    .role-panel-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding-bottom: 7px;
-      margin-bottom: 7px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    }
-    body.light-mode .role-panel-header {
-      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-    }
-
-    .role-panel-header-title {
-      font-size: 11.5px;
-      font-weight: 800;
-      color: var(--text-main);
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-    body.light-mode .role-panel-header-title {
-      color: #0F172A;
-    }
-
-    .role-panel-badge {
-      font-size: 8.5px;
-      font-weight: 800;
-      padding: 2px 7px;
-      border-radius: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.4px;
-    }
-
-    .role-options-list {
+      border-radius: 14px;
+      padding: 20px 22px;
       display: flex;
       flex-direction: column;
-      gap: 4px;
-      overflow-y: auto;
-      overflow-x: hidden;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: thin;
-      scrollbar-color: rgba(212, 175, 55, 0.4) transparent;
-      flex: 1;
-      min-height: 0;
-      padding-right: 4px;
-    }
-    .role-options-list::-webkit-scrollbar {
-      width: 4px;
-    }
-    .role-options-list::-webkit-scrollbar-thumb {
-      background: var(--cba-gold);
-      border-radius: 4px;
-    }
-
-    .role-option-item {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 5px 8px;
-      border-radius: 7px;
-      background: rgba(255, 255, 255, 0.025);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      cursor: pointer;
-      transition: all 0.16s ease;
-      text-align: left;
-      user-select: none;
-      width: 100%;
-      outline: none;
-    }
-    body.light-mode .role-option-item {
-      background: #F8FAFC;
-      border: 1px solid #E2E8F0;
-    }
-
-    .role-option-item:hover {
-      background: rgba(212, 175, 55, 0.08);
-      border-color: rgba(212, 175, 55, 0.4);
-      transform: translateX(2px);
-    }
-    body.light-mode .role-option-item:hover {
-      background: #FFFBEB;
-      border-color: #D97706;
-    }
-
-    .role-option-item.active {
-      background: rgba(212, 175, 55, 0.16) !important;
-      border-color: var(--cba-gold) !important;
-      box-shadow: 0 0 10px rgba(212, 175, 55, 0.25);
-    }
-    body.light-mode .role-option-item.active {
-      background: #FEF3C7 !important;
-      border-color: #D97706 !important;
-      box-shadow: 0 2px 8px rgba(217, 119, 6, 0.2);
-    }
-
-    /* Colores por Rol */
-    .role-ini .role-option-item.active {
-      background: rgba(59, 130, 246, 0.18) !important;
-      border-color: #3B82F6 !important;
-      box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
-    }
-    body.light-mode .role-ini .role-option-item.active {
-      background: #DBEAFE !important;
-      border-color: #2563EB !important;
-    }
-
-    .role-pri .role-option-item.active {
-      background: rgba(16, 185, 129, 0.18) !important;
-      border-color: #10B981 !important;
-      box-shadow: 0 0 10px rgba(16, 185, 129, 0.3);
-    }
-    body.light-mode .role-pri .role-option-item.active {
-      background: #D1FAE5 !important;
-      border-color: #059669 !important;
-    }
-
-    .role-med .role-option-item.active {
-      background: rgba(168, 85, 247, 0.18) !important;
-      border-color: #A855F7 !important;
-      box-shadow: 0 0 10px rgba(168, 85, 247, 0.3);
-    }
-    body.light-mode .role-med .role-option-item.active {
-      background: #EDE9FE !important;
-      border-color: #7C3AED !important;
-    }
-
-    .role-option-icon {
-      font-size: 13px;
-      line-height: 1;
-      flex-shrink: 0;
-      width: 22px;
-      height: 22px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 5px;
-      background: rgba(255, 255, 255, 0.05);
-    }
-    body.light-mode .role-option-icon {
-      background: #E2E8F0;
-    }
-
-    .role-option-info {
-      flex: 1;
-      min-width: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 1px;
-    }
-    .role-option-title {
-      font-size: 10.5px;
-      font-weight: 700;
-      color: var(--text-main);
-      line-height: 1.22;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    body.light-mode .role-option-title {
-      color: #0F172A;
-    }
-
-    .role-option-scope {
-      font-size: 9px;
-      color: var(--text-secondary);
-      line-height: 1.2;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    body.light-mode .role-option-scope {
-      color: #475569;
-    }
-
-    .role-option-thumb {
-      width: 44px;
-      height: 26px;
-      border-radius: 4px;
-      overflow: hidden;
-      flex-shrink: 0;
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      background: #000;
       position: relative;
-    }
-    body.light-mode .role-option-thumb {
-      border: 1px solid #CBD5E1;
-    }
-    .role-option-thumb img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    /* Panel Derecho: Visor de Captura del Sistema SICE-CBA */
-    .role-showcase-panel {
-      display: flex;
-      flex-direction: column;
-      min-height: 0;
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 12px;
-      padding: 10px 14px;
+      transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
       box-shadow: var(--card-shadow);
-    }
-    body.light-mode .role-showcase-panel {
-      background: #FFFFFF;
-      border: 1.5px solid #CBD5E1;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+      overflow: hidden;
     }
 
-    .role-showcase-header {
+    .role-pillar-card:hover {
+      border-color: var(--card-hover-border);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.55);
+      transform: translateY(-3px);
+    }
+
+    .role-pillar-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      opacity: 0.95;
+      border-radius: 14px 14px 0 0;
+    }
+
+    /* Colores temáticos superiores por Rol */
+    .card-dir::before { background: var(--cba-gold); }
+    .card-ini::before { background: #3B82F6; }
+    .card-pri::before { background: #10B981; }
+    .card-med::before { background: #A855F7; }
+
+    /* Header del Pilar */
+    .pillar-card-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 10px;
-      padding-bottom: 7px;
-      margin-bottom: 7px;
+      margin-bottom: 12px;
+      padding-bottom: 10px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
-    body.light-mode .role-showcase-header {
+    body.light-mode .pillar-card-header {
       border-bottom: 1px solid rgba(0, 0, 0, 0.06);
     }
 
-    .showcase-header-left {
+    .pillar-header-left {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
       min-width: 0;
     }
 
-    .showcase-window-dots {
-      display: flex;
-      gap: 4px;
-    }
-    .showcase-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-    }
-    .showcase-dot.red { background: #EF4444; }
-    .showcase-dot.yellow { background: #F59E0B; }
-    .showcase-dot.green { background: #10B981; }
-
-    .showcase-tag-pill {
-      font-size: 8.5px;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.4px;
-      padding: 2px 7px;
-      border-radius: 4px;
-      background: rgba(212, 175, 55, 0.16);
-      border: 1px solid var(--cba-gold);
-      color: var(--cba-gold);
-      white-space: nowrap;
-    }
-
-    .showcase-option-title {
-      font-size: 12px;
-      font-weight: 800;
-      color: var(--text-main);
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    body.light-mode .showcase-option-title {
-      color: #0F172A;
-    }
-
-    .showcase-zoom-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      font-size: 9.5px;
-      font-weight: 800;
-      padding: 3px 9px;
-      border-radius: 5px;
-      background: rgba(212, 175, 55, 0.18);
-      border: 1px solid var(--cba-gold);
-      color: var(--cba-gold);
-      cursor: pointer;
-      transition: all 0.18s ease;
-      white-space: nowrap;
-    }
-    .showcase-zoom-btn:hover {
-      background: var(--cba-gold);
-      color: #0B0D18;
-      transform: scale(1.04);
-    }
-    body.light-mode .showcase-zoom-btn {
-      background: #FEF3C7;
-      border-color: #D97706;
-      color: #B45309;
-    }
-    body.light-mode .showcase-zoom-btn:hover {
-      background: #D97706;
-      color: #FFFFFF;
-    }
-
-    .role-showcase-viewport {
-      flex: 1;
-      min-height: 0;
-      position: relative;
-      border-radius: 8px;
-      overflow: hidden;
-      background: #040711;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      cursor: zoom-in;
+    .pillar-avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 9px;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.6);
-    }
-    body.light-mode .role-showcase-viewport {
-      background: #F1F5F9;
-      border: 1.5px solid #CBD5E1;
-      box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.05);
+      font-size: 19px;
+      flex-shrink: 0;
     }
 
-    .role-showcase-viewport img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      transition: transform 0.25s ease, opacity 0.2s ease;
-    }
-    .role-showcase-viewport:hover img {
-      transform: scale(1.02);
-    }
-
-    .viewport-zoom-hint {
-      position: absolute;
-      bottom: 7px;
-      right: 7px;
-      background: rgba(11, 13, 24, 0.88);
-      backdrop-filter: blur(4px);
-      color: #F8FAFC;
-      font-size: 8.5px;
-      font-weight: 700;
-      padding: 2.5px 7px;
-      border-radius: 4px;
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      pointer-events: none;
-      transition: all 0.2s ease;
-    }
-    .role-showcase-viewport:hover .viewport-zoom-hint {
-      background: var(--cba-gold);
-      color: #0B0D18;
-      border-color: var(--cba-gold);
-    }
-
-    .role-showcase-footer {
-      display: flex;
-      align-items: flex-start;
-      gap: 7px;
-      padding-top: 7px;
-      margin-top: 7px;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-      font-size: 11px;
-      line-height: 1.35;
-      color: var(--text-secondary);
-    }
-    body.light-mode .role-showcase-footer {
-      border-top: 1px solid rgba(0, 0, 0, 0.06);
-      color: #334155;
-    }
-    .showcase-desc-highlight {
+    .card-dir .pillar-avatar {
+      background: rgba(212, 175, 55, 0.16);
+      border: 1px solid rgba(212, 175, 55, 0.35);
       color: var(--cba-gold);
-      font-weight: 800;
-      white-space: nowrap;
     }
-    body.light-mode .showcase-desc-highlight {
-      color: #B45309;
+    .card-ini .pillar-avatar {
+      background: rgba(59, 130, 246, 0.16);
+      border: 1px solid rgba(59, 130, 246, 0.35);
+      color: #60A5FA;
+    }
+    .card-pri .pillar-avatar {
+      background: rgba(16, 185, 129, 0.16);
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      color: #34D399;
+    }
+    .card-med .pillar-avatar {
+      background: rgba(168, 85, 247, 0.16);
+      border: 1px solid rgba(168, 85, 247, 0.35);
+      color: #C084FC;
     }
 
-    /* Módulo de Interfaz y Espacio para 1 Captura por Diapositiva */
-    .role-single-cap-pill {
+    .pillar-title-wrap {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+
+    .pillar-card-title {
+      font-size: 14.5px;
+      font-weight: 800;
+      color: var(--text-main);
+      line-height: 1.25;
+    }
+    body.light-mode .pillar-card-title {
+      color: #0F172A;
+    }
+
+    .pillar-card-badge {
       font-size: 8.5px;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.4px;
       padding: 2.5px 8px;
       border-radius: 4px;
-      background: rgba(212, 175, 55, 0.12);
-      border: 1px solid var(--cba-gold);
-      color: var(--cba-gold);
       white-space: nowrap;
     }
 
-    .role-interface-canvas {
-      flex: 1;
-      width: 100%;
-      min-height: 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 12px;
-      padding: 14px 16px;
-      background: radial-gradient(circle at 50% 15%, rgba(212, 175, 55, 0.05) 0%, rgba(8, 10, 20, 0.95) 85%);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 9px;
-      box-shadow: inset 0 0 24px rgba(0, 0, 0, 0.5);
-    }
-    body.light-mode .role-interface-canvas {
-      background: radial-gradient(circle at 50% 15%, rgba(217, 119, 6, 0.06) 0%, #FFFFFF 85%);
-      border: 1.5px solid #CBD5E1;
-      box-shadow: inset 0 0 16px rgba(0, 0, 0, 0.04);
-    }
-
-    .canvas-topbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding-bottom: 9px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      gap: 10px;
-    }
-    body.light-mode .canvas-topbar {
-      border-bottom: 1px solid #E2E8F0;
-    }
-
-    .canvas-sys-info {
-      display: flex;
-      align-items: center;
-      gap: 7px;
-    }
-    .canvas-dot-pulse {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--cba-gold);
-      box-shadow: 0 0 8px var(--cba-gold);
-    }
-    .canvas-brand {
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 0.8px;
-      color: var(--text-main);
-    }
-    body.light-mode .canvas-brand { color: #0F172A; }
-    .canvas-slash { color: var(--text-secondary); opacity: 0.5; font-size: 11px; }
-    .canvas-role-badge {
-      font-size: 10px;
-      font-weight: 700;
+    .card-dir .pillar-card-badge {
+      background: rgba(212, 175, 55, 0.16);
+      border: 1px solid var(--cba-gold);
       color: var(--cba-gold);
     }
+    .card-ini .pillar-card-badge {
+      background: rgba(59, 130, 246, 0.16);
+      border: 1px solid #3B82F6;
+      color: #60A5FA;
+    }
+    .card-pri .pillar-card-badge {
+      background: rgba(16, 185, 129, 0.16);
+      border: 1px solid #10B981;
+      color: #34D399;
+    }
+    .card-med .pillar-card-badge {
+      background: rgba(168, 85, 247, 0.16);
+      border: 1px solid #A855F7;
+      color: #C084FC;
+    }
 
-    .canvas-tabs-preview {
+    /* Lista de Tareas y Puntos de Apoyo */
+    .pillar-points-list {
       display: flex;
+      flex-direction: column;
+      gap: 11px;
+      flex: 1;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .pillar-point-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      font-size: 12.5px;
+      line-height: 1.48;
+      color: var(--text-secondary);
+    }
+    body.light-mode .pillar-point-item {
+      color: #334155;
+    }
+
+    .pillar-bullet {
+      font-size: 11px;
+      line-height: 1.48;
+      flex-shrink: 0;
+      font-weight: 900;
+    }
+    .card-dir .pillar-bullet { color: var(--cba-gold); }
+    .card-ini .pillar-bullet { color: #3B82F6; }
+    .card-pri .pillar-bullet { color: #10B981; }
+    .card-med .pillar-bullet { color: #A855F7; }
+
+    .pillar-point-item strong {
+      color: var(--text-main);
+      font-weight: 700;
+    }
+    body.light-mode .pillar-point-item strong {
+      color: #0F172A;
+    }
+
+    /* Footer con Etiquetas de Valor / Garantías */
+    .pillar-card-footer {
+      margin-top: 14px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+      display: flex;
+      flex-wrap: wrap;
       gap: 6px;
     }
-    .canvas-tab {
-      font-size: 9px;
+    body.light-mode .pillar-card-footer {
+      border-top: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .pillar-pill {
+      font-size: 9.5px;
       font-weight: 700;
       padding: 3px 8px;
       border-radius: 4px;
       background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.09);
       color: var(--text-secondary);
+      white-space: nowrap;
     }
-    body.light-mode .canvas-tab {
+    body.light-mode .pillar-pill {
       background: #F1F5F9;
       border: 1px solid #CBD5E1;
       color: #475569;
     }
-    .canvas-tab.active {
-      background: rgba(212, 175, 55, 0.16);
-      border-color: var(--cba-gold);
-      color: var(--cba-gold);
+
+    /* Adaptación a Modo Claro */
+    body.light-mode .role-pillar-card {
+      background: #FFFFFF;
+      border: 1.5px solid #CBD5E1;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
     }
-    body.light-mode .canvas-tab.active {
+    body.light-mode .role-pillar-card:hover {
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
+    }
+    body.light-mode .card-dir .pillar-avatar {
+      background: #FEF3C7;
+      border: 1.5px solid #D97706;
+      color: #B45309;
+    }
+    body.light-mode .card-dir .pillar-card-badge {
       background: #FEF3C7;
       border-color: #D97706;
-      color: #92400E;
+      color: #B45309;
     }
-
-    .canvas-pillars-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
+    body.light-mode .card-ini .pillar-avatar {
+      background: #DBEAFE;
+      border: 1.5px solid #2563EB;
+      color: #1D4ED8;
     }
-    .canvas-pillar-card {
-      background: rgba(255, 255, 255, 0.025);
-      border: 1px solid rgba(255, 255, 255, 0.07);
-      border-radius: 7px;
-      padding: 9px 10px;
-      display: flex;
-      flex-direction: column;
-      gap: 3px;
+    body.light-mode .card-ini .pillar-card-badge {
+      background: #DBEAFE;
+      border-color: #2563EB;
+      color: #1D4ED8;
     }
-    body.light-mode .canvas-pillar-card {
-      background: #F8FAFC;
-      border: 1px solid #E2E8F0;
+    body.light-mode .card-pri .pillar-avatar {
+      background: #D1FAE5;
+      border: 1.5px solid #059669;
+      color: #047857;
     }
-    .pillar-icon { font-size: 15px; margin-bottom: 2px; }
-    .pillar-title {
-      font-size: 10.5px;
-      font-weight: 800;
-      color: var(--text-main);
+    body.light-mode .card-pri .pillar-card-badge {
+      background: #D1FAE5;
+      border-color: #059669;
+      color: #047857;
     }
-    body.light-mode .pillar-title { color: #0F172A; }
-    .pillar-desc {
-      font-size: 9px;
-      color: var(--text-secondary);
-      line-height: 1.3;
+    body.light-mode .card-med .pillar-avatar {
+      background: #EDE9FE;
+      border: 1.5px solid #7C3AED;
+      color: #6D28D9;
     }
-    body.light-mode .pillar-desc { color: #64748B; }
-
-    .role-capture-slot {
-      border: 1.5px dashed rgba(212, 175, 55, 0.35);
-      border-radius: 8px;
-      background: rgba(212, 175, 55, 0.03);
-      padding: 18px 20px;
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      transition: all 0.25s ease;
+    body.light-mode .card-med .pillar-card-badge {
+      background: #EDE9FE;
+      border-color: #7C3AED;
+      color: #6D28D9;
     }
-    body.light-mode .role-capture-slot {
-      border-color: rgba(217, 119, 6, 0.4);
-      background: rgba(217, 119, 6, 0.03);
-    }
-    .capture-slot-icon {
-      font-size: 26px;
-      line-height: 1;
-      width: 44px;
-      height: 44px;
-      border-radius: 8px;
-      background: rgba(212, 175, 55, 0.12);
-      border: 1px solid rgba(212, 175, 55, 0.25);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-    .capture-slot-content {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-    .capture-slot-title {
-      font-size: 12px;
-      font-weight: 800;
-      color: var(--text-main);
-    }
-    body.light-mode .capture-slot-title { color: #0F172A; }
-    .capture-slot-sub {
-      font-size: 9.5px;
-      color: var(--text-secondary);
-      line-height: 1.35;
-    }
-    body.light-mode .capture-slot-sub { color: #64748B; }
 
     /* ==========================================================================
        SISTEMA RESPONSIVE INSTITUCIONAL CBA (Mobile, Tablet, Desktop & Landscape)
@@ -3306,9 +2995,8 @@
         grid-template-columns: 1.15fr 0.85fr;
         gap: 24px;
       }
-      .role-slide-layout {
-        grid-template-columns: 360px 1fr;
-        gap: 14px;
+      .role-pillars-grid {
+        gap: 12px;
       }
       .comp-media-wrapper {
         height: 220px;
@@ -3361,16 +3049,9 @@
         width: 85px;
         height: 85px;
       }
-      .role-slide-layout {
+      .role-pillars-grid {
         grid-template-columns: 1fr;
-        gap: 14px;
-        height: auto;
-      }
-      .role-options-panel {
-        max-height: 230px;
-      }
-      .role-showcase-panel {
-        min-height: auto;
+        gap: 12px;
       }
       .card-grid-4 {
         grid-template-columns: repeat(2, 1fr);
@@ -3487,28 +3168,9 @@
       .hero-visual {
         padding: 18px;
       }
-      .role-slide-layout {
+      .role-pillars-grid {
         grid-template-columns: 1fr;
         gap: 12px;
-        height: auto;
-      }
-      .role-options-panel {
-        max-height: 210px;
-      }
-      .canvas-pillars-grid {
-        grid-template-columns: 1fr;
-        gap: 8px;
-      }
-      .canvas-topbar {
-        flex-wrap: wrap;
-        gap: 6px;
-      }
-      .canvas-tabs-preview {
-        overflow-x: auto;
-        max-width: 100%;
-      }
-      .canvas-tab {
-        white-space: nowrap;
       }
       .progress-track {
         max-width: 150px;
@@ -3924,15 +3586,11 @@
     <section class="slide active" data-index="0" data-category="ALL">
       <div class="hero-cover-layout">
         <div class="hero-cover-left">
-          <div class="hero-cover-badge">
-            <span class="animated-emoji-rocket" title="Modernización Activa">🚀</span>
-            <span>Modernización · Homologación 2026</span>
-          </div>
 
           <h1 class="hero-h1 hero-cover-title">SICE-CBA: Evolución del Control de Estudios</h1>
 
           <p class="hero-desc hero-cover-desc">
-            Presentación ejecutiva: Comparativa frente al antiguo sistema <strong>CEO</strong>. Actualmente en <strong>fase activa de pruebas y homologación local</strong>, preparándose para su aprobación y su posible instalación definitiva en los <strong>servidores propios del colegio</strong>.
+            Comparativa frente al antiguo sistema <strong>CEO</strong>. Actualmente en <strong>fase activa de pruebas y homologación local</strong>, preparándose para su aprobación y su posible instalación definitiva en los <strong>servidores propios del colegio</strong>.
           </p>
 
           <div class="hero-min-grid">
@@ -3948,7 +3606,7 @@
             <div class="hero-min-card target-card">
               <div class="card-head">
                 <span class="card-phase-num gold">Fase 2</span>
-                <span class="card-status-target">🎯 Próximo Hito</span>
+                <span class="card-status-target">🎯 Próximo</span>
               </div>
               <div class="card-main-title">Servidores del Colegio</div>
               <div class="card-sub-label">Despliegue definitivo en hardware propio CBA</div>
@@ -3966,9 +3624,8 @@
 
     <!-- DIAPOSITIVA 2: De CEO a SICE-CBA en 3 Puntos Críticos -->
     <section class="slide" data-index="1" data-category="ALL">
-      <div class="slide-tag">Diagnóstico y Transformación <span class="audience-pill-tag">3 Ejes Fundamentales</span></div>
+      <div class="slide-tag">Diagnóstico y Transformación</div>
       <h2 class="slide-title">De CEO a SICE–CBA en 3 Puntos Críticos</h2>
-      <p class="slide-subtitle">Principales cuellos de botella del sistema histórico frente a las soluciones de alto impacto del nuevo sistema:</p>
 
       <div class="crit-grid">
         <!-- 1. INFRAESTRUCTURA -->
@@ -4125,9 +3782,8 @@
 
     <!-- DIAPOSITIVA 3: Cara a Cara Visual - Escritorio y Operatividad Diaria -->
     <section class="slide" data-index="2" data-category="ALL">
-      <div class="slide-tag">Comparativa Visual <span class="audience-pill-tag">Experiencia de Usuario</span></div>
+      <div class="slide-tag">Comparativa Visual</div>
       <h2 class="slide-title">Escritorio Principal & Centro de Comando</h2>
-      <p class="slide-subtitle">De un panel estático y desordenado a un centro de control con métricas e indicadores en vivo.</p>
 
       <div class="comparison-container">
         <div class="comp-col legacy">
@@ -4170,300 +3826,215 @@
       </div>
     </section>
 
-        <!-- DIAPOSITIVA 4: Rol Directora: Supervisión General -->
+    <!-- DIAPOSITIVA 4: Rol Directora: Supervisión General -->
     <section class="slide" data-index="3" data-category="DIRECTIVA">
-      <div class="slide-tag">Operatividad Directiva <span class="audience-pill-tag">10 Tareas · Supervisión General</span></div>
+      <div class="slide-tag">Operatividad Directiva</div>
       <h2 class="slide-title"><span class="role-anim-emoji emoji-dir">🏛️</span> Rol Directora: Supervisión General</h2>
-      <p class="slide-subtitle">Monitoreo continuo de los 3 subsistemas, doble pensum y auditoría pedagógica institucional:</p>
 
-      <div class="role-slide-layout role-dir">
-        <!-- Panel Izquierdo: Lista de Tareas Recurrentes -->
-        <div class="role-options-panel">
-          <div class="role-panel-header">
-            <span class="role-panel-header-title">🏛️ Tareas Recurrentes del Rol</span>
-            <span class="role-panel-badge" style="background: rgba(212, 175, 55, 0.16); border: 1px solid var(--cba-gold); color: var(--cba-gold);">10 Tareas</span>
+      <div class="role-pillars-grid">
+        <!-- Pilar 1: Supervisión Pedagógica y Malla Curricular -->
+        <div class="role-pillar-card card-dir">
+          <div class="pillar-card-header">
+            <div class="pillar-header-left">
+              <div class="pillar-avatar">🎯</div>
+              <div class="pillar-title-wrap">
+                <h3 class="pillar-card-title">Supervisión Pedagógica 360°</h3>
+              </div>
+            </div>
           </div>
-          <div class="role-options-list">
-            <button type="button" class="role-option-item active" 
-                    onclick="selectRoleOption(this, 'dirOptTitle', 'dirOptDesc', 'dirOptTag', 'Estrategias evaluadas', 'Auditoría en tiempo real de la malla curricular institucional (18 asignaturas) y avance de estrategias de aula por docente.', 'SUPERVISIÓN ACADÉMICA')"
-                    onmouseenter="selectRoleOption(this, 'dirOptTitle', 'dirOptDesc', 'dirOptTag', 'Estrategias evaluadas', 'Auditoría en tiempo real de la malla curricular institucional (18 asignaturas) y avance de estrategias de aula por docente.', 'SUPERVISIÓN ACADÉMICA')">
-              <span class="role-option-icon">🎯</span>
-              <div class="role-option-info">
-                <span class="role-option-title">Estrategias evaluadas</span>
-                <span class="role-option-scope">Por curso y por docente</span>
-              </div>
-            </button>
-            <button type="button" class="role-option-item" 
-                    onclick="selectRoleOption(this, 'dirOptTitle', 'dirOptDesc', 'dirOptTag', 'Registros de asistencia', 'Control diario automatizado con registro de pases en portería (4), índice CBA (98.4%) y alertas normativas LOE Art. 109.', 'CONTROL DE ASISTENCIAS')"
-                    onmouseenter="selectRoleOption(this, 'dirOptTitle', 'dirOptDesc', 'dirOptTag', 'Registros de asistencia', 'Control diario automatizado con registro de pases en portería (4), índice CBA (98.4%) y alertas normativas LOE Art. 109.', 'CONTROL DE ASISTENCIAS')">
-              <span class="role-option-icon">📅</span>
-              <div class="role-option-info">
-                <span class="role-option-title">Registros de asistencia</span>
-                <span class="role-option-scope">Por curso y por estudiante</span>
-              </div>
-            </button>
-            <button type="button" class="role-option-item" 
-                    onclick="selectRoleOption(this, 'dirOptTitle', 'dirOptDesc', 'dirOptTag', 'Registros de conducta', 'Bitácora institucional de conducta: seguimiento de faltas leves, graves y reconocimientos vinculados a ambos padres.', 'EXPEDIENTE DISCIPLINARIO')"
-                    onmouseenter="selectRoleOption(this, 'dirOptTitle', 'dirOptDesc', 'dirOptTag', 'Registros de conducta', 'Bitácora institucional de conducta: seguimiento de faltas leves, graves y reconocimientos vinculados a ambos padres.', 'EXPEDIENTE DISCIPLINARIO')">
-              <span class="role-option-icon">⚖️</span>
-              <div class="role-option-info">
-                <span class="role-option-title">Registros de conducta</span>
-                <span class="role-option-scope">Por curso y por estudiante</span>
-              </div>
-            </button>
-            <button type="button" class="role-option-item" 
-                    onclick="selectRoleOption(this, 'dirOptTitle', 'dirOptDesc', 'dirOptTag', 'Calificaciones / estudiante', 'Cálculo automático de promedios ponderados ministeriales MPPE y promedios internos CBA sin recargas de página.', 'PROMEDIOS OFICIALES')"
-                    onmouseenter="selectRoleOption(this, 'dirOptTitle', 'dirOptDesc', 'dirOptTag', 'Calificaciones / estudiante', 'Cálculo automático de promedios ponderados ministeriales MPPE y promedios internos CBA sin recargas de página.', 'PROMEDIOS OFICIALES')">
-              <span class="role-option-icon">📝</span>
-              <div class="role-option-info">
-                <span class="role-option-title">Calificaciones / estudiante</span>
-                <span class="role-option-scope">Promedio MPPE y Promedio CBA</span>
-              </div>
-            </button>
-            <button type="button" class="role-option-item" 
-                    onclick="selectRoleOption(this, 'dirOptTitle', 'dirOptDesc', 'dirOptTag', 'Calificaciones por curso', 'Matriz institucional completa con desglose de materias oficiales y materias del programa artístico Bellas Artes.', 'SÁBANA DE NOTAS')"
-                    onmouseenter="selectRoleOption(this, 'dirOptTitle', 'dirOptDesc', 'dirOptTag', 'Calificaciones por curso', 'Matriz institucional completa con desglose de materias oficiales y materias del programa artístico Bellas Artes.', 'SÁBANA DE NOTAS')">
-              <span class="role-option-icon">📊</span>
-              <div class="role-option-info">
-                <span class="role-option-title">Calificaciones por curso</span>
-                <span class="role-option-scope">Pensum MPPE y Pensum CBA</span>
-              </div>
-            </button>
-            <button type="button" class="role-option-item" 
-                    onclick="selectRoleOption(this, 'dirOptTitle', 'dirOptDesc', 'dirOptTag', 'Cuadros estadísticos (Calificaciones)', 'Semáforo de rendimiento general, Promedio UCE (16.4/20) y porcentajes de aprobación consolidados por nivel escolar.', 'ANALÍTICA Y RENDIMIENTO')"
-                    onmouseenter="selectRoleOption(this, 'dirOptTitle', 'dirOptDesc', 'dirOptTag', 'Cuadros estadísticos (Calificaciones)', 'Semáforo de rendimiento general, Promedio UCE (16.4/20) y porcentajes de aprobación consolidados por nivel escolar.', 'ANALÍTICA Y RENDIMIENTO')">
-              <span class="role-option-icon">📈</span>
-              <div class="role-option-info">
-                <span class="role-option-title">Cuadros estadísticos</span>
-                <span class="role-option-scope">Calificaciones por curso</span>
-              </div>
-            </button>
-            <button type="button" class="role-option-item" 
-                    onclick="selectRoleOption(this, 'dirOptTitle', 'dirOptDesc', 'dirOptTag', 'Cuadros estadísticos (Asistencia)', 'Monitoreo continuo del umbral del 25% de inasistencias acumuladas y reportes de alertas tempranas para dirección.', 'AUDITORÍA DE ASISTENCIA')"
-                    onmouseenter="selectRoleOption(this, 'dirOptTitle', 'dirOptDesc', 'dirOptTag', 'Cuadros estadísticos (Asistencia)', 'Monitoreo continuo del umbral del 25% de inasistencias acumuladas y reportes de alertas tempranas para dirección.', 'AUDITORÍA DE ASISTENCIA')">
-              <span class="role-option-icon">📊</span>
-              <div class="role-option-info">
-                <span class="role-option-title">Cuadros estadísticos</span>
-                <span class="role-option-scope">Asistencia por curso</span>
-              </div>
-            </button>
-            <button type="button" class="role-option-item" 
-                    onclick="selectRoleOption(this, 'dirOptTitle', 'dirOptDesc', 'dirOptTag', 'Cuadros estadísticos (Conducta)', 'Métricas agregadas de faltas, reconocimientos al mérito y acuerdos escolares para el consejo directivo.', 'ESTADÍSTICAS DE CONVIVENCIA')"
-                    onmouseenter="selectRoleOption(this, 'dirOptTitle', 'dirOptDesc', 'dirOptTag', 'Cuadros estadísticos (Conducta)', 'Métricas agregadas de faltas, reconocimientos al mérito y acuerdos escolares para el consejo directivo.', 'ESTADÍSTICAS DE CONVIVENCIA')">
-              <span class="role-option-icon">📋</span>
-              <div class="role-option-info">
-                <span class="role-option-title">Cuadros estadísticos</span>
-                <span class="role-option-scope">Registros de conducta por curso</span>
-              </div>
-            </button>
-            <button type="button" class="role-option-item" 
-                    onclick="selectRoleOption(this, 'dirOptTitle', 'dirOptDesc', 'dirOptTag', 'Estudiantes Grupos CRP', 'Gestión centralizada de nóminas de robótica aplicada, teatro, música, medios digitales y agroecología sin duplicidad.', 'INSCRIPCIÓN CRP')"
-                    onmouseenter="selectRoleOption(this, 'dirOptTitle', 'dirOptDesc', 'dirOptTag', 'Estudiantes Grupos CRP', 'Gestión centralizada de nóminas de robótica aplicada, teatro, música, medios digitales y agroecología sin duplicidad.', 'INSCRIPCIÓN CRP')">
-              <span class="role-option-icon">🎨</span>
-              <div class="role-option-info">
-                <span class="role-option-title">Estudiantes Grupos CRP</span>
-                <span class="role-option-scope">Creación, Recreación y Producción</span>
-              </div>
-            </button>
-            <button type="button" class="role-option-item" 
-                    onclick="selectRoleOption(this, 'dirOptTitle', 'dirOptDesc', 'dirOptTag', 'Carga de notas CRP', 'Supervisión de actas evaluativas y calificaciones de talleres CRP para la aprobación reglamentaria del lapso.', 'CARGA DOCENTE CRP')"
-                    onmouseenter="selectRoleOption(this, 'dirOptTitle', 'dirOptDesc', 'dirOptTag', 'Carga de notas CRP', 'Supervisión de actas evaluativas y calificaciones de talleres CRP para la aprobación reglamentaria del lapso.', 'CARGA DOCENTE CRP')">
-              <span class="role-option-icon">📥</span>
-              <div class="role-option-info">
-                <span class="role-option-title">Carga de notas CRP</span>
-                <span class="role-option-scope">Reporte de carga de calificaciones</span>
-              </div>
-            </button>
+
+          <ul class="pillar-points-list">
+            <li class="pillar-point-item">
+              <span class="pillar-bullet">✦</span>
+              <div><strong>Auditoría docente:</strong> Monitoreo en tiempo real de estrategias de aula evaluadas, avance programático y planificación por curso.</div>
+            </li>
+            <li class="pillar-point-item">
+              <span class="pillar-bullet">✦</span>
+              <div><strong>Doble Pensum integrado:</strong> Calificaciones oficiales MPPE y malla artística/interna CBA consolidadas sin discrepancias.</div>
+            </li>
+            <li class="pillar-point-item">
+              <span class="pillar-bullet">✦</span>
+              <div><strong>Sábana ejecutiva en vivo:</strong> Visualización matricial de calificaciones por curso y estudiante con guardado reactivo sin recargas (F5).</div>
+            </li>
+          </ul>
+
+          <div class="pillar-card-footer">
+            <span class="pillar-pill">🎯 Auditoría Docente</span>
+            <span class="pillar-pill">⚡ Cero Recargas F5</span>
+            <span class="pillar-pill">📑 Doble Pensum MPPE & CBA</span>
           </div>
         </div>
 
-        <!-- Panel Derecho: Módulo de Interfaz del Rol (Preparado para 1 Captura) -->
-        <div class="role-showcase-panel">
-          <div class="role-showcase-header">
-            <div class="showcase-header-left">
-              <div class="showcase-window-dots">
-                <span class="showcase-dot red"></span>
-                <span class="showcase-dot yellow"></span>
-                <span class="showcase-dot green"></span>
-              </div>
-              <span id="dirOptTag" class="showcase-tag-pill">SUPERVISIÓN GENERAL</span>
-              <span id="dirOptTitle" class="showcase-option-title">Estrategias evaluadas</span>
-            </div>
-            <span class="role-single-cap-pill">1 Captura de Interfaz</span>
-          </div>
-
-          <div class="role-interface-canvas">
-            <div class="canvas-topbar">
-              <div class="canvas-sys-info">
-                <span class="canvas-dot-pulse"></span>
-                <span class="canvas-brand">SICE-CBA</span>
-                <span class="canvas-slash">/</span>
-                <span class="canvas-role-badge">🏛️ Entorno Directora</span>
-              </div>
-              <div class="canvas-tabs-preview">
-                <span class="canvas-tab active">Supervisión Global</span>
-                <span class="canvas-tab">Auditoría de Malla</span>
-                <span class="canvas-tab">Control Lapsos</span>
-              </div>
-            </div>
-
-            <div class="canvas-pillars-grid">
-              <div class="canvas-pillar-card">
-                <span class="pillar-icon">📊</span>
-                <span class="pillar-title">Auditoría Integral</span>
-                <span class="pillar-desc">Monitoreo unificado de Inicial, Primaria y Media General (18 asignaturas).</span>
-              </div>
-              <div class="canvas-pillar-card">
-                <span class="pillar-icon">⏱️</span>
-                <span class="pillar-title">Control de Asistencia</span>
-                <span class="pillar-desc">Pases en portería, índice de puntualidad 98.4% y umbral LOE Art. 109.</span>
-              </div>
-              <div class="canvas-pillar-card">
-                <span class="pillar-icon">⚖️</span>
-                <span class="pillar-title">Convivencia y Talleres</span>
-                <span class="pillar-desc">Bitácora de conducta de ambos padres y nóminas centralizadas CRP.</span>
-              </div>
-            </div>
-
-            <div class="role-capture-slot">
-              <div class="capture-slot-icon">🖥️</div>
-              <div class="capture-slot-content">
-                <span class="capture-slot-title">Espacio Preparado para Captura de Interfaz del Rol</span>
-                <span class="capture-slot-sub">Se incorporará la captura representativa de la interfaz del personal directivo</span>
+        <!-- Pilar 2: Asistencia Diaria y Convivencia -->
+        <div class="role-pillar-card card-dir">
+          <div class="pillar-card-header">
+            <div class="pillar-header-left">
+              <div class="pillar-avatar">⚖️</div>
+              <div class="pillar-title-wrap">
+                <h3 class="pillar-card-title">Control Diario & Convivencia</h3>
               </div>
             </div>
           </div>
 
-          <div class="role-showcase-footer">
-            <span class="showcase-desc-highlight">✦ Solución SICE-CBA:</span>
-            <span id="dirOptDesc">Auditoría en tiempo real de la malla curricular institucional (18 asignaturas) y avance de estrategias de aula por docente.</span>
+          <ul class="pillar-points-list">
+            <li class="pillar-point-item">
+              <span class="pillar-bullet">✦</span>
+              <div><strong>Portería automatizada:</strong> Registro continuo de pases de acceso y cálculo del índice general de puntualidad y asistencia CBA (98.4%).</div>
+            </li>
+            <li class="pillar-point-item">
+              <span class="pillar-bullet">✦</span>
+              <div><strong>Alerta temprana LOE 109:</strong> Detección matemática oportuna del umbral del 25% de inasistencias para resguardo del derecho evaluativo.</div>
+            </li>
+            <li class="pillar-point-item">
+              <span class="pillar-bullet">✦</span>
+              <div><strong>Bitácora de convivencia:</strong> Registro de reconocimientos, acuerdos escolares y faltas con trazabilidad y notificación directa a ambos padres.</div>
+            </li>
+          </ul>
+
+          <div class="pillar-card-footer">
+            <span class="pillar-pill">📅 Portería 98.4%</span>
+            <span class="pillar-pill">🛡️ Alerta LOE Art. 109</span>
+            <span class="pillar-pill">👨‍👩‍👧 Trazabilidad Padres</span>
+          </div>
+        </div>
+
+        <!-- Pilar 3: Analítica de Dirección y Talleres CRP -->
+        <div class="role-pillar-card card-dir">
+          <div class="pillar-card-header">
+            <div class="pillar-header-left">
+              <div class="pillar-avatar">📊</div>
+              <div class="pillar-title-wrap">
+                <h3 class="pillar-card-title">Analítica & Talleres CRP</h3>
+              </div>
+            </div>
+          </div>
+
+          <ul class="pillar-points-list">
+            <li class="pillar-point-item">
+              <span class="pillar-bullet">✦</span>
+              <div><strong>Cuadros estadísticos agregados:</strong> Semáforos de rendimiento académico, ausentismo y clima escolar para el Consejo Directivo.</div>
+            </li>
+            <li class="pillar-point-item">
+              <span class="pillar-bullet">✦</span>
+              <div><strong>Nóminas centralizadas CRP:</strong> Asignación única sin duplicidad en robótica, música, teatro, medios digitales y agroecología.</div>
+            </li>
+            <li class="pillar-point-item">
+              <span class="pillar-bullet">✦</span>
+              <div><strong>Carga y cierre de actas:</strong> Supervisión de calificaciones cualitativas de CRP requeridas para la certificación reglamentaria del lapso.</div>
+            </li>
+          </ul>
+
+          <div class="pillar-card-footer">
+            <span class="pillar-pill">📈 Semáforos de Rendimiento</span>
+            <span class="pillar-pill">🎨 Nóminas CRP</span>
+            <span class="pillar-pill">🔒 Cierre de Actas</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- DIAPOSITIVA 5: Rol Coordinación Inicial: Maternal & Preescolar -->
+    <!-- DIAPOSITIVA 5: Rol Coordinación Inicial: Preescolar -->
     <section class="slide" data-index="4" data-category="DOCENTES DIRECTIVA">
-      <div class="slide-tag">Nivel Maternal & Preescolar <span class="audience-pill-tag">5 Tareas · Valoración Cualitativa</span></div>
-      <h2 class="slide-title"><span class="role-anim-emoji emoji-ini">🧸</span> Rol Coordinación Inicial: Maternal & Preescolar</h2>
-      <p class="slide-subtitle">Acompañamiento pedagógico formativo, áreas de desarrollo en la primera infancia y escala literal oficial (A a E):</p>
+      <div class="slide-tag">Nivel Preescolar</div>
+      <h2 class="slide-title"><span class="role-anim-emoji emoji-ini">🧸</span> Rol Coordinación Inicial: Preescolar</h2>
 
-      <div class="role-slide-layout role-ini">
-        <!-- Panel Izquierdo: Lista de Tareas Recurrentes -->
-        <div class="role-options-panel">
-          <div class="role-panel-header">
-            <span class="role-panel-header-title">🧸 Tareas Recurrentes del Rol</span>
-            <span class="role-panel-badge" style="background: rgba(212, 175, 55, 0.16); border: 1px solid var(--cba-gold); color: var(--cba-gold);">5 Tareas</span>
+      <div class="role-pillars-grid">
+        <!-- Pilar 1: Áreas de Desarrollo Infantil -->
+        <div class="role-pillar-card card-ini">
+          <div class="pillar-card-header">
+            <div class="pillar-header-left">
+              <div class="pillar-avatar">🧸</div>
+              <div class="pillar-title-wrap">
+                <h3 class="pillar-card-title">Desarrollo de Primera Infancia</h3>
+              </div>
+            </div>
           </div>
-          <div class="role-options-list">
-            <button type="button" class="role-option-item active" 
-                    onclick="selectRoleOption(this, 'iniOptTitle', 'iniOptDesc', 'iniOptTag', 'Indicadores evaluados', 'Banco oficial de indicadores adaptados al currículo de educación inicial y áreas de desarrollo del niño.', 'INDICADORES PEDAGÓGICOS')"
-                    onmouseenter="selectRoleOption(this, 'iniOptTitle', 'iniOptDesc', 'iniOptTag', 'Indicadores evaluados', 'Banco oficial de indicadores adaptados al currículo de educación inicial y áreas de desarrollo del niño.', 'INDICADORES PEDAGÓGICOS')">
-              <span class="role-option-icon">🧸</span>
-              <div class="role-option-info">
-                <span class="role-option-title">Indicadores evaluados</span>
-                <span class="role-option-scope">Reporte de indicadores pedagógicos</span>
-              </div>
-            </button>
-            <button type="button" class="role-option-item" 
-                    onclick="selectRoleOption(this, 'iniOptTitle', 'iniOptDesc', 'iniOptTag', 'Indicadores Actitudinales', 'Registro cualitativo de adaptación socioemocional, hábitos de trabajo y convivencia en edad temprana.', 'EVALUACIÓN ACTITUDINAL')"
-                    onmouseenter="selectRoleOption(this, 'iniOptTitle', 'iniOptDesc', 'iniOptTag', 'Indicadores Actitudinales', 'Registro cualitativo de adaptación socioemocional, hábitos de trabajo y convivencia en edad temprana.', 'EVALUACIÓN ACTITUDINAL')">
-              <span class="role-option-icon">⭐</span>
-              <div class="role-option-info">
-                <span class="role-option-title">Indicadores Actitudinales</span>
-                <span class="role-option-scope">Reporte específico evaluado</span>
-              </div>
-            </button>
-            <button type="button" class="role-option-item" 
-                    onclick="selectRoleOption(this, 'iniOptTitle', 'iniOptDesc', 'iniOptTag', 'Consulta de evaluación individual', 'Expediente detallado del progreso formativo del infante con valoraciones literales (A, B, C, D, E) y observaciones.', 'INFORME CUALITATIVO')"
-                    onmouseenter="selectRoleOption(this, 'iniOptTitle', 'iniOptDesc', 'iniOptTag', 'Consulta de evaluación individual', 'Expediente detallado del progreso formativo del infante con valoraciones literales (A, B, C, D, E) y observaciones.', 'INFORME CUALITATIVO')">
-              <span class="role-option-icon">🔍</span>
-              <div class="role-option-info">
-                <span class="role-option-title">Consulta de evaluación</span>
-                <span class="role-option-scope">Individual por estudiante</span>
-              </div>
-            </button>
-            <button type="button" class="role-option-item" 
-                    onclick="selectRoleOption(this, 'iniOptTitle', 'iniOptDesc', 'iniOptTag', 'Consulta de evaluación consolidada', 'Visión panorámica de las salas de 3, 4 y 5 años con áreas de desarrollo (Personal, Ambiente, Música, Plásticas).', 'SÁBANA DE SALA')"
-                    onmouseenter="selectRoleOption(this, 'iniOptTitle', 'iniOptDesc', 'iniOptTag', 'Consulta de evaluación consolidada', 'Visión panorámica de las salas de 3, 4 y 5 años con áreas de desarrollo (Personal, Ambiente, Música, Plásticas).', 'SÁBANA DE SALA')">
-              <span class="role-option-icon">📑</span>
-              <div class="role-option-info">
-                <span class="role-option-title">Consulta de evaluación</span>
-                <span class="role-option-scope">Consolidada por curso</span>
-              </div>
-            </button>
-            <button type="button" class="role-option-item" 
-                    onclick="selectRoleOption(this, 'iniOptTitle', 'iniOptDesc', 'iniOptTag', 'Cuadros estadísticos de valoración', 'Porcentaje de infantes valorados, avance de carga por sala y semáforo de cumplimiento pedagógico en educación inicial.', 'MÉTRICAS Y COBERTURA')"
-                    onmouseenter="selectRoleOption(this, 'iniOptTitle', 'iniOptDesc', 'iniOptTag', 'Cuadros estadísticos de valoración', 'Porcentaje de infantes valorados, avance de carga por sala y semáforo de cumplimiento pedagógico en educación inicial.', 'MÉTRICAS Y COBERTURA')">
-              <span class="role-option-icon">📈</span>
-              <div class="role-option-info">
-                <span class="role-option-title">Cuadros estadísticos</span>
-                <span class="role-option-scope">Valoración por curso y estudiante</span>
-              </div>
-            </button>
+
+          <ul class="pillar-points-list">
+            <li class="pillar-point-item">
+              <span class="pillar-bullet">✦</span>
+              <div><strong>Banco normado de indicadores:</strong> Competencias formativas y socioemocionales adaptadas a las Salas de 3, 4 y 5 años.</div>
+            </li>
+            <li class="pillar-point-item">
+              <span class="pillar-bullet">✦</span>
+              <div><strong>Áreas de desarrollo integradas:</strong> Formación personal y social, relación con el ambiente, comunicación y expresión lúdico-artística.</div>
+            </li>
+            <li class="pillar-point-item">
+              <span class="pillar-bullet">✦</span>
+              <div><strong>Evaluación actitudinal:</strong> Seguimiento cualitativo de hábitos, ritmos madurativos, autonomía y adaptación al entorno escolar.</div>
+            </li>
+          </ul>
+
+          <div class="pillar-card-footer">
+            <span class="pillar-pill">🧸 Salas 3, 4 y 5 Años</span>
+            <span class="pillar-pill">🌱 Enfoque Formativo</span>
+            <span class="pillar-pill">⭐ Banco Oficial MPPE</span>
           </div>
         </div>
 
-        <!-- Panel Derecho: Módulo de Interfaz del Rol (Preparado para 1 Captura) -->
-        <div class="role-showcase-panel">
-          <div class="role-showcase-header">
-            <div class="showcase-header-left">
-              <div class="showcase-window-dots">
-                <span class="showcase-dot red"></span>
-                <span class="showcase-dot yellow"></span>
-                <span class="showcase-dot green"></span>
-              </div>
-              <span id="iniOptTag" class="showcase-tag-pill" style="border-color: #3B82F6; color: #60A5FA; background: rgba(59, 130, 246, 0.16);">INDICADORES PEDAGÓGICOS</span>
-              <span id="iniOptTitle" class="showcase-option-title">Indicadores evaluados</span>
-            </div>
-            <span class="role-single-cap-pill" style="border-color: #3B82F6; color: #60A5FA;">1 Captura de Interfaz</span>
-          </div>
-
-          <div class="role-interface-canvas">
-            <div class="canvas-topbar">
-              <div class="canvas-sys-info">
-                <span class="canvas-dot-pulse" style="background: #3B82F6;"></span>
-                <span class="canvas-brand">SICE-CBA</span>
-                <span class="canvas-slash">/</span>
-                <span class="canvas-role-badge">🧸 Coord. Inicial</span>
-              </div>
-              <div class="canvas-tabs-preview">
-                <span class="canvas-tab active" style="border-color: #3B82F6; color: #60A5FA;">Maternal & Preescolar</span>
-                <span class="canvas-tab">Salas 3, 4 y 5 Años</span>
-                <span class="canvas-tab">Escala Literal (A-E)</span>
-              </div>
-            </div>
-
-            <div class="canvas-pillars-grid">
-              <div class="canvas-pillar-card">
-                <span class="pillar-icon">🧸</span>
-                <span class="pillar-title">Escala Literal MPPE</span>
-                <span class="pillar-desc">Valoración adaptada (A, B, C, D, E) respetando la normativa de primera infancia.</span>
-              </div>
-              <div class="canvas-pillar-card">
-                <span class="pillar-icon">🎨</span>
-                <span class="pillar-title">Áreas de Desarrollo</span>
-                <span class="pillar-desc">Formación Personal, Social, Ambiente, Artes Plásticas y Educación Física.</span>
-              </div>
-              <div class="canvas-pillar-card">
-                <span class="pillar-icon">📑</span>
-                <span class="pillar-title">Boletines Cualitativos</span>
-                <span class="pillar-desc">Informes descriptivos individuales y sábanas de sala con emisión inmediata.</span>
-              </div>
-            </div>
-
-            <div class="role-capture-slot">
-              <div class="capture-slot-icon">🖥️</div>
-              <div class="capture-slot-content">
-                <span class="capture-slot-title">Espacio Preparado para Captura de Interfaz del Rol</span>
-                <span class="capture-slot-sub">Se incorporará la captura representativa de la interfaz de Coordinación Inicial</span>
+        <!-- Pilar 2: Escala Literal (A - E) -->
+        <div class="role-pillar-card card-ini">
+          <div class="pillar-card-header">
+            <div class="pillar-header-left">
+              <div class="pillar-avatar">📝</div>
+              <div class="pillar-title-wrap">
+                <h3 class="pillar-card-title">Evaluación Descriptiva Literal</h3>
               </div>
             </div>
           </div>
 
-          <div class="role-showcase-footer">
-            <span class="showcase-desc-highlight">✦ Solución SICE-CBA:</span>
-            <span id="iniOptDesc">Banco oficial de indicadores adaptados al currículo de educación inicial y áreas de desarrollo del niño.</span>
+          <ul class="pillar-points-list">
+            <li class="pillar-point-item">
+              <span class="pillar-bullet">✦</span>
+              <div><strong>Alineación ministerial MPPE:</strong> Escala estrictamente literal (<code>A</code> a <code>E</code>). El sistema bloquea promedios o escalas numéricas sobre 20.</div>
+            </li>
+            <li class="pillar-point-item">
+              <span class="pillar-bullet">✦</span>
+              <div><strong>Expediente formativo individual:</strong> Informe cualitativo del progreso del infante con apreciaciones descriptivas redactadas por el docente.</div>
+            </li>
+            <li class="pillar-point-item">
+              <span class="pillar-bullet">✦</span>
+              <div><strong>Cero notas cuantitativas:</strong> Respeto absoluto al desarrollo pedagógico de la primera infancia garantizado por la lógica del software.</div>
+            </li>
+          </ul>
+
+          <div class="pillar-card-footer">
+            <span class="pillar-pill">🔒 Cero Notas Numéricas</span>
+            <span class="pillar-pill">📝 Informes Descriptivos</span>
+            <span class="pillar-pill">🛡️ Blindaje Ministerial</span>
+          </div>
+        </div>
+
+        <!-- Pilar 3: Sábana de Salas & Cobertura -->
+        <div class="role-pillar-card card-ini">
+          <div class="pillar-card-header">
+            <div class="pillar-header-left">
+              <div class="pillar-avatar">📑</div>
+              <div class="pillar-title-wrap">
+                <h3 class="pillar-card-title">Sábana de Salas & Cobertura</h3>
+              </div>
+            </div>
+          </div>
+
+          <ul class="pillar-points-list">
+            <li class="pillar-point-item">
+              <span class="pillar-bullet">✦</span>
+              <div><strong>Sábana digital consolidada:</strong> Matriz panorámica de cada sala con visión integral de indicadores sin manipulación de archivos Excel.</div>
+            </li>
+            <li class="pillar-point-item">
+              <span class="pillar-bullet">✦</span>
+              <div><strong>Semáforo de cobertura:</strong> Monitoreo en tiempo real del porcentaje de niños valorados y avance de carga docente por sala.</div>
+            </li>
+            <li class="pillar-point-item">
+              <span class="pillar-bullet">✦</span>
+              <div><strong>Emisión inmediata de boletines:</strong> Generación digital directa de informes de lapso listos para firma y entrega a representantes.</div>
+            </li>
+          </ul>
+
+          <div class="pillar-card-footer">
+            <span class="pillar-pill">📊 Sábana Consolidada</span>
+            <span class="pillar-pill">📈 Semáforo de Cobertura</span>
+            <span class="pillar-pill">⚡ Emisión en 1 Clic</span>
           </div>
         </div>
       </div>
@@ -4471,153 +4042,106 @@
 
     <!-- DIAPOSITIVA 6: Rol Coordinación Primaria: 1.° a 6.° Grado -->
     <section class="slide" data-index="5" data-category="DOCENTES DIRECTIVA">
-      <div class="slide-tag">Nivel Primaria (1.° a 6.° Grado) <span class="audience-pill-tag">8 Tareas · Doble Pensum</span></div>
+      <div class="slide-tag">Nivel Primaria (1.° a 6.° Grado)</div>
       <h2 class="slide-title"><span class="role-anim-emoji emoji-pri">🌱</span> Rol Coordinación Primaria: 1.° a 6.° Grado</h2>
-      <p class="slide-subtitle">Seguimiento de competencias fundamentales, evaluación continua, asistencia y doble pensum (MPPE vs CBA):</p>
 
-      <div class="role-slide-layout role-pri">
-        <!-- Panel Izquierdo: Lista de Tareas Recurrentes -->
-        <div class="role-options-panel">
-          <div class="role-panel-header">
-            <span class="role-panel-header-title">🌱 Tareas Recurrentes del Rol</span>
-            <span class="role-panel-badge" style="background: rgba(16, 185, 129, 0.16); border: 1px solid #10B981; color: #10B981;">8 Tareas</span>
+      <div class="role-pillars-grid">
+        <!-- Pilar 1: Evaluación Cualitativa Formativa MPPE -->
+        <div class="role-pillar-card card-pri">
+          <div class="pillar-card-header">
+            <div class="pillar-header-left">
+              <div class="pillar-avatar">🎯</div>
+              <div class="pillar-title-wrap">
+                <h3 class="pillar-card-title">Competencias Fundamentales</h3>
+              </div>
+            </div>
           </div>
-          <div class="role-options-list">
-            <button type="button" class="role-option-item active" 
-                    onclick="selectRoleOption(this, 'priOptTitle', 'priOptDesc', 'priOptTag', 'Indicadores evaluados', 'Evaluación formativa cualitativa oficial MPPE (Logrado • En Proceso • Iniciado) en competencias fundamentales.', 'INDICADORES PRIMARIA')"
-                    onmouseenter="selectRoleOption(this, 'priOptTitle', 'priOptDesc', 'priOptTag', 'Indicadores evaluados', 'Evaluación formativa cualitativa oficial MPPE (Logrado • En Proceso • Iniciado) en competencias fundamentales.', 'INDICADORES PRIMARIA')">
-              <span class="role-option-icon">🎯</span>
-              <div class="role-option-info">
-                <span class="role-option-title">Indicadores evaluados</span>
-                <span class="role-option-scope">Por curso y por docente</span>
-              </div>
-            </button>
-            <button type="button" class="role-option-item" 
-                    onclick="selectRoleOption(this, 'priOptTitle', 'priOptDesc', 'priOptTag', 'Registros de asistencia', 'Control diario por aula con justificación de ausencias, pases de portería y seguimiento de puntualidad escolar.', 'ASISTENCIA 1.° A 6.°')"
-                    onmouseenter="selectRoleOption(this, 'priOptTitle', 'priOptDesc', 'priOptTag', 'Registros de asistencia', 'Control diario por aula con justificación de ausencias, pases de portería y seguimiento de puntualidad escolar.', 'ASISTENCIA 1.° A 6.°')">
-              <span class="role-option-icon">📅</span>
-              <div class="role-option-info">
-                <span class="role-option-title">Registros de asistencia</span>
-                <span class="role-option-scope">Por curso y por estudiante</span>
-              </div>
-            </button>
-            <button type="button" class="role-option-item" 
-                    onclick="selectRoleOption(this, 'priOptTitle', 'priOptDesc', 'priOptTag', 'Registros de conducta', 'Registro preventivo de acuerdos de convivencia, hábitos escolares y reconocimientos al mérito de primaria.', 'SEGUIMIENTO CONDUCTUAL')"
-                    onmouseenter="selectRoleOption(this, 'priOptTitle', 'priOptDesc', 'priOptTag', 'Registros de conducta', 'Registro preventivo de acuerdos de convivencia, hábitos escolares y reconocimientos al mérito de primaria.', 'SEGUIMIENTO CONDUCTUAL')">
-              <span class="role-option-icon">⚖️</span>
-              <div class="role-option-info">
-                <span class="role-option-title">Registros de conducta</span>
-                <span class="role-option-scope">Por curso y por estudiante</span>
-              </div>
-            </button>
-            <button type="button" class="role-option-item" 
-                    onclick="selectRoleOption(this, 'priOptTitle', 'priOptDesc', 'priOptTag', 'Calificaciones / estudiante', 'Escala cualitativa oficial MPPE (L, EP, I) junto a la ponderación del pensum institucional de Bellas Artes.', 'BOLETÍN Y PROMEDIOS')"
-                    onmouseenter="selectRoleOption(this, 'priOptTitle', 'priOptDesc', 'priOptTag', 'Calificaciones / estudiante', 'Escala cualitativa oficial MPPE (L, EP, I) junto a la ponderación del pensum institucional de Bellas Artes.', 'BOLETÍN Y PROMEDIOS')">
-              <span class="role-option-icon">📝</span>
-              <div class="role-option-info">
-                <span class="role-option-title">Calificaciones / estudiante</span>
-                <span class="role-option-scope">Promedio MPPE y Promedio CBA</span>
-              </div>
-            </button>
-            <button type="button" class="role-option-item" 
-                    onclick="selectRoleOption(this, 'priOptTitle', 'priOptDesc', 'priOptTag', 'Calificaciones por curso', 'Sábana reactiva en tiempo real de 1.° a 6.° Grado, con soporte oficial de Secciones A, B y Sección U (Única).', 'SÁBANA DE PRIMARIA')"
-                    onmouseenter="selectRoleOption(this, 'priOptTitle', 'priOptDesc', 'priOptTag', 'Calificaciones por curso', 'Sábana reactiva en tiempo real de 1.° a 6.° Grado, con soporte oficial de Secciones A, B y Sección U (Única).', 'SÁBANA DE PRIMARIA')">
-              <span class="role-option-icon">📊</span>
-              <div class="role-option-info">
-                <span class="role-option-title">Calificaciones por curso</span>
-                <span class="role-option-scope">Pensum MPPE y Pensum CBA</span>
-              </div>
-            </button>
-            <button type="button" class="role-option-item" 
-                    onclick="selectRoleOption(this, 'priOptTitle', 'priOptDesc', 'priOptTag', 'Cuadros estadísticos (Calificaciones)', 'Consolidado gráfico de niveles de logro (L, EP, I) por asignatura y grado para orientación y refuerzo pedagógico.', 'ESTADÍSTICAS RENDIMIENTO')"
-                    onmouseenter="selectRoleOption(this, 'priOptTitle', 'priOptDesc', 'priOptTag', 'Cuadros estadísticos (Calificaciones)', 'Consolidado gráfico de niveles de logro (L, EP, I) por asignatura y grado para orientación y refuerzo pedagógico.', 'ESTADÍSTICAS RENDIMIENTO')">
-              <span class="role-option-icon">📈</span>
-              <div class="role-option-info">
-                <span class="role-option-title">Cuadros estadísticos</span>
-                <span class="role-option-scope">Calificaciones por curso</span>
-              </div>
-            </button>
-            <button type="button" class="role-option-item" 
-                    onclick="selectRoleOption(this, 'priOptTitle', 'priOptDesc', 'priOptTag', 'Cuadros estadísticos (Asistencia)', 'Semáforo de asistencia escolar (índice 98.4%) y detección temprana de ausentismo para coordinación de bienestar.', 'ÍNDICES DE AUSENTISMO')"
-                    onmouseenter="selectRoleOption(this, 'priOptTitle', 'priOptDesc', 'priOptTag', 'Cuadros estadísticos (Asistencia)', 'Semáforo de asistencia escolar (índice 98.4%) y detección temprana de ausentismo para coordinación de bienestar.', 'ÍNDICES DE AUSENTISMO')">
-              <span class="role-option-icon">📊</span>
-              <div class="role-option-info">
-                <span class="role-option-title">Cuadros estadísticos</span>
-                <span class="role-option-scope">Asistencia por curso</span>
-              </div>
-            </button>
-            <button type="button" class="role-option-item" 
-                    onclick="selectRoleOption(this, 'priOptTitle', 'priOptDesc', 'priOptTag', 'Cuadros estadísticos (Conducta)', 'Monitoreo preventivo del clima escolar y cumplimiento de los acuerdos de convivencia en todos los grados.', 'AUDITORÍA CONVIVENCIA')"
-                    onmouseenter="selectRoleOption(this, 'priOptTitle', 'priOptDesc', 'priOptTag', 'Cuadros estadísticos (Conducta)', 'Monitoreo preventivo del clima escolar y cumplimiento de los acuerdos de convivencia en todos los grados.', 'AUDITORÍA CONVIVENCIA')">
-              <span class="role-option-icon">📋</span>
-              <div class="role-option-info">
-                <span class="role-option-title">Cuadros estadísticos</span>
-                <span class="role-option-scope">Registros de conducta por curso</span>
-              </div>
-            </button>
+
+          <ul class="pillar-points-list">
+            <li class="pillar-point-item">
+              <span class="pillar-bullet">✦</span>
+              <div><strong>Indicadores normados MPPE:</strong> Escala cualitativa oficial: <em>Logrado (L)</em>, <em>Proceso (P)</em> e <em>Iniciado (I)</em> en lectura, cálculo y ciencias.</div>
+            </li>
+            <li class="pillar-point-item">
+              <span class="pillar-bullet">✦</span>
+              <div><strong>Doble Pensum Primaria:</strong> Coexistencia integrada del currículo ministerial y las materias artísticas e idiomáticas propias de Bellas Artes.</div>
+            </li>
+            <li class="pillar-point-item">
+              <span class="pillar-bullet">✦</span>
+              <div><strong>Boletines descriptivos oficiales:</strong> Valoraciones cualitativas detalladas por estudiante con generación instantánea en PDF.</div>
+            </li>
+          </ul>
+
+          <div class="pillar-card-footer">
+            <span class="pillar-pill">🌱 Escala (L · P · I)</span>
+            <span class="pillar-pill">📚 Doble Pensum CBA</span>
+            <span class="pillar-pill">📄 Boletín Oficial PDF</span>
           </div>
         </div>
 
-        <!-- Panel Derecho: Módulo de Interfaz del Rol (Preparado para 1 Captura) -->
-        <div class="role-showcase-panel">
-          <div class="role-showcase-header">
-            <div class="showcase-header-left">
-              <div class="showcase-window-dots">
-                <span class="showcase-dot red"></span>
-                <span class="showcase-dot yellow"></span>
-                <span class="showcase-dot green"></span>
-              </div>
-              <span id="priOptTag" class="showcase-tag-pill" style="border-color: #10B981; color: #34D399; background: rgba(16, 185, 129, 0.16);">INDICADORES PRIMARIA</span>
-              <span id="priOptTitle" class="showcase-option-title">Indicadores evaluados</span>
-            </div>
-            <span class="role-single-cap-pill" style="border-color: #10B981; color: #34D399;">1 Captura de Interfaz</span>
-          </div>
-
-          <div class="role-interface-canvas">
-            <div class="canvas-topbar">
-              <div class="canvas-sys-info">
-                <span class="canvas-dot-pulse" style="background: #10B981;"></span>
-                <span class="canvas-brand">SICE-CBA</span>
-                <span class="canvas-slash">/</span>
-                <span class="canvas-role-badge">🌱 Coord. Primaria</span>
-              </div>
-              <div class="canvas-tabs-preview">
-                <span class="canvas-tab active" style="border-color: #10B981; color: #34D399;">1.° a 6.° Grado</span>
-                <span class="canvas-tab">Escala (L, EP, I)</span>
-                <span class="canvas-tab">Doble Pensum</span>
-              </div>
-            </div>
-
-            <div class="canvas-pillars-grid">
-              <div class="canvas-pillar-card">
-                <span class="pillar-icon">🌱</span>
-                <span class="pillar-title">Escala Formativa MPPE</span>
-                <span class="pillar-desc">Logrado (L), En Proceso (EP) e Iniciado (I) con apreciaciones descriptivas.</span>
-              </div>
-              <div class="canvas-pillar-card">
-                <span class="pillar-icon">📚</span>
-                <span class="pillar-title">Pensum MPPE vs CBA</span>
-                <span class="pillar-desc">Malla ministerial integrada con materias artísticas e institucionales CBA.</span>
-              </div>
-              <div class="canvas-pillar-card">
-                <span class="pillar-icon">⏱️</span>
-                <span class="pillar-title">Asistencia Diaria</span>
-                <span class="pillar-desc">Puntualidad por aula, cómputo de faltas y alertas de prevención escolar.</span>
-              </div>
-            </div>
-
-            <div class="role-capture-slot">
-              <div class="capture-slot-icon">🖥️</div>
-              <div class="capture-slot-content">
-                <span class="capture-slot-title">Espacio Preparado para Captura de Interfaz del Rol</span>
-                <span class="capture-slot-sub">Se incorporará la captura representativa de la interfaz de Coordinación Primaria</span>
+        <!-- Pilar 2: Sábana Reactiva y Soporte Sección U -->
+        <div class="role-pillar-card card-pri">
+          <div class="pillar-card-header">
+            <div class="pillar-header-left">
+              <div class="pillar-avatar">📊</div>
+              <div class="pillar-title-wrap">
+                <h3 class="pillar-card-title">Sábana Reactiva & Sección U</h3>
               </div>
             </div>
           </div>
 
-          <div class="role-showcase-footer">
-            <span class="showcase-desc-highlight">✦ Solución SICE-CBA:</span>
-            <span id="priOptDesc">Evaluación formativa cualitativa oficial MPPE (Logrado • En Proceso • Iniciado) en competencias fundamentales.</span>
+          <ul class="pillar-points-list">
+            <li class="pillar-point-item">
+              <span class="pillar-bullet">✦</span>
+              <div><strong>Soporte nativo Sección U (Única):</strong> Resuelve la limitación histórica de CEO que obligaba a simular secciones A y B forzadas.</div>
+            </li>
+            <li class="pillar-point-item">
+              <span class="pillar-bullet">✦</span>
+              <div><strong>Carga reactiva celda por celda:</strong> Guardado automático instantáneo al escribir o calificar, sin recargas de pantalla ni pérdida de datos.</div>
+            </li>
+            <li class="pillar-point-item">
+              <span class="pillar-bullet">✦</span>
+              <div><strong>Matriz de 1.° a 6.° Grado:</strong> Filtros dinámicos por grado, sección y lapso con visualización unificada para la coordinación.</div>
+            </li>
+          </ul>
+
+          <div class="pillar-card-footer">
+            <span class="pillar-pill">✨ Soporte Oficial Sección U</span>
+            <span class="pillar-pill">⚡ Guardado Automático</span>
+            <span class="pillar-pill">📊 Matriz 1.° a 6.°</span>
+          </div>
+        </div>
+
+        <!-- Pilar 3: Asistencia de Aula y Clima Escolar -->
+        <div class="role-pillar-card card-pri">
+          <div class="pillar-card-header">
+            <div class="pillar-header-left">
+              <div class="pillar-avatar">⏱️</div>
+              <div class="pillar-title-wrap">
+                <h3 class="pillar-card-title">Control Diario & Convivencia</h3>
+              </div>
+            </div>
+          </div>
+
+          <ul class="pillar-points-list">
+            <li class="pillar-point-item">
+              <span class="pillar-bullet">✦</span>
+              <div><strong>Puntualidad y ausentismo:</strong> Control diario por aula, justificación de inasistencias y cómputo del índice general CBA (98.4%).</div>
+            </li>
+            <li class="pillar-point-item">
+              <span class="pillar-bullet">✦</span>
+              <div><strong>Bitácora preventiva de aula:</strong> Registro de acuerdos de convivencia, refuerzo de hábitos escolares y reconocimientos al mérito.</div>
+            </li>
+            <li class="pillar-point-item">
+              <span class="pillar-bullet">✦</span>
+              <div><strong>Estadísticas de coordinación:</strong> Reportes gráficos de ausentismo y desempeño para orientación y consejos pedagógicos de grado.</div>
+            </li>
+          </ul>
+
+          <div class="pillar-card-footer">
+            <span class="pillar-pill">⏱️ Asistencia Diaria 98.4%</span>
+            <span class="pillar-pill">⚖️ Clima Escolar</span>
+            <span class="pillar-pill">📈 Reportes de Grado</span>
           </div>
         </div>
       </div>
@@ -4625,171 +4149,106 @@
 
     <!-- DIAPOSITIVA 7: Rol Coordinación Media General: 1.° a 5.° Año -->
     <section class="slide" data-index="6" data-category="DOCENTES DIRECTIVA">
-      <div class="slide-tag">Nivel Media General (1.° a 5.° Año) <span class="audience-pill-tag">10 Tareas · Escala 01-20</span></div>
+      <div class="slide-tag">Nivel Media General (1.° a 5.° Año)</div>
       <h2 class="slide-title"><span class="role-anim-emoji emoji-med">🎓</span> Rol Coordinación Media General: 1.° a 5.° Año</h2>
-      <p class="slide-subtitle">Gestión rigurosa de la escala vigesimal (01-20), doble pensum, Grupos CRP y auditoría LOE Art. 109:</p>
 
-      <div class="role-slide-layout role-med">
-        <!-- Panel Izquierdo: Lista de Tareas Recurrentes -->
-        <div class="role-options-panel">
-          <div class="role-panel-header">
-            <span class="role-panel-header-title">🎓 Tareas Recurrentes del Rol</span>
-            <span class="role-panel-badge" style="background: rgba(168, 85, 247, 0.16); border: 1px solid #A855F7; color: #A855F7;">10 Tareas</span>
+      <div class="role-pillars-grid">
+        <!-- Pilar 1: Rigor Vigesimal & Planes de Aula -->
+        <div class="role-pillar-card card-med">
+          <div class="pillar-card-header">
+            <div class="pillar-header-left">
+              <div class="pillar-avatar">🎓</div>
+              <div class="pillar-title-wrap">
+                <h3 class="pillar-card-title">Rigor Vigesimal & Planes</h3>
+              </div>
+            </div>
           </div>
-          <div class="role-options-list">
-            <button type="button" class="role-option-item active" 
-                    onclick="selectRoleOption(this, 'medOptTitle', 'medOptDesc', 'medOptTag', 'Estrategias evaluadas', 'Control normado de planes de evaluación, ponderaciones vigesimales (máx. 20 pts) y fechas reglamentarias.', 'PLANIFICACIÓN DE LAPSO')"
-                    onmouseenter="selectRoleOption(this, 'medOptTitle', 'medOptDesc', 'medOptTag', 'Estrategias evaluadas', 'Control normado de planes de evaluación, ponderaciones vigesimales (máx. 20 pts) y fechas reglamentarias.', 'PLANIFICACIÓN DE LAPSO')">
-              <span class="role-option-icon">🎯</span>
-              <div class="role-option-info">
-                <span class="role-option-title">Estrategias evaluadas</span>
-                <span class="role-option-scope">Por curso y por docente</span>
-              </div>
-            </button>
-            <button type="button" class="role-option-item" 
-                    onclick="selectRoleOption(this, 'medOptTitle', 'medOptDesc', 'medOptTag', 'Registros de asistencia', 'Control de asistencia por hora académica con cómputo de horas válidas para derecho a evaluación sumativa.', 'ASISTENCIA POR MATERIA')"
-                    onmouseenter="selectRoleOption(this, 'medOptTitle', 'medOptDesc', 'medOptTag', 'Registros de asistencia', 'Control de asistencia por hora académica con cómputo de horas válidas para derecho a evaluación sumativa.', 'ASISTENCIA POR MATERIA')">
-              <span class="role-option-icon">📅</span>
-              <div class="role-option-info">
-                <span class="role-option-title">Registros de asistencia</span>
-                <span class="role-option-scope">Por curso y por estudiante</span>
-              </div>
-            </button>
-            <button type="button" class="role-option-item" 
-                    onclick="selectRoleOption(this, 'medOptTitle', 'medOptDesc', 'medOptTag', 'Registros de conducta', 'Historial disciplinario de bachillerato, compromisos pedagógicos y citaciones oficiales a padres.', 'EXPEDIENTE DISCIPLINARIO')"
-                    onmouseenter="selectRoleOption(this, 'medOptTitle', 'medOptDesc', 'medOptTag', 'Registros de conducta', 'Historial disciplinario de bachillerato, compromisos pedagógicos y citaciones oficiales a padres.', 'EXPEDIENTE DISCIPLINARIO')">
-              <span class="role-option-icon">⚖️</span>
-              <div class="role-option-info">
-                <span class="role-option-title">Registros de conducta</span>
-                <span class="role-option-scope">Por curso y por estudiante</span>
-              </div>
-            </button>
-            <button type="button" class="role-option-item" 
-                    onclick="selectRoleOption(this, 'medOptTitle', 'medOptDesc', 'medOptTag', 'Calificaciones / estudiante', 'Cálculo matemático exacto en escala 01-20 (mínimo aprobatorio 10 pts) y promedio ponderado institucional CBA.', 'PROMEDIOS VIGESIMALES')"
-                    onmouseenter="selectRoleOption(this, 'medOptTitle', 'medOptDesc', 'medOptTag', 'Calificaciones / estudiante', 'Cálculo matemático exacto en escala 01-20 (mínimo aprobatorio 10 pts) y promedio ponderado institucional CBA.', 'PROMEDIOS VIGESIMALES')">
-              <span class="role-option-icon">📝</span>
-              <div class="role-option-info">
-                <span class="role-option-title">Calificaciones / estudiante</span>
-                <span class="role-option-scope">Promedio MPPE y Promedio CBA</span>
-              </div>
-            </button>
-            <button type="button" class="role-option-item" 
-                    onclick="selectRoleOption(this, 'medOptTitle', 'medOptDesc', 'medOptTag', 'Calificaciones por curso', 'Matriz digital de 1.° a 5.° Año con materias oficiales MPPE y especialidades Bellas Artes (Robótica, Inglés).', 'SÁBANA DE BACHILLERATO')"
-                    onmouseenter="selectRoleOption(this, 'medOptTitle', 'medOptDesc', 'medOptTag', 'Calificaciones por curso', 'Matriz digital de 1.° a 5.° Año con materias oficiales MPPE y especialidades Bellas Artes (Robótica, Inglés).', 'SÁBANA DE BACHILLERATO')">
-              <span class="role-option-icon">📊</span>
-              <div class="role-option-info">
-                <span class="role-option-title">Calificaciones por curso</span>
-                <span class="role-option-scope">Pensum MPPE y Pensum CBA</span>
-              </div>
-            </button>
-            <button type="button" class="role-option-item" 
-                    onclick="selectRoleOption(this, 'medOptTitle', 'medOptDesc', 'medOptTag', 'Cuadros estadísticos (Calificaciones)', 'Reportes de aprobación/reprobación, materias de mayor exigencia técnica y cuadro de honor estudiantil.', 'CURVAS DE RENDIMIENTO')"
-                    onmouseenter="selectRoleOption(this, 'medOptTitle', 'medOptDesc', 'medOptTag', 'Cuadros estadísticos (Calificaciones)', 'Reportes de aprobación/reprobación, materias de mayor exigencia técnica y cuadro de honor estudiantil.', 'CURVAS DE RENDIMIENTO')">
-              <span class="role-option-icon">📈</span>
-              <div class="role-option-info">
-                <span class="role-option-title">Cuadros estadísticos</span>
-                <span class="role-option-scope">Calificaciones por curso</span>
-              </div>
-            </button>
-            <button type="button" class="role-option-item" 
-                    onclick="selectRoleOption(this, 'medOptTitle', 'medOptDesc', 'medOptTag', 'Cuadros estadísticos (Asistencia)', 'Monitoreo estricto del umbral del 25% de inasistencias no justificadas para la toma de decisiones oportunas.', 'AUDITORÍA LOE ART. 109')"
-                    onmouseenter="selectRoleOption(this, 'medOptTitle', 'medOptDesc', 'medOptTag', 'Cuadros estadísticos (Asistencia)', 'Monitoreo estricto del umbral del 25% de inasistencias no justificadas para la toma de decisiones oportunas.', 'AUDITORÍA LOE ART. 109')">
-              <span class="role-option-icon">📊</span>
-              <div class="role-option-info">
-                <span class="role-option-title">Cuadros estadísticos</span>
-                <span class="role-option-scope">Asistencia por curso</span>
-              </div>
-            </button>
-            <button type="button" class="role-option-item" 
-                    onclick="selectRoleOption(this, 'medOptTitle', 'medOptDesc', 'medOptTag', 'Cuadros estadísticos (Conducta)', 'Consolidado de incidencias y acuerdos para consejos de sección y coordinación de orientación vocacional.', 'CONVIVENCIA BACHILLERATO')"
-                    onmouseenter="selectRoleOption(this, 'medOptTitle', 'medOptDesc', 'medOptTag', 'Cuadros estadísticos (Conducta)', 'Consolidado de incidencias y acuerdos para consejos de sección y coordinación de orientación vocacional.', 'CONVIVENCIA BACHILLERATO')">
-              <span class="role-option-icon">📋</span>
-              <div class="role-option-info">
-                <span class="role-option-title">Cuadros estadísticos</span>
-                <span class="role-option-scope">Registros de conducta por curso</span>
-              </div>
-            </button>
-            <button type="button" class="role-option-item" 
-                    onclick="selectRoleOption(this, 'medOptTitle', 'medOptDesc', 'medOptTag', 'Estudiantes Grupos CRP', 'Gestión integral de talleres CRP (Robótica, Teatro, Ensamble de Música, Medios Digitales, Agroecología).', 'ASIGNACIÓN GRUPOS CRP')"
-                    onmouseenter="selectRoleOption(this, 'medOptTitle', 'medOptDesc', 'medOptTag', 'Estudiantes Grupos CRP', 'Gestión integral de talleres CRP (Robótica, Teatro, Ensamble de Música, Medios Digitales, Agroecología).', 'ASIGNACIÓN GRUPOS CRP')">
-              <span class="role-option-icon">🎨</span>
-              <div class="role-option-info">
-                <span class="role-option-title">Estudiantes Grupos CRP</span>
-                <span class="role-option-scope">Creación, Recreación y Producción</span>
-              </div>
-            </button>
-            <button type="button" class="role-option-item" 
-                    onclick="selectRoleOption(this, 'medOptTitle', 'medOptDesc', 'medOptTag', 'Carga de notas CRP', 'Control estricto de actas y calificaciones cualitativas de CRP para la certificación oficial del lapso.', 'CIERRE DE NOTAS CRP')"
-                    onmouseenter="selectRoleOption(this, 'medOptTitle', 'medOptDesc', 'medOptTag', 'Carga de notas CRP', 'Control estricto de actas y calificaciones cualitativas de CRP para la certificación oficial del lapso.', 'CIERRE DE NOTAS CRP')">
-              <span class="role-option-icon">📥</span>
-              <div class="role-option-info">
-                <span class="role-option-title">Carga de notas CRP</span>
-                <span class="role-option-scope">Reporte de carga de calificaciones</span>
-              </div>
-            </button>
+
+          <ul class="pillar-points-list">
+            <li class="pillar-point-item">
+              <span class="pillar-bullet">✦</span>
+              <div><strong>Auditoría de planes:</strong> Validación obligatoria de ponderaciones (suma exacta de 100% sobre 20 pts) y fechas reglamentarias de lapso.</div>
+            </li>
+            <li class="pillar-point-item">
+              <span class="pillar-bullet">✦</span>
+              <div><strong>Doble Pensum vigesimal:</strong> Cálculo matemático exacto para asignaturas MPPE y especialidades Bellas Artes (Robótica, Inglés).</div>
+            </li>
+            <li class="pillar-point-item">
+              <span class="pillar-bullet">✦</span>
+              <div><strong>Sábana de 1.° a 5.° Año:</strong> Matriz digital completa con promedios aritméticos y ponderados en tiempo real sin desfases.</div>
+            </li>
+          </ul>
+
+          <div class="pillar-card-footer">
+            <span class="pillar-pill">🎓 Escala 01-20</span>
+            <span class="pillar-pill">📐 Ponderación 100%</span>
+            <span class="pillar-pill">⚡ Sábana Reactiva</span>
           </div>
         </div>
 
-        <!-- Panel Derecho: Módulo de Interfaz del Rol (Preparado para 1 Captura) -->
-        <div class="role-showcase-panel">
-          <div class="role-showcase-header">
-            <div class="showcase-header-left">
-              <div class="showcase-window-dots">
-                <span class="showcase-dot red"></span>
-                <span class="showcase-dot yellow"></span>
-                <span class="showcase-dot green"></span>
-              </div>
-              <span id="medOptTag" class="showcase-tag-pill" style="border-color: #A855F7; color: #C084FC; background: rgba(168, 85, 247, 0.16);">PLANIFICACIÓN DE LAPSO</span>
-              <span id="medOptTitle" class="showcase-option-title">Estrategias evaluadas</span>
-            </div>
-            <span class="role-single-cap-pill" style="border-color: #A855F7; color: #C084FC;">1 Captura de Interfaz</span>
-          </div>
-
-          <div class="role-interface-canvas">
-            <div class="canvas-topbar">
-              <div class="canvas-sys-info">
-                <span class="canvas-dot-pulse" style="background: #A855F7;"></span>
-                <span class="canvas-brand">SICE-CBA</span>
-                <span class="canvas-slash">/</span>
-                <span class="canvas-role-badge">🎓 Coord. Media General</span>
-              </div>
-              <div class="canvas-tabs-preview">
-                <span class="canvas-tab active" style="border-color: #A855F7; color: #C084FC;">1.° a 5.° Año</span>
-                <span class="canvas-tab">Escala 01-20 Vigesimal</span>
-                <span class="canvas-tab">Talleres CRP</span>
-              </div>
-            </div>
-
-            <div class="canvas-pillars-grid">
-              <div class="canvas-pillar-card">
-                <span class="pillar-icon">🎓</span>
-                <span class="pillar-title">Escala 01-20 Vigesimal</span>
-                <span class="pillar-desc">Cálculo exacto, mínimo aprobatorio 10 pts y promedios ponderados CBA.</span>
-              </div>
-              <div class="canvas-pillar-card">
-                <span class="pillar-icon">🎨</span>
-                <span class="pillar-title">Talleres Activos CRP</span>
-                <span class="pillar-desc">Robótica Maker, Teatro, Ensamble Musical, Medios Digitales y Agroecología.</span>
-              </div>
-              <div class="canvas-pillar-card">
-                <span class="pillar-icon">⚖️</span>
-                <span class="pillar-title">Auditoría LOE Art. 109</span>
-                <span class="pillar-desc">Cálculo porcentual de inasistencias y alertas tempranas del umbral del 25%.</span>
-              </div>
-            </div>
-
-            <div class="role-capture-slot">
-              <div class="capture-slot-icon">🖥️</div>
-              <div class="capture-slot-content">
-                <span class="capture-slot-title">Espacio Preparado para Captura de Interfaz del Rol</span>
-                <span class="capture-slot-sub">Se incorporará la captura representativa de la interfaz de Coordinación Media General</span>
+        <!-- Pilar 2: Asistencia por Materia & LOE 109 -->
+        <div class="role-pillar-card card-med">
+          <div class="pillar-card-header">
+            <div class="pillar-header-left">
+              <div class="pillar-avatar">⏱️</div>
+              <div class="pillar-title-wrap">
+                <h3 class="pillar-card-title">Auditoría LOE 109 & Faltas</h3>
               </div>
             </div>
           </div>
 
-          <div class="role-showcase-footer">
-            <span class="showcase-desc-highlight">✦ Solución SICE-CBA:</span>
-            <span id="medOptDesc">Control normado de planes de evaluación, ponderaciones vigesimales (máx. 20 pts) y fechas reglamentarias.</span>
+          <ul class="pillar-points-list">
+            <li class="pillar-point-item">
+              <span class="pillar-bullet">✦</span>
+              <div><strong>Control por hora académica:</strong> Registro de asistencia asignatura por asignatura para validar el derecho a evaluación sumativa.</div>
+            </li>
+            <li class="pillar-point-item">
+              <span class="pillar-bullet">✦</span>
+              <div><strong>Auditoría LOE Art. 109:</strong> Cómputo automatizado de inasistencias con semáforo preventivo antes de alcanzar el 25% no justificado.</div>
+            </li>
+            <li class="pillar-point-item">
+              <span class="pillar-bullet">✦</span>
+              <div><strong>Expediente de bachillerato:</strong> Historial disciplinario, acuerdos de compromiso escolar y citaciones oficiales a padres.</div>
+            </li>
+          </ul>
+
+          <div class="pillar-card-footer">
+            <span class="pillar-pill">⚖️ LOE Art. 109</span>
+            <span class="pillar-pill">⏱️ Por Hora Académica</span>
+            <span class="pillar-pill">📋 Expediente Digital</span>
+          </div>
+        </div>
+
+        <!-- Pilar 3: Grupos CRP & Analítica -->
+        <div class="role-pillar-card card-med">
+          <div class="pillar-card-header">
+            <div class="pillar-header-left">
+              <div class="pillar-avatar">🎨</div>
+              <div class="pillar-title-wrap">
+                <h3 class="pillar-card-title">Talleres CRP & Analítica</h3>
+              </div>
+            </div>
+          </div>
+
+          <ul class="pillar-points-list">
+            <li class="pillar-point-item">
+              <span class="pillar-bullet">✦</span>
+              <div><strong>Nóminas centralizadas CRP:</strong> Asignación única en Robótica Maker, Teatro, Ensamble Musical, Medios y Agroecología.</div>
+            </li>
+            <li class="pillar-point-item">
+              <span class="pillar-bullet">✦</span>
+              <div><strong>Cierre de actas evaluativas:</strong> Control de carga de calificaciones cualitativas de CRP requeridas para la certificación del lapso.</div>
+            </li>
+            <li class="pillar-point-item">
+              <span class="pillar-bullet">✦</span>
+              <div><strong>Curvas de rendimiento:</strong> Cuadros de honor automáticos y detección oportuna de asignaturas de mayor exigencia técnica.</div>
+            </li>
+          </ul>
+
+          <div class="pillar-card-footer">
+            <span class="pillar-pill">🎨 Talleres CRP</span>
+            <span class="pillar-pill">🏆 Cuadro de Honor</span>
+            <span class="pillar-pill">🔒 Cierre de Actas</span>
           </div>
         </div>
       </div>
@@ -4797,9 +4256,8 @@
 
     <!-- DIAPOSITIVA 8: Normativa Legal MPPE y Roles Blindados -->
     <section class="slide" data-index="7" data-category="DOCENTES DIRECTIVA">
-      <div class="slide-tag">Reglas de Negocio Oficiales MPPE <span class="audience-pill-tag">Pedagógico & Roles</span></div>
+      <div class="slide-tag">Reglas de Negocio Oficiales MPPE</div>
       <h2 class="slide-title">Escalas Evaluativas Oficiales y Roles de Personal</h2>
-      <p class="slide-subtitle">Alineación exacta con las normativas del Ministerio y segregación de responsabilidades:</p>
 
       <div class="card-grid-3">
         <div class="feature-card">
@@ -4808,7 +4266,7 @@
           </div>
           <h3 class="feature-card-title">Educación Inicial</h3>
           <p class="feature-card-desc">
-            Escala <strong>Literal Oficial Exclusiva</strong>. Prohibidos promedios o escalas numéricas sobre 20.
+            Escala <strong>Literal</strong>. Prohibidos promedios o escalas numéricas sobre 20.
           </p>
           <div class="scale-box inicial">
             <strong>Escala Literal:</strong> <code>A</code>, <code>B</code>, <code>C</code>, <code>D</code>, <code>E</code>.<br>
@@ -4822,11 +4280,11 @@
           </div>
           <h3 class="feature-card-title">Educación Primaria</h3>
           <p class="feature-card-desc">
-            Evaluación <strong>Cualitativa / Formativa</strong> por competencias e indicadores de aprendizaje.
+            Evaluación <strong>Cualitativa</strong> por competencias e indicadores de aprendizaje.
           </p>
           <div class="scale-box primaria">
             <strong>Indicadores:</strong><br>
-            <code>L</code> (Logrado) · <code>P/EP</code> (En Proceso) · <code>I</code> (Iniciado).
+            <code>L</code> (Logrado) · <code>P</code> (Proceso) · <code>I</code> (Iniciado).
           </div>
         </div>
 
@@ -4836,7 +4294,7 @@
           </div>
           <h3 class="feature-card-title">Media General & Roles</h3>
           <p class="feature-card-desc">
-            Escala <strong>Cuantitativa Vigesimal (01 a 20)</strong> con actas y ponderaciones por lapso.
+            Escala <strong>Cuantitativa</strong> con actas y ponderaciones por lapso.
           </p>
           <div class="scale-box media">
             <strong>Seguridad de Roles:</strong><br>
@@ -4852,7 +4310,7 @@
     <section class="slide" data-index="8" data-category="ALL">
       <div class="hero-layout">
         <div>
-          <div class="slide-tag">Plan de Despliegue · CBA 2026 <span class="audience-pill-tag">Ruta Metódica</span></div>
+          <div class="slide-tag">Plan de Despliegue · CBA 2026</div>
           <h2 class="hero-h1" style="font-size: 34px;">De Pruebas Locales a Producción Institucional</h2>
           <p class="hero-desc">
             El sistema se consolida en un plan de 4 fases para asegurar una transición sin interrupciones en la <strong>Unidad Educativa Bellas Artes</strong>.

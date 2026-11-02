@@ -23,7 +23,7 @@ DIAPOSITIVAS
    - CEO: Menú lateral rígido de 2012, tablas lentas y fragmentadas.
    - SICE-CBA: Panel en tiempo real con métricas clave y buscador global (Ctrl+K).
 
-4. ROL DIRECTORA: SUPERVISIÓN GENERAL (10 TAREAS)
+4. ROL DIRECTORA: SUPERVISIÓN GENERAL (3 PILARES MAESTROS)
    - Estrategias de aula por docente y curso.
    - Control diario de asistencia (Portería y umbral LOE Art. 109).
    - Bitácora de conducta y acuerdos escolares.
@@ -31,21 +31,21 @@ DIAPOSITIVAS
    - Cuadros estadísticos (Rendimiento, asistencia y conducta).
    - Gestión y carga de notas de Grupos CRP.
 
-5. ROL COORDINACIÓN INICIAL: MATERNAL & PREESCOLAR (5 TAREAS)
+5. ROL COORDINACIÓN INICIAL: MATERNAL & PREESCOLAR (3 PILARES MAESTROS)
    - Banco de indicadores por áreas de desarrollo de la primera infancia.
    - Reporte de indicadores actitudinales y socioemocionales.
    - Evaluación cualitativa individual y sábana consolidada de salas.
    - Escala oficial literal exclusiva: A, B, C, D, E (Sin notas numéricas).
    - Estadísticas de avance y cobertura pedagógica.
 
-6. ROL COORDINACIÓN PRIMARIA: 1.° A 6.° GRADO (8 TAREAS)
-   - Indicadores cualitativos oficiales MPPE: Logrado (L), En Proceso (EP), Iniciado (I).
+6. ROL COORDINACIÓN PRIMARIA: 1.° A 6.° GRADO (3 PILARES MAESTROS)
+   - Indicadores cualitativos oficiales MPPE: Logrado (L), Proceso (P), Iniciado (I).
    - Asistencia diaria por aula y control de disciplina/conducta.
    - Doble pensum formativo: Boletín oficial MPPE y asignaturas CBA.
    - Sábana digital reactiva para Secciones A, B y Sección U.
    - Cuadros estadísticos de rendimiento, ausentismo y convivencia.
 
-7. ROL COORDINACIÓN MEDIA GENERAL: 1.° A 5.° AÑO (10 TAREAS)
+7. ROL COORDINACIÓN MEDIA GENERAL: 1.° A 5.° AÑO (3 PILARES MAESTROS)
    - Control de planes de evaluación y ponderaciones sobre 20 puntos.
    - Asistencia por hora académica y auditoría de inasistencias (LOE Art. 109).
    - Expediente disciplinario de bachillerato y citaciones.
@@ -55,8 +55,8 @@ DIAPOSITIVAS
 
 8. ESCALAS EVALUATIVAS OFICIALES Y ROLES DE PERSONAL
    - Inicial: Escala Literal Oficial (A - E).
-   - Primaria: Escala Cualitativa Formativa (L, EP, I).
-   - Media General: Escala Vigesimal Cuantitativa (01 - 20).
+   - Primaria: Escala Cualitativa (L, P, I).
+   - Media General: Escala Cuantitativa.
    - Seguridad de Roles:
      * Secretaría: Solo Asistencia y Conducta (Bloqueo total a notas).
      * Docente: Planificación y Notas de sus materias.
