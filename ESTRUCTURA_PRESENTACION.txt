@@ -53,7 +53,7 @@ DIAPOSITIVAS
    - Sábana completa de 1.° a 5.° Año y cuadros de rendimiento.
    - Asignación de nóminas y cierre de actas en Grupos CRP.
 
-8. ESCALAS EVALUATIVAS OFICIALES Y ROLES DE PERSONAL
+8. ESCALAS EVALUATIVAS Y ROLES DE PERSONAL
    - Inicial: Escala Literal Oficial (A - E).
    - Primaria: Escala Cualitativa (A, L, P, I).
    - Media General: Escala Cuantitativa.
