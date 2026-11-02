@@ -39,7 +39,7 @@ DIAPOSITIVAS
    - Estadísticas de avance y cobertura pedagógica.
 
 6. ROL COORDINACIÓN PRIMARIA: 1.° A 6.° GRADO (3 PILARES MAESTROS)
-   - Indicadores cualitativos oficiales MPPE: Avanzado (A), Logrado (L), Proceso (P), Iniciado (I).
+   - Indicadores cualitativos oficiales MPPE: Logrado (L), Avanzado (A), Proceso (P), Iniciado (I).
    - Asistencia diaria por aula y control de disciplina/conducta.
    - Doble pensum formativo: Boletín oficial MPPE y asignaturas CBA.
    - Sábana digital reactiva para Secciones A, B y Sección U.
@@ -64,7 +64,7 @@ DIAPOSITIVAS
 
 9. ESCALAS EVALUATIVAS Y ROLES DE PERSONAL
    - Inicial: Escala Literal Oficial (A - E).
-   - Primaria: Escala Cualitativa (A, L, P, I).
+   - Primaria: Escala Cualitativa (L, A, P, I).
    - Media General: Escala Cuantitativa.
    - Seguridad de Roles:
      * Secretaría: Solo Asistencia y Conducta (Bloqueo total a notas).
