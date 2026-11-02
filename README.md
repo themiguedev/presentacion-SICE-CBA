@@ -30,11 +30,11 @@ El sistema se encuentra actualmente en **fase activa de validación y pruebas lo
 4. **Automatización de Tareas Recurrentes por Rol (Documento Institucional CBA):**
    - **Directora:** Estrategias por curso/docente, asistencia, conducta, **Doble Pensum Académico (Promedio MPPE y Promedio CBA)**, cuadros estadísticos y reporte de **Grupos CRP** (inscripción y notas).
    - **Coordinación Docente de Inicial:** Indicadores evaluados, **Indicadores Actitudinales**, consultas de evaluación por estudiante y curso, y estadísticas formativas en escala literal (A a E).
-   - **Coordinación Docente de Primaria:** Indicadores por curso/docente, asistencia, disciplina, **Doble Pensum (MPPE y CBA)**, cuadros estadísticos y escala cualitativa (L, P/EP, I).
+   - **Coordinación Docente de Primaria:** Indicadores por curso/docente, asistencia, disciplina, **Doble Pensum (MPPE y CBA)**, cuadros estadísticos y escala cualitativa (A, L, P, I).
    - **Coordinación Docente de Media General:** Registro de estrategias evaluadas, asistencia, disciplina, **Doble Pensum (escala vigesimal 01 a 20)**, cuadros estadísticos y **Grupos CRP**.
 
-5. **Escalas Evaluativas Oficiales y Roles de Personal:**
-   - Detalle por subsistema (Inicial Literal, Primaria Cualitativa, Media General Vigesimal).
+5. **Escalas Evaluativas y Roles de Personal:**
+   - Detalle por subsistema (Inicial Literal, Primaria Cualitativa, Media General Cuantitativa).
    - Segregación de roles (SECRETARIA blindada con acceso exclusivo a Inasistencias y Conducta; DOCENTE en Evaluación; ADMINISTRADOR en Matrícula y Usuarios).
 
 6. **Plan de Despliegue a Servidores del Plantel & Preguntas y Respuestas:**
